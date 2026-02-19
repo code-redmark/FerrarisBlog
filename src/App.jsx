@@ -1,12 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
+function App(props) {
   return (
     <div>
-      <h1>Ferraris Blog</h1>
+      <h1>{props.nome}</h1>
     </div>
   )
 }

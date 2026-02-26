@@ -1,10 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
 import App from './App.jsx'
+
+/* Crea un root object, in pratica va a modficare
+l'elemento specificato, in questo caso l'elemento con 
+l'id "root" (la div in index.html) in document che sarebbe il documento html
+*/
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App nome="Ciao"/>
+    <App/>
   </StrictMode>,
 )

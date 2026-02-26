@@ -1,9 +1,15 @@
+import './componenti/Testa.jsx'
 import './App.css'
+import Testa from './componenti/Testa.jsx'
+import Piedi from './componenti/Piedi.jsx'
+import Contenuto from './componenti/Contenuto.jsx'
 
-function App(props) {
+function App() {
   return (
     <div>
-      <h1>{props.nome}</h1>
+        <Testa></Testa>
+        <Contenuto></Contenuto>
+        <Piedi></Piedi>
     </div>
   )
 }

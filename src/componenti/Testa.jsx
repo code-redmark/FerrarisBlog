@@ -1,6 +1,10 @@
+import './Testa.css'
+
 function Testa() {
     return (
-        <h1>Testa</h1>
+        <div className='Testa'>
+            <p>Testa</p>
+        </div>
     )
 }
 

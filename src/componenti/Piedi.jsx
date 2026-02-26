@@ -1,6 +1,8 @@
+import './Piedi.css'
+
 function Piedi() {
     return (
-        <div>
+        <div className='Piedi'>
             <p>piedi</p>
         </div>
     )   

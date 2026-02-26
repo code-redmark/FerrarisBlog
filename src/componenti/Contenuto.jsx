@@ -3,7 +3,7 @@ import './Contenuto.css'
 function Contenuto() {
     return (
         <main className='Contenuto'>
-            <p>aaa</p>
+            <p>contenuto</p>
         </main>
     )   
 }

@@ -1,8 +1,10 @@
+import './Contenuto.css'
+
 function Contenuto() {
     return (
-        <div>
-            <p>Contenuto</p>
-        </div>
+        <main className='Contenuto'>
+            <p>aaa</p>
+        </main>
     )   
 }
 

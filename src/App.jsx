@@ -1,16 +1,15 @@
-import './componenti/Testa.jsx'
 import './App.css'
-import Testa from './componenti/Testa.jsx'
-import Piedi from './componenti/Piedi.jsx'
-import Contenuto from './componenti/Contenuto.jsx'
+import Home from './pagine/Home.jsx'
+import Orientamento from './pagine/Orientamento.jsx'
+import { Route, Routes } from 'react-router-dom'
+
 
 function App() {
   return (
-    <div>
-        <Testa></Testa>
-        <Contenuto></Contenuto>
-        <Piedi></Piedi>
-    </div>
+    <Routes>
+      <Route path='/' element={<Home />}></Route>
+      <Route path='/orientamento' element={<Orientamento></Orientamento>}></Route>
+    </Routes>
   )
 }
 

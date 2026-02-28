@@ -1,15 +1,11 @@
 import { Link } from 'react-router-dom'
 import './Pagina.css'
+import Testa from '../componenti/Testa'
 
 export default function Orientamento() {
     return (
         <main>
-            <div>
-                <Link to="/"> Torna a home </Link>
-            </div>
-            <div className='Testa'> 
-                <p>Testa Orientamento</p>
-            </div>
+            <Testa></Testa>
 
             <div className='Contenuto'>
                 <p>Contenuto Orientamento</p>

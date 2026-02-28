@@ -10,7 +10,7 @@ l'id "root" (la div in index.html) in document che sarebbe il documento html
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename="/FerrarisBlog">
         <App />
       </BrowserRouter>
     </StrictMode>

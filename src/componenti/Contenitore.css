@@ -1,0 +1,17 @@
+.Contenitore {
+    display: flex;
+    flex-direction: row;
+}
+
+
+/*Roba per telefono*/
+@media (max-width: 850px) {
+    .Contenitore {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* .Contenuto { Da modificare quando avremmo da fare i contenitori
+    
+} */

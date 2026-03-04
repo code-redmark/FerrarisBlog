@@ -1,6 +1,6 @@
-import Testa from '../componenti/Testa'
-import Contenuto from '../componenti/Contenuto'
-import '../stile/Piedi.css'
+import Testa from '../componenti/base/Testa'
+import Contenuto from '../componenti/base/Contenuto'
+import '../stile/base/Piedi.css'
 
 
 export default function Orientamento() {

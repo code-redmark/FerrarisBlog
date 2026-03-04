@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import "./Testa.css"
+import "../../stile/Testa.css"
 
 export default function Testa() {
     return (

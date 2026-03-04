@@ -1,5 +1,6 @@
 import Testa from '../componenti/Testa'
 import Contenuto from '../componenti/Contenuto'
+import '../stile/Piedi.css'
 
 
 export default function Orientamento() {
@@ -7,7 +8,7 @@ export default function Orientamento() {
         <main>
             <Testa></Testa>
 
-            <Contenuto><p>Contenuto Orientamento</p></Contenuto>
+            <Contenuto><h1 className='HeaderContenuto'>Contenuto Orientamento</h1></Contenuto>
 
             <div className='Piedi'>
             <p>Piedi Orientamento</p>

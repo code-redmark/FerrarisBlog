@@ -1,4 +1,4 @@
-import './Piedi.css'
+import '../../stile/Piedi.css'
 
 export default function Piedi() {
     return (

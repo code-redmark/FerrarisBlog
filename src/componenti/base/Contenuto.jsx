@@ -1,4 +1,4 @@
-import "./Contenuto.css"
+import "../../stile/Contenuto.css"
 
 export default function Contenuto({children, larghezza, altezza}) {
     return (

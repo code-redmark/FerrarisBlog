@@ -1,23 +1,38 @@
 {
     "classi": [
         {
+            "id": "3m",
             "anno": "3",
             "sezione": "M"
         },
         {
+            "id": "3a",
             "anno": "3",
             "sezione": "A"
         },
         {
+            "id": "3b",
             "anno": "3",
             "sezione": "B"
         },{
+            "id": "3c",
             "anno": "3",
             "sezione": "C"
         },
         {
+            "id": "3d",
             "anno": "3",
             "sezione": "D"
+        },
+        {
+            "id": "3e",
+            "anno": "3",
+            "sezione": "E"
+        },
+        {
+            "id": "3f",
+            "anno": "3",
+            "sezione": "F"
         }
     ]
 }

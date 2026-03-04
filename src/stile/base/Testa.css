@@ -1,17 +1,33 @@
-ul#ListaTesta {
-    padding-right: 99%;
-    list-style: none;
-}
-
-ul#ListaTesta li {
-    padding: 10px;
-    display: inline;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .Testa {
     width: 100%;
-    height: 12vh;
+    height: 16vh;
     border: 1px solid black;
-    margin: auto;
-    position: sticky;
+    display: flex;
+    align-items: center;
+}
+
+ul#ListaTesta {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    padding-inline-start: 20px;
+}
+
+ul#ListaTesta li {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+img#logo {
+    height: 60px;
+    width: auto;
+    display: block;
 }

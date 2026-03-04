@@ -4,13 +4,11 @@ import "../stile/RiquadroClasse.css"
 
 export default function ListaClassi() {
     return (
-        <div>
+        <div style={{overflowY: "scroll", position: "sticky"}}>
             {data.classi.map(classe => (
-                <div className="RiquadroClasse">
+                <div key={classe.id} className="RiquadroClasse">
                     <h1>{classe.anno} {classe.sezione}</h1>
                 </div>
-
-                
             )
         )}
         </div>

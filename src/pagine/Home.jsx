@@ -11,16 +11,19 @@ export default function Home() {
         <main>
             <Testa></Testa>
 
-            <div id="Contenitore">
-                <Contenuto larghezza="25%" altezza="60vh">
+            <div className="Contenitore">
+
+                <Contenuto larghezza="15%" altezza="120vh">
                     <div className="HeaderContenuto">
                         <h1 className="Le Classi">Le Classi</h1>
                     </div>
                     <ListaClassi />
                 </Contenuto>
-                <Contenuto larghezza="75%" altezza="60vh">
+
+                <Contenuto larghezza="85%" altezza="120vh">
                     <Contenuto larghezza="100%" altezza="100%"><h1>Marco</h1></Contenuto> 
                 </Contenuto>
+
             </div>
 
             <Piedi></Piedi>

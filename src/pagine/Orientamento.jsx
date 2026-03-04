@@ -1,6 +1,6 @@
-import './Pagina.css'
 import Testa from '../componenti/Testa'
 import Contenuto from '../componenti/Contenuto'
+
 
 export default function Orientamento() {
     return (

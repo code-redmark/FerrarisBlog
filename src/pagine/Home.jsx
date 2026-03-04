@@ -1,7 +1,6 @@
 import Testa from "../componenti/Testa.jsx"
 import Contenuto from '../componenti/Contenuto.jsx'
 import Piedi from "../componenti/Piedi.jsx"
-import './Pagina.css'
 import "../componenti/Contenitore.css"
 
 export default function Home() {

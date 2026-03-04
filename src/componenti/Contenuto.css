@@ -3,3 +3,9 @@
     width: var(--larghezza);
     height: var(--altezza);
 }
+
+@media (max-width: 850px) {
+    .Contenuto {
+        width: 100%;
+    }
+}

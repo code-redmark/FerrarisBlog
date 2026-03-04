@@ -1,0 +1,20 @@
+
+
+.Highlight {
+    flex: 0, 0, auto;
+    background-color: rgb(75, 75, 75);
+    color: aliceblue;
+}
+
+h1.Highlight {
+    font-size: 5%;
+}
+
+h2.Highlight {
+    font-size: 3%;
+}
+
+p.Highlight {
+    font-size: 2%;
+}
+

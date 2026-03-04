@@ -3,6 +3,7 @@ import Contenuto from '../componenti/base/Contenuto.jsx'
 import Piedi from "../componenti/base/Piedi.jsx"
 
 import ListaClassi from "../componenti/ListaClassi.jsx"
+import ListaHighlight from "../componenti/ListaHighlight.jsx"
 
 import "../stile/base/Contenitore.css"
 
@@ -21,7 +22,7 @@ export default function Home() {
                 </Contenuto>
 
                 <Contenuto larghezza="85%" altezza="120vh">
-                    <Contenuto larghezza="100%" altezza="100%"><h1>Marco</h1></Contenuto> 
+                    <ListaHighlight></ListaHighlight>
                 </Contenuto>
 
             </div>

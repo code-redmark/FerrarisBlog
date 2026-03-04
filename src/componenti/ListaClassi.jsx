@@ -1,11 +1,11 @@
-import data from "../classi.json"
+import datiClassi from "../classi.json"
 
 import "../stile/RiquadroClasse.css"
 
 export default function ListaClassi() {
     return (
         <div style={{overflowY: "scroll", position: "sticky"}}>
-            {data.classi.map(classe => (
+            {datiClassi.classi.map(classe => (
                 <div key={classe.id} className="RiquadroClasse">
                     <h1>{classe.anno} {classe.sezione}</h1>
                 </div>

@@ -11,6 +11,7 @@ export default function Home() {
     return (
         <main>
             <Testa></Testa>
+            <div id="arcobaleno"/>
 
             <div className="Contenitore">
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logo from '../../../dist/assets/logo.png'
+import logo from "../Assets/logo.png"
 import "../../stile/base/Testa.css"
 
 export default function Testa() {

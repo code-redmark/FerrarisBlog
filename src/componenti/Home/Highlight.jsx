@@ -1,6 +1,6 @@
-import Contenuto from "./base/Contenuto";
+import Contenuto from "../base/Contenuto";
 
-import "../stile/Highlight.css"
+import "../../stile/Highlight.css"
 
 export default function Highlight({titolo, descrizione, stringaData}) {
 

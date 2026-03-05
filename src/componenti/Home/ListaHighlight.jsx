@@ -1,7 +1,7 @@
-import datiNotizie from "../highlights.json"
+import datiNotizie from "../../highlights.json"
 import Highlight from "./Highlight"
 
-import "../stile/ListaHighlight.css"
+import "../../stile/ListaHighlight.css"
 
 export default function ListaHighlight() {
     return (

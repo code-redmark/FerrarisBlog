@@ -2,8 +2,8 @@ import Testa from "../componenti/base/Testa.jsx"
 import Contenuto from '../componenti/base/Contenuto.jsx'
 import Piedi from "../componenti/base/Piedi.jsx"
 
-import ListaClassi from "../componenti/ListaClassi.jsx"
-import ListaHighlight from "../componenti/ListaHighlight.jsx"
+import ListaClassi from "../componenti/Home/ListaClassi.jsx"
+import ListaHighlight from "../componenti/Home/ListaHighlight.jsx"
 
 import "../stile/base/Contenitore.css"
 

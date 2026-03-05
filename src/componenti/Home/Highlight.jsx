@@ -5,31 +5,29 @@ import "../../stile/Highlight.css"
 export default function Highlight({titolo, descrizione, stringaData}) {
 
 
-    const currentDate = new Date(stringaData);
-    const italia = currentDate.toLocaleDateString("it-IT", {timeZone: "Europe/Rome"});
+    let currentDate = new Date(stringaData);
+    let ms = Date.now() - currentDate;
+    console.log(ms)
 
-    let ms = Date.now() - new Date(italia);
-
-    const secondi = ms / 1000;
-    const minuti = secondi / 60;
-    const ore = minuti / 60;
-    const giorni = ore / 24;
-    const mesi = giorni / 30;
-    const anni = mesi / 12;
+    let secondi = Math.floor(ms / 1000);
+    let minuti = Math.floor(secondi / 60);
+    let ore = Math.floor(minuti / 60);
+    let giorni = Math.floor(ore / 24);
+    let mesi = Math.floor(giorni / 30);
+    let anni = Math.floor(mesi / 12);
     
-
     let tempo;
 
     if (anni > 0) {
-        tempo = '${anni} anni fa';
+        tempo =`${anni} anni fa`;
     } else if (mesi > 0) {
-        tempo = '${mesi} mesi fa';
+        tempo = `${mesi} mesi fa`;
     } else if (giorni > 0) {
-        tempo = '${giorni} giorni fa';
+        tempo = `${giorni} giorni fa`;
     } else if (ore > 0) {
-        tempo = '${ore} ore fa';
+        tempo = `${ore} ore fa`;
     } else if (minuti > 0) {
-        tempo = '${minuti} minuti fa';
+        tempo = `${minuti} minuti fa`;
     } else {
         tempo = 'Adesso';
     }

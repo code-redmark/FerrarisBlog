@@ -15,14 +15,14 @@ export default function Home() {
 
             <div className="Contenitore">
 
-                <Contenuto larghezza="15%" altezza="120vh">
+                <Contenuto larghezza="15%" altezza="70vh">
                     <div className="HeaderContenuto">
                         <h1 className="Le Classi">Le Classi</h1>
                     </div>
                     <ListaClassi />
                 </Contenuto>
 
-                <Contenuto larghezza="85%" altezza="120vh">
+                <Contenuto larghezza="85%" altezza="70vh">
                     <ListaHighlight></ListaHighlight>
                 </Contenuto>
 

@@ -34,7 +34,7 @@ img#logo {
 
 @font-face {
     font-family: 'button';
-    src: url('../../Assets/Font/Modak.ttf') format('truetype');
+    src: url('src/componenti/Assets/Font/Modak.ttf') format('truetype');
 }
 
 .button-text {

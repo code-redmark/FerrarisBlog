@@ -7,7 +7,8 @@ export default function PaginaClasse({anno, sezione}) {
         <div className="PaginaClasse">
             <Testa></Testa>
                 <Contenuto larghezza="100%" altezza="60vh">
-                    <p> La pagina della {anno}{sezione}!</p>
+                    <h1>{anno}{sezione}</h1>
+
                 </Contenuto>
             <Piedi></Piedi>
         </div>

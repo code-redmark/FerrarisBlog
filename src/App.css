@@ -9,3 +9,10 @@
   padding: 0;
   text-align: center;
 }
+
+div#arcobaleno {
+    content: "";
+    background: linear-gradient(45deg, #219fb7, #aab343, #f7bf02, #eca40b, #c85c2a, #b5363b, #ab2443, #831c88, rgb(156, 84, 156), rgb(130, 0, 0)); /*goat chat gpt*/
+    height: 2px;
+    width: 100%;
+}

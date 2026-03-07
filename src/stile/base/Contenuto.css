@@ -1,3 +1,4 @@
+/* Container setup */
 .Contenuto {
     display: flex;
     flex-direction: column;
@@ -11,19 +12,80 @@
     }
 }
 
+/* 1. FIXED HEADER: Now centers the text perfectly */
 .HeaderContenuto {
     color: white;
     align-items: center;
     position: sticky;
+    top: 0;
     width: 100%;
     height: 10vh;
+    display: flex;             /* Centering logic */
+    justify-content: center;    /* Horizontal center */
+    align-items: center;        /* Vertical center */
+    z-index: 10;
 }
 
+/* Font faces */
 @font-face {
     font-family: 'contenuto';
     src: url('public/Assets/Font/RobotoCondensed.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'leclassi';
+    src: url('src/componenti/Assets/Font/Modak.ttf') format('truetype');
+}
+
+/* 2. THE TITLE: Thick rainbow outline, no hover effect */
+.leclassi {
+    margin: 0; 
+    font-family: 'contenuto';
+    font-size: 30px;
+    color: rgb(36, 28, 28); 
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+
+    /* Thicker Rainbow Outline (2px offsets with slight blur for smoothness) */
+    text-shadow: 
+        -2px -2px 1px #219fb7,  
+         2px -2px 1px #aab343,  
+        -2px  2px 1px #f7bf02,  
+         2px  2px 1px #ab2443;
+    
+    filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.2));
+}
+
+/* 3. THE BUTTONS: Solid blue background with thin rainbow border */
+.RiquadroClasse {
+    position: relative;
+    box-sizing: border-box;
+    width: 90%;
+    margin: 0 5% 5% 5%;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-family: 'contenuto';
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    /* Border Logic: Solid blue inside, rainbow only on the edge */
+    border: 1.5px solid transparent; 
+    border-radius: 10px;
+    background-image: 
+        linear-gradient(rgb(132, 202, 196), rgb(132, 202, 196)), 
+        linear-gradient(45deg, #219fb7, #aab343, #f7bf02, #eca40b, #c85c2a, #b5363b, #ab2443, #831c88, rgb(156, 84, 156), rgb(130, 0, 0));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+/* Basic button class for other elements */
 .button-classi {
     font-family: 'contenuto';
     font-size: 24px;

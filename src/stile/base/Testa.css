@@ -41,9 +41,8 @@ img#logo {
     font-family: 'button';
     font-size: 24px;
     color: white;
-    background-color: #007BFF; /* colore sfondo pulsante */
     padding: 10px 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     text-align: center;
     display: inline-block;
     text-decoration: none;

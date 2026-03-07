@@ -13,8 +13,8 @@ export default function Testa() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/Orientamento" className='button-text'>
-                        Orientamento
+                    <Link to="/Orientamento" className='button-text' style={{backgroundColor: "black"}}>
+                        ORIENTAMENTO
                     </Link>
                 </li>
             </ul>

@@ -17,7 +17,7 @@ export default function Home() {
 
                 <Contenuto larghezza="15%" altezza="120vh">
                     <div className="HeaderContenuto">
-                        <h1 className="Le Classi">Le Classi</h1>
+                        <h1 className="Le Classi" style={{fontFamily:"contenuto"}}>Le Classi</h1>
                     </div>
                     <ListaClassi />
                 </Contenuto>

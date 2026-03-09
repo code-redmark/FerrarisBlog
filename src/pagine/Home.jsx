@@ -14,11 +14,16 @@ export default function Home() {
         <main>
             <Testa></Testa>
             <div id="arcobaleno"/>
+            <div id="Palle" style={{
+                height: "3vh",
+                backgroundColor: "#222"
+            }}></div>
 
             <div className="Contenitore">
  
-                <Contenuto larghezza="15%" altezza="200vh">
-                    <div className="pc" style={{backgroundColor: "#222"}}>
+                <Contenuto larghezza="15%">
+
+                    <div className="pc" style={{backgroundColor: "#222", flex: 1}}>
                         <div className="HeaderContenuto">
                         <h1 className="Le Classi" style={{fontFamily:"contenuto"}}>Le Classi</h1>
                         </div>
@@ -27,7 +32,7 @@ export default function Home() {
                 
                 </Contenuto>
 
-                <Contenuto larghezza="85%" altezza="120vh">
+                <Contenuto larghezza="85%" altezza="250vh">
                     <ListaHighlight></ListaHighlight>
                 </Contenuto>
                 

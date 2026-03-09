@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import logolight from "../Assets/Img/logolight.png" // logo light mode
-import logodark from "../Assets/Img/logodark.png" // logo dark mode
+import logolight from "../../../public/Assets/Img/logolight.png" // logo light mode
+import logodark from "../../../public/Assets/Img/logodark.png" // logo dark mode
 import "../../stile/base/Testa.css"
 
 export default function Testa() {

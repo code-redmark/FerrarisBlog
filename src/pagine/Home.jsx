@@ -15,21 +15,22 @@ export default function Home() {
             <Testa></Testa>
             <div id="arcobaleno"/>
 
-            <div className="Contenitora">
-
-                <div className="pc">
-                    <Contenuto larghezza="15%" altezza="120vh">
-                    <div className="HeaderContenuto">
+            <div className="Contenitore">
+ 
+                <Contenuto larghezza="15%" altezza="200vh">
+                    <div className="pc" style={{backgroundColor: "#222"}}>
+                        <div className="HeaderContenuto">
                         <h1 className="Le Classi" style={{fontFamily:"contenuto"}}>Le Classi</h1>
+                        </div>
+                            <ListaClassi />
                     </div>
-                    <ListaClassi />
-                    </Contenuto>
+                
+                </Contenuto>
 
-                    <Contenuto larghezza="85%" altezza="120vh">
-                        <ListaHighlight></ListaHighlight>
-                    </Contenuto>
-                </div>
-
+                <Contenuto larghezza="85%" altezza="120vh">
+                    <ListaHighlight></ListaHighlight>
+                </Contenuto>
+                
                 <div className="mobile">
                     {/** Stesse cose ma con una sidebar*/}
                     <Sidebar>

@@ -12,6 +12,8 @@
 }
 
 .HeaderContenuto {
+    color: white;
+    align-items: center;
     position: sticky;
     width: 100%;
     height: 10vh;
@@ -19,7 +21,7 @@
 
 @font-face {
     font-family: 'contenuto';
-    src: url('src/componenti/Assets/Font/RobotoCondensed.ttf') format('truetype');
+    src: url('public/Assets/Font/RobotoCondensed.ttf') format('truetype');
 }
 
 .button-classi {

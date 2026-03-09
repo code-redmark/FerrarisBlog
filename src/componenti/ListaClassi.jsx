@@ -6,8 +6,8 @@ export default function ListaClassi() {
     return (
         <div style={{overflowY: "scroll", position: "sticky"}}>
             {datiClassi.classi.map(classe => (
-                <div id="bordoFuori">
-                    <div key={classe.id} className="RiquadroClasse">
+                <div key={classe.id} id="bordoFuori">
+                    <div className="RiquadroClasse">
                     <h1>{classe.anno} {classe.sezione}</h1>
                     </div>
                 </div>

@@ -7,6 +7,7 @@ import ListaHighlight from "../componenti/ListaHighlight.jsx"
 
 import "../stile/base/Contenitore.css"
 import "../App.css"
+import Sidebar from "../componenti/Sidebar.jsx"
 
 export default function Home() {
     return (
@@ -14,7 +15,7 @@ export default function Home() {
             <Testa></Testa>
             <div id="arcobaleno"/>
 
-            <div className="Contenitore">
+            <div className="Contenitora">
 
                 <div className="pc">
                     <Contenuto larghezza="15%" altezza="120vh">
@@ -30,7 +31,10 @@ export default function Home() {
                 </div>
 
                 <div className="mobile">
-                    {/** Stesse cose ma con un menu a tendina */}
+                    {/** Stesse cose ma con una sidebar*/}
+                    <Sidebar>
+                        <ListaClassi />
+                    </Sidebar>
                 </div>
 
                 

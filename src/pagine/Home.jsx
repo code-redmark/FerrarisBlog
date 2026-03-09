@@ -6,6 +6,7 @@ import ListaClassi from "../componenti/ListaClassi.jsx"
 import ListaHighlight from "../componenti/ListaHighlight.jsx"
 
 import "../stile/base/Contenitore.css"
+import "../App.css"
 
 export default function Home() {
     return (
@@ -15,16 +16,24 @@ export default function Home() {
 
             <div className="Contenitore">
 
-                <Contenuto larghezza="15%" altezza="120vh">
+                <div className="pc">
+                    <Contenuto larghezza="15%" altezza="120vh">
                     <div className="HeaderContenuto">
                         <h1 className="Le Classi" style={{fontFamily:"contenuto"}}>Le Classi</h1>
                     </div>
                     <ListaClassi />
-                </Contenuto>
+                    </Contenuto>
 
-                <Contenuto larghezza="85%" altezza="120vh">
-                    <ListaHighlight></ListaHighlight>
-                </Contenuto>
+                    <Contenuto larghezza="85%" altezza="120vh">
+                        <ListaHighlight></ListaHighlight>
+                    </Contenuto>
+                </div>
+
+                <div className="mobile">
+                    {/** Stesse cose ma con un menu a tendina */}
+                </div>
+
+                
 
             </div>
 

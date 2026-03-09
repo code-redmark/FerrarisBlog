@@ -16,3 +16,21 @@ div#arcobaleno {
     height: 2px;
     width: 100%;
 }
+
+.pc {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}

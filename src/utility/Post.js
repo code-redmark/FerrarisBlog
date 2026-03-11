@@ -6,49 +6,85 @@
  * una hash map. è necessaria in quanto il sito statico ha bisogno di avere tutto già in locale
  */
 
-import path from 'path';
-import fs from 'fs';
-import matter from 'gray-matter';
-
+import path from 'path'
+import fs from 'fs'
+import matter from 'gray-matter'
 
 
 /**
- * Trova tutti i Markdown all'interno di una cartella
- * recursivamente
+ * Restituisce i path di tutti i Markdown all'interno della cartella
+ * post/file, dividendoli per classe
  */
-function trovaMarkdown(pathCartella) {
-    let listaMarkdown = [] // è teoricamente ovvio ma per ricordarmi [] --> array ; {} --> dizionario
+function trovaMarkdown(pathCartelle) {
 
-    const contenuto = fs.readdirSync(pathCartella, { withFileTypes: true  }) //withFileTypes ci dice se è un file o una cartella
-    contenuto.forEach(oggetto => {
-        const pathOggetto = path.join(pathCartella, oggetto.name);
-        if (oggetto.isDirectory()) {
-            listaMarkdown = listaMarkdown.concat(trovaMarkdown(pathOggetto)) // concat unisce 2 array
-        } else if (oggetto.isFile() && oggetto.name.endsWith('.md')) {
-            listaMarkdown.push(pathOggetto)
-        }
+    let listaMarkdown = {}
+    const nomiClassi = fs.readdirSync(pathCartelle)
+
+    nomiClassi.forEach(nomeClasse => {
+
+        const pathClasse = path.join(pathCartelle, nomeClasse)
+        const entryFiles = fs.readdirSync(pathClasse, { withFileTypes: true })
+
+        let postClasse = []
+
+        entryFiles.forEach(file => {
+            if (!file.isFile() || !file.name.endsWith(".md")) return
+
+            const pathFile = path.join(pathClasse, file.name)
+            postClasse.push(pathFile)
+        })
+
+        listaMarkdown[nomeClasse] = postClasse
     })
+
     return listaMarkdown
 }
 
-const pathPost = path.join(process.cwd(), 'src/post/file')
-const listaPost = trovaMarkdown(pathPost)
 
-const MappaPost = {}
+const pathCartelleClassi = path.join(process.cwd(), 'src/post/file')
+const listaPost = trovaMarkdown(pathCartelleClassi)
 
-listaPost.forEach(post => {
-    const file = fs.readFileSync(post, 'utf8')
-    const { data, content } = matter(file)
+let Mappa = {}
 
-    const slug = data.title.replace(/\s+/g, "-").toLowerCase()
 
-    MappaPost[data.id] = {
-        ...data,
-        content,
-        slug
+/**
+ * Costruzione della mappa finale
+ */
+for (let classe in listaPost) {
+
+    console.log(classe)
+    
+
+    let dictClasse = {}
+    const posts = listaPost[classe]
+
+    for (let pathPost of posts) {
+
+        const file = fs.readFileSync(pathPost, 'utf-8')
+        const parsed = matter(file)
+
+        const data = parsed.data
+        const content = parsed.content
+
+        const slug = data.title.toLowerCase().replace(/\s+/g, "-")
+
+        let dictPost = {
+            id: data.id,
+            title: data.title,
+            slug: slug,
+            content: content,
+            description: data.description
+        }
+
+        dictClasse[data.id] = dictPost
     }
-});
 
-fs.writeFileSync(path.join(process.cwd(), 'src/post/posts.json'), JSON.stringify(MappaPost, null, 2))
+    Mappa[classe] = dictClasse
+}
 
 
+
+fs.writeFileSync(
+    path.join(process.cwd(), 'src/post/posts.json'),
+    JSON.stringify(Mappa, null, 2)
+)

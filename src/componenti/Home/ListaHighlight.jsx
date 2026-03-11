@@ -8,8 +8,9 @@ export default function ListaHighlight() {
         <div className="ListaHighlight">
             {
             
-                listaHighlight.highlights.map(highlight =>{
-                    const post = listaPost[highlight.id]
+                listaHighlight.highlights.map(highlight => {
+                    const classe = listaPost[highlight.id.slice(0, 2)]
+                    const post = classe[highlight.id]
                     return (
                         <div key={highlight.id}>
                             <Highlight

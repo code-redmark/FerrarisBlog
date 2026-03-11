@@ -12,7 +12,7 @@ export default function Sidebar({children}) {
 
     return (
         <div>
-            <button onClick={() => toggleBar(!bar)}></button>
+            <button className="sidebar_button" onClick={() => toggleBar(!bar)}>LE CLASSI</button>
             <div className={`sidebar ${name}`}>
                     {children}
             </div>

@@ -24,7 +24,7 @@
     transition: background-color 0.3s;
     
     border: 3px solid transparent;
-    border-radius: inherit;
+    border-radius: 10px;
 
     background-image: 
         linear-gradient(rgb(71, 71, 71), rgb(84, 84, 84)), 

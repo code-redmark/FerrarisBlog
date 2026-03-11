@@ -12,8 +12,7 @@
 
 div#arcobaleno {
     content: "";
-    background: linear-gradient(45deg, #219fb7, #aab343, #f7bf02, #eca40b, #c85c2a, #b5363b, #ab2443, #831c88, rgb(156, 84, 156), rgb(130, 0, 0)); /*goat chat gpt*/
-    height: 2px;
+    background: linear-gradient(45deg, #176d7f, #7b8230, #b28902, #c88e10, #92441f, #b5363b, #ab2443, #831c88, rgb(82, 43, 82), rgb(130, 0, 0));
     width: 100%;
 }
 
@@ -35,7 +34,7 @@ div#arcobaleno {
     }
 }
 
-/* Questa è la roba della sidebar, è copiata da un sito molto bello che te le fa generare
+/* Questa è la roba della scrollbar, è copiata da un sito molto bello che te le fa generare
 https://scrollbar.app non chiedetemi assolutamente cosa fa tutta questa roba               */
 :root {
   --sb-track-color: #474747;

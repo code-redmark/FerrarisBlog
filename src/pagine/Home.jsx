@@ -13,7 +13,7 @@ export default function Home() {
     return (
         <main>
             <Testa></Testa>
-            <div id="arcobaleno"/>
+            <div id="arcobaleno"></div>
             <div id="Palle" style={{
                 height: "3vh",
                 backgroundColor: "#222"

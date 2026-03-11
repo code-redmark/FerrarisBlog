@@ -13,12 +13,9 @@ export default function Home() {
     return (
         <main>
             <Testa></Testa>
-            <div id="arcobaleno"></div>
-            <div id="Palle" style={{
-                height: "3vh",
-                backgroundColor: "#222"
-            }}></div>
 
+            <div id="arcobaleno" style={{height: "0.5vh"}}/>
+            
             <div className="Contenitore">
  
                 <Contenuto larghezza="15%">

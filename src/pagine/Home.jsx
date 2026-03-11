@@ -5,6 +5,7 @@ import Piedi from "../componenti/base/Piedi.jsx"
 import ListaClassi from "../componenti/ListaClassi.jsx"
 import ListaHighlight from "../componenti/ListaHighlight.jsx"
 
+import "../stile/titoloclasse.css"
 import "../stile/base/Contenitore.css"
 import "../App.css"
 import Sidebar from "../componenti/Sidebar.jsx"
@@ -22,7 +23,7 @@ export default function Home() {
 
                     <div className="pc" style={{backgroundColor: "#222", flex: 1}}>
                         <div className="HeaderContenuto">
-                        <h1 className="Le Classi" style={{fontFamily:"contenuto"}}>Le Classi</h1>
+                        <h1 className="LeClassi">Le Classi</h1>
                         </div>
                             <ListaClassi />
                     </div>

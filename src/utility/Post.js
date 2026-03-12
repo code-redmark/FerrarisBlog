@@ -68,12 +68,15 @@ for (let classe in listaPost) {
 
         const slug = data.title.toLowerCase().replace(/\s+/g, "-")
 
+        console.log(data.date)
+
         let dictPost = {
             id: data.id,
             title: data.title,
             slug: slug,
             content: content,
-            description: data.description
+            description: data.description,
+            dataPost: data.date
         }
 
         dictClasse[data.id] = dictPost

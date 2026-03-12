@@ -15,7 +15,7 @@ export default function ListaHighlight() {
                         <div key={highlight.id}>
                             <Highlight
                             titolo={post.title}
-                            data={post.date}
+                            stringaData={post.dataPost}
                             />
                         </div>
                     )

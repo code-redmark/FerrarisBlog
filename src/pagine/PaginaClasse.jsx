@@ -3,6 +3,7 @@ import Piedi from "../componenti/base/Piedi";
 import Testa from "../componenti/base/Testa";
 
 import posts from "../../src/post/posts.json"
+import { Link } from "react-router-dom";
 
 export default function PaginaClasse({ anno, sezione }) {
 
@@ -17,7 +18,11 @@ export default function PaginaClasse({ anno, sezione }) {
                 <ul>
                     {postsClasse.map(post => (
                         <li key={post.id}>
-                            {post.title}
+                            <Link to={`/classe/${chiave}/post/${post.slug}`}>
+                            
+                            <p>{post.title}</p>
+
+                            </Link>
                         </li>
                     ))}
                 </ul>

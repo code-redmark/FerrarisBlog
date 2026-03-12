@@ -1,5 +1,4 @@
 import { useState } from "react";
-import ListaClassi from "./ListaClassi";
 import "../stile/Sidebar.css"
 
 export default function Sidebar({children}) {

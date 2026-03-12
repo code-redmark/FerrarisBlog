@@ -3,7 +3,6 @@
     margin: 0 5% 5% 5%;
     border: 5px solid #303030;
     border-radius: 15px;
-
 }
 
 .RiquadroClasse {
@@ -18,7 +17,7 @@
     
     font-family: 'contenuto';
     font-size: 15px;
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -33,12 +32,9 @@
     background-origin: border-box;
     background-clip: padding-box, border-box;
 }
-.BottoneClasse {
-    width: 100%;
-    cursor: pointer;
-    border: none;
-    background-color: #ffffff
-}
-.BottoneClasse:hover {
-    background-color: #e8e8e8
+
+#LinkRiquadro {
+    color: white;
+    text-decoration: none;
+
 }

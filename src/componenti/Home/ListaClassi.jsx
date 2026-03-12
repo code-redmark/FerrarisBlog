@@ -5,14 +5,14 @@ import "../../stile/RiquadroClasse.css"
 
 export default function ListaClassi() {
     return (
-        <div style={{overflowY: "scroll", position: "sticky", scrollbarWidth: "none"}}>
+        <div style={{overflowY: "scroll", scrollbarWidth: "none"}}>
             {datiClassi.classi.map(classe => (
-                <div key={classe.id} className="RiquadroClasse">
-                    <Link to={`/classe/${classe.id}`}>
-                        <button className="BottoneClasse">
+                <div className="bordoFuori">    
+                    <div key={classe.id} className="RiquadroClasse">
+                        <Link id="LinkRiquadro" to={`/classe/${classe.id}`}>
                             <h1>{classe.anno} {classe.sezione}</h1>
-                        </button>
-                    </Link>
+                        </Link>
+                    </div>
                 </div>
             )
         )}

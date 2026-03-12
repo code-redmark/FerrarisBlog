@@ -19,7 +19,7 @@ export default function Home() {
             
             <div className="Contenitore">
  
-                <Contenuto larghezza="15%">
+                <Contenuto larghezza="15%" altezza="141.3vh">
 
                     <div className="pc" style={{backgroundColor: "#222", flex: 1}}>
                         <div className="HeaderContenuto">
@@ -30,8 +30,9 @@ export default function Home() {
                 
                 </Contenuto>
 
-                <Contenuto larghezza="85%" altezza="70vh">
+                <Contenuto larghezza="85%" altezza="141.3vh">
                     <ListaHighlight></ListaHighlight>
+                    <Piedi></Piedi>
                 </Contenuto>
                 
                 <div className="mobile">
@@ -40,12 +41,7 @@ export default function Home() {
                         <ListaClassi />
                     </Sidebar>
                 </div>
-
-                
-
             </div>
-
-            <Piedi></Piedi>
         </main>
         
     )

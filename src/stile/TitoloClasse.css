@@ -2,20 +2,20 @@
 
 .changa-one-regular {
   font-family: "Changa One", sans-serif;
-  font-weight: 400;
+  font-weight: 50;
   font-style: normal;
 }
 
 .changa-one-regular-italic {
   font-family: "Changa One", sans-serif;
-  font-weight: 400;
+  font-weight: 50;
   font-style: italic;
 }
 
 .LeClassi {
   font-family: "Changa One", sans-serif;
   font-style: italic;
-  font-size: 50px;
+  font-size: 200%;
   color: white;
 
   -webkit-text-stroke: 1px;

@@ -5,26 +5,43 @@ import Piedi from "../componenti/base/Piedi.jsx"
 import ListaClassi from "../componenti/Home/ListaClassi.jsx"
 import ListaHighlight from "../componenti/Home/ListaHighlight.jsx"
 
+import "../stile/titoloclasse.css"
 import "../stile/base/Contenitore.css"
+import "../App.css"
+import Sidebar from "../componenti/Sidebar.jsx"
 
 export default function Home() {
     return (
         <main>
             <Testa></Testa>
-            <div id="arcobaleno"/>
 
+            <div id="arcobaleno" style={{height: "0.5vh"}}/>
+            
             <div className="Contenitore">
+ 
+                <Contenuto larghezza="15%">
 
-                <Contenuto larghezza="15%" altezza="70vh">
-                    <div className="HeaderContenuto">
-                        <h1 className="Le Classi">Le Classi</h1>
+                    <div className="pc" style={{backgroundColor: "#222", flex: 1}}>
+                        <div className="HeaderContenuto">
+                        <h1 className="LeClassi">Le Classi</h1>
+                        </div>
+                            <ListaClassi />
                     </div>
-                    <ListaClassi />
+                
                 </Contenuto>
 
                 <Contenuto larghezza="85%" altezza="70vh">
                     <ListaHighlight></ListaHighlight>
                 </Contenuto>
+                
+                <div className="mobile">
+                    {/** Stesse cose ma con una sidebar*/}
+                    <Sidebar>
+                        <ListaClassi />
+                    </Sidebar>
+                </div>
+
+                
 
             </div>
 

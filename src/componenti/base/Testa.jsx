@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import logo from "../Assets/logo.png"
+import logolight from "../../../public/Assets/Img/logolight.png" // logo light mode
+import logodark from "../../../public/Assets/Img/logodark.png" // logo dark mode
 import "../../stile/base/Testa.css"
 
 export default function Testa() {
@@ -8,12 +9,12 @@ export default function Testa() {
             <ul id='ListaTesta'>
                 <li>
                     <Link to="/">
-                        <img id='logo' src={logo} alt='LOGOFERRARIS' />
+                        <img id='logo' src={logolight} alt='LOGOFERRARIS' />
                     </Link>
                 </li>
                 <li>
-                    <Link to="/Orientamento">
-                    Orientamento
+                    <Link to="/Orientamento" className='test' alt='PULSANTEORIENTAMENTO'>
+                        ORIENTAMENTO
                     </Link>
                 </li>
             </ul>

@@ -28,7 +28,7 @@ img#logo {
 
 @font-face {
     font-family: 'button';
-    src: url('public/Assets/Font/Modak.ttf') format('truetype');
+    src: url('/public/assets/font/Modak.ttf') format('truetype');
 }
 
 .button-text {

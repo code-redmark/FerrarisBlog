@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'testo';
-    src: url('/Assets/Font/Roboto.ttf') format('truetype');
+    src: url('/assets/font/Roboto.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'titolo';
-    src: url('/Assets/Font/RobotoCondensed.ttf') format('truetype');
+    src: url('/assets/font/RobotoCondensed.ttf') format('truetype');
 }
 
 h1 {

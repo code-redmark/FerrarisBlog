@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
-import logolight from "../../../public/Assets/Img/logolight.png" // logo light mode
-import logodark from "../../../public/Assets/Img/logodark.png" // logo dark mode
+
 import "../../stile/base/Testa.css"
 
 export default function Testa() {
@@ -9,7 +8,7 @@ export default function Testa() {
             <ul id='ListaTesta'>
                 <li>
                     <Link to="/">
-                        <img id='logo' src={logolight} alt='LOGOFERRARIS' />
+                        <img id="logo" src={`assets/img/logolight.png`} alt="logo" />
                     </Link>
                 </li>
                 <li>

@@ -5,7 +5,6 @@ import Piedi from "../componenti/base/Piedi.jsx"
 import ListaClassi from "../componenti/Home/ListaClassi.jsx"
 import ListaHighlight from "../componenti/Home/ListaHighlight.jsx"
 
-import "../stile/TitoloClasse.css"
 import "../stile/base/Contenitore.css"
 import "../App.css"
 import Sidebar from "../componenti/Sidebar.jsx"

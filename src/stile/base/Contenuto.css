@@ -1,4 +1,3 @@
-/* Container setup */
 .Contenuto {
     display: flex;
     flex-direction: column;
@@ -12,7 +11,6 @@
     }
 }
 
-/* 1. FIXED HEADER: Now centers the text perfectly */
 .HeaderContenuto {
     color: white;
     align-items: center;
@@ -20,13 +18,12 @@
     top: 0;
     width: 100%;
     height: 10vh;
-    display: flex;             /* Centering logic */
-    justify-content: center;    /* Horizontal center */
-    align-items: center;        /* Vertical center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 10;
 }
 
-/* Font faces */
 @font-face {
     font-family: 'contenuto';
     src: url('public/Assets/Font/RobotoCondensed.ttf') format('truetype');
@@ -37,7 +34,6 @@
     src: url('src/componenti/Assets/Font/Modak.ttf') format('truetype');
 }
 
-/* 2. THE TITLE: Thick rainbow outline, no hover effect */
 .leclassi {
     margin: 0; 
     font-family: 'contenuto';
@@ -47,7 +43,6 @@
     display: inline-block;
     text-decoration: none;
 
-    /* Thicker Rainbow Outline (2px offsets with slight blur for smoothness) */
     text-shadow: 
         -2px -2px 1px #219fb7,  
          2px -2px 1px #aab343,  
@@ -57,7 +52,6 @@
     filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.2));
 }
 
-/* 3. THE BUTTONS: Solid blue background with thin rainbow border */
 .RiquadroClasse {
     position: relative;
     box-sizing: border-box;
@@ -75,7 +69,6 @@
     cursor: pointer;
     transition: background-color 0.3s;
 
-    /* Border Logic: Solid blue inside, rainbow only on the edge */
     border: 1.5px solid transparent; 
     border-radius: 10px;
     background-image: 
@@ -85,7 +78,6 @@
     background-clip: padding-box, border-box;
 }
 
-/* Basic button class for other elements */
 .button-classi {
     font-family: 'contenuto';
     font-size: 24px;
@@ -97,4 +89,10 @@
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.LeClassi {
+  font-family: "contenuto";
+  font-size: 200%;
+  color: white;
 }

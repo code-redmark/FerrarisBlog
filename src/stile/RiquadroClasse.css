@@ -1,36 +1,47 @@
+.RiquadroClasse {
+    border: 3px solid transparent;
+    border-radius: 10px;
+
+    /* sfondo interno fisso + bordo con gradiente più tenue */
+    background:
+        linear-gradient(rgb(71,71,71), rgb(84,84,84)) padding-box,
+        linear-gradient(45deg,
+            rgba(23,109,127,0.5),
+            rgba(23,109,127,0.5),
+            rgba(123,130,48,0.5),
+            rgba(178,137,2,0.5),
+            rgba(200,142,16,0.5),
+            rgba(146,68,31,0.5),
+            rgba(181,54,59,0.5),
+            rgba(171,36,67,0.5),
+            rgba(131,28,136,0.5),
+            rgba(82,43,82,0.5),
+            rgba(130,0,0,0.5)
+        ) border-box;
+
+
+    outline: 2px solid #303030; /* bordo solido esterno */
+    outline-offset: 3px; /* distanza dal bordo animato */
+    border-radius: 10px;
+
+    /* dimensioni e posizione del gradiente */
+    background-size: 100% 100%, 300% 300%;
+    background-position: 0 0, 0 0;
+
+    /* animazione continua del gradiente */
+    animation: moveBorder 5s linear infinite;
+}
+
+@keyframes moveBorder {
+    0%   { background-position: 0 0, 0 0; }
+    50%  { background-position: 0 0, 100% 100%; }
+    100% { background-position: 0 0, 0 0; }
+}
 #bordoFuori {
     position: relative;
     margin: 0 5% 5% 5%;
     border: 5px solid #303030;
     border-radius: 15px;
-}
-
-.RiquadroClasse {
-    position: relative;
-    box-sizing: border-box;
-    width: inherit;
-    
-    display: flex;
-    align-items: center;      
-    justify-content: center;   
-    min-height: 50px;          
-    
-    font-family: 'contenuto';
-    font-size: 15px;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    
-    border: 3px solid transparent;
-    border-radius: 10px;
-
-    background-image: 
-        linear-gradient(rgb(71, 71, 71), rgb(84, 84, 84)), 
-        linear-gradient(45deg, #176d7f, #7b8230, #b28902, #c88e10, #92441f, #b5363b, #ab2443, #831c88, rgb(82, 43, 82), rgb(130, 0, 0));
-
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
 }
 
 #LinkRiquadro {

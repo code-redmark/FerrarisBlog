@@ -5,7 +5,7 @@ import "../../stile/RiquadroClasse.css"
 
 export default function ListaClassi() {
     return (
-        <div style={{overflowY: "scroll", scrollbarWidth: "none"}}>
+        <div style={{overflowY: "scroll", scrollbarWidth: "none", paddingTop: "5px"}}>
             {datiClassi.classi.map(classe => (
                 <div className="bordoFuori">    
                     <div key={classe.id} className="RiquadroClasse">

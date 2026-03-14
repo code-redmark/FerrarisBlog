@@ -1,22 +1,57 @@
-
 .Highlight {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    flex: 0, 0, auto;
-    background-color: rgb(75, 75, 75);
-    color: aliceblue;
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    gap: 3%;
+
+    padding: 3% 3%;
+
+    background-color: red;
 }
 
-h1.Highlight {
-    font-size: 5%;
+.Highlight #testo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    text-align: justify;
+
+    border: 2px solid black;
+    width: 65%;
 }
 
-h2.Highlight {
-    font-size: 3%;
+.Highlight #immagine {
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid black;
+    width: 35%;
+
 }
 
-p.Highlight {
-    font-size: 2%;
+.Highlight #testo #Titolo {
+    color: white;
 }
+
+.Highlight #testo #Descrizione {
+    color: white;
+}
+
+.Highlight #testo #Data {
+    color: white;
+}
+
+.Highlight #immagine.Immagine {
+    border: 3px solid black;
+}
+
+.Highlight #immagine.LeggiPost {
+    height: 40%;
+    border: 3px solid black;
+    background-color: green;
+    margin: 2%;
+}
+
 
 
 

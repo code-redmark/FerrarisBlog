@@ -1,4 +1,5 @@
 import Contenuto from "../base/Contenuto";
+import { Link } from "react-router-dom";
 
 import "../../stile/Highlight.css"
 
@@ -34,12 +35,37 @@ export default function Highlight({titolo, descrizione, stringaData}) {
 
     return (
         
-            <Contenuto larghezza="75vh" altezza="24vh">
+            <Contenuto larghezza="130vh" altezza="75vh">
                 <div className="Highlight">
-                    <h1>{titolo}</h1>
-                    <h2 id="Tempo">{tempo}</h2>
-                    <p id="Descrizione">{descrizione}</p>
+                    <div id="testo">
+                        <div id="Titolo">
+                            {titolo}
+                        </div>
+
+                        <div id="Descrizione">
+                            {descrizione}
+                        </div>
+
+                        <div id="Data">
+                            {tempo}   
+                        </div>
+                    </div>
+
+                    <div id="immagine">
+                        <div className="Immagine">
+                            <img alt="Foto"></img>                            
+                        </div>
+                        <div className="LeggiPost">
+                            <Link>
+                                <div>
+                                    <p>Leggi</p>
+                                </div>
+                            </Link>
+                        </div>
+
+                    </div>
                 </div>
+
             </Contenuto>
     )
 }

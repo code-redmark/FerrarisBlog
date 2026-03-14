@@ -15,6 +15,7 @@ export default function ListaHighlight() {
                         <div key={highlight.id}>
                             <Highlight
                             titolo={post.title}
+                            descrizione={post.description}
                             stringaData={post.dataPost}
                             />
                         </div>

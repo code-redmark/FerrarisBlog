@@ -68,3 +68,13 @@ https://scrollbar.app non chiedetemi assolutamente cosa fa tutta questa roba    
         scrollbar-width: thin; /* Opzionale, per Firefox */
     }
 }
+
+@font-face {
+    font-family: "HeaderBlog";
+    src: url("/assets/font/Lexend-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "TestoBlog";
+    src: url("/assets/font/Lexend-VariableFont_wght.ttf") format('truetype');
+}

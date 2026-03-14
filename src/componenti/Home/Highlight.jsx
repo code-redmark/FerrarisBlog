@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 
 import "../../stile/HighlightHome.css"
 
-export default function Highlight({titolo, descrizione, stringaData}) {
+export default function Highlight({post}) {
+
+    const classe = post.id.slice(0, 2)
 
 
-    let currentDate = new Date(stringaData);
+    let currentDate = new Date(post.dataPost);
     let ms = Date.now() - currentDate;
     console.log(ms)
 
@@ -37,16 +39,24 @@ export default function Highlight({titolo, descrizione, stringaData}) {
             <div className="Highlight">
                 <div id="testo">
                     <div id="Titolo">
-                        {titolo}
+                        {post.title}
                     </div>
 
                     <div id="Descrizione">
-                        {descrizione}
+                        {post.description}
                     </div>
 
                     <div id="Data">
                         {tempo}   
                     </div>
+
+                    <Link to={`/classe/${classe}/post/${post.slug}`}>
+                        <div id="Leggi">
+                            <p>LEGGI</p>
+                        </div>
+                    </Link>
+                    
+
                 </div>
 
                 <div id="immagine">

@@ -4,32 +4,40 @@
     flex-direction: column;
     align-items: center;
 
-    width: 100%;
-    height: 30vh;
+    overflow-y: scroll;
+    background-color: #ffffff00;
+
+    width: 75%;
+    height: 120vh;
 
     padding: 3%;
-    box-shadow: 40px white;
+    gap: 15%;
 }
 
 .Highlight {
     display: flex;
-    height: 100%;
+    width: 75%;
+    height: 38vh;
     flex-direction: row;
     gap: 3%;
 
     padding: 3% 3%;
 
-    background-color: red;
+    background-color: rgb(73, 73, 73);
 }
 
 .Highlight #testo {
+
+    padding: 10%, 5%;
+
     position: relative;
     display: flex;
     flex-direction: column;
 
     text-align: justify;
 
-    border: 2px solid black;
+    outline: 2px solid rgb(42, 42, 42);
+    outline-offset: 5px;
     width: 65%;
 }
 
@@ -44,14 +52,55 @@
 
 .Highlight #testo #Titolo {
     color: white;
+    font-size: clamp(16px, 3vw, 50px);
+    font-family: 'HeaderBlog';
+    font-weight: 900;
+    white-space: nowrap;
+
+    padding-bottom: 3%;
+    z-index: 2;
 }
 
 .Highlight #testo #Descrizione {
     color: white;
+    font-size: 1rem;
+    font-family: 'TestoBlog';
+
+    
 }
 
 .Highlight #testo #Data {
-    color: white;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+
+    color: rgb(135, 135, 135);
+    font-family: "TestoBlog";
+    font-size: 1.2rem;
+}
+
+.Highlight #testo #Leggi {
+    text-align: center;
+
+    background-color: aliceblue;
+    border: solid #000000;
+    outline: ;
+
+    position: absolute;
+    padding: 3%;
+    bottom: -10%;
+    width: 30%;
+    left: 60%;
+}
+
+.Highlight #testo #Leggi p {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: large;
+    text-decoration: none;
 }
 
 .Highlight #immagine.Immagine {

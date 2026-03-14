@@ -1,38 +1,28 @@
 {
     "classi": [
-        {
-            "id": "3m",
-            "anno": "3",
-            "sezione": "M"
-        },
-        {
-            "id": "3a",
-            "anno": "3",
-            "sezione": "A"
-        },
-        {
-            "id": "3b",
-            "anno": "3",
-            "sezione": "B"
-        },{
-            "id": "3c",
-            "anno": "3",
-            "sezione": "C"
-        },
-        {
-            "id": "3d",
-            "anno": "3",
-            "sezione": "D"
-        },
-        {
-            "id": "3e",
-            "anno": "3",
-            "sezione": "E"
-        },
-        {
-            "id": "3f",
-            "anno": "3",
-            "sezione": "F"
-        }
+        {"id": "3a","anno": "3","sezione": "A"},
+        {"id": "3b","anno": "3","sezione": "B"},
+        {"id": "3c","anno": "3","sezione": "C"},
+        {"id": "3d","anno": "3","sezione": "D"},
+        {"id": "3e","anno": "3","sezione": "E"},
+        {"id": "3f","anno": "3","sezione": "F"},
+        {"id": "3g","anno": "3","sezione": "G"},
+        {"id": "3h","anno": "3","sezione": "H"},
+        {"id": "3i","anno": "3","sezione": "I"},
+        {"id": "3l","anno": "3","sezione": "L"},
+        {"id": "3m","anno": "3","sezione": "M"},
+        {"id": "3n","anno": "3","sezione": "N"},
+        {"id": "3o","anno": "3","sezione": "O"},
+        {"id": "3p","anno": "3","sezione": "P"},
+        {"id": "3q","anno": "3","sezione": "Q"},
+        {"id": "3r","anno": "3","sezione": "R"},
+        {"id": "3s","anno": "3","sezione": "S"},
+        {"id": "3t","anno": "3","sezione": "T"},
+        {"id": "3u","anno": "3","sezione": "U"},
+        {"id": "3v","anno": "3","sezione": "V"},
+        {"id": "3w","anno": "3","sezione": "W"},
+        {"id": "3x","anno": "3","sezione": "X"},
+        {"id": "3y","anno": "3","sezione": "Y"},
+        {"id": "3z","anno": "3","sezione": "Z"}
     ]
 }

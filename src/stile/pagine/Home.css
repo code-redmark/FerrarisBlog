@@ -11,7 +11,7 @@
 }
 
 .sidebar.aperta {
-    left: 0
+    left: -10px;
 }
 
 .sidebar.chiusa {
@@ -46,4 +46,23 @@
 
     background-origin: border-box;
     background-clip: padding-box, border-box;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+
+    background-color: #222;
+}
+
+#lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 15%;
+}
+
+#highlights {
+    width: 85%;
 }

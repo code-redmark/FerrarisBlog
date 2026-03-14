@@ -1,9 +1,10 @@
-import Contenuto from "../componenti/base/Contenuto";
 import Piedi from "../componenti/base/Piedi";
 import Testa from "../componenti/base/Testa";
 
 import posts from "../../src/post/posts.json"
 import { Link } from "react-router-dom";
+
+import "../stile/pagine/PaginaClasse.css"
 
 export default function PaginaClasse({ anno, sezione }) {
 
@@ -11,24 +12,29 @@ export default function PaginaClasse({ anno, sezione }) {
     const postsClasse = Object.values(posts[chiave] || {})
 
     return (
-        <div className="PaginaClasse">
+        <main>
             <Testa />
 
-            <Contenuto larghezza="100%" altezza="60vh">
-                <ul>
-                    {postsClasse.map(post => (
-                        <li key={post.id}>
-                            <Link to={`/classe/${chiave}/post/${post.slug}`}>
-                            
-                            <p>{post.title}</p>
 
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </Contenuto>
+                <div className="PostClasse">
+                    <ul>
+                        {postsClasse.map(post => (
+                            <li key={post.id}>
+                                <Link to={`/classe/${chiave}/post/${post.slug}`}>
+                                
+                                <p>{post.title}</p>
+
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>  
+                
 
             <Piedi />
-        </div>
+        </main>
+            
+            
+        
     )
 }

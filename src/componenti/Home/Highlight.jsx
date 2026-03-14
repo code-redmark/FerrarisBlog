@@ -1,7 +1,6 @@
-import Contenuto from "../base/Contenuto";
 import { Link } from "react-router-dom";
 
-import "../../stile/Highlight.css"
+import "../../stile/HighlightHome.css"
 
 export default function Highlight({titolo, descrizione, stringaData}) {
 
@@ -35,37 +34,35 @@ export default function Highlight({titolo, descrizione, stringaData}) {
 
     return (
         
-            <Contenuto larghezza="130vh" altezza="75vh">
-                <div className="Highlight">
-                    <div id="testo">
-                        <div id="Titolo">
-                            {titolo}
-                        </div>
-
-                        <div id="Descrizione">
-                            {descrizione}
-                        </div>
-
-                        <div id="Data">
-                            {tempo}   
-                        </div>
+            <div className="Highlight">
+                <div id="testo">
+                    <div id="Titolo">
+                        {titolo}
                     </div>
 
-                    <div id="immagine">
-                        <div className="Immagine">
-                            <img alt="Foto"></img>                            
-                        </div>
-                        <div className="LeggiPost">
-                            <Link>
-                                <div>
-                                    <p>Leggi</p>
-                                </div>
-                            </Link>
-                        </div>
+                    <div id="Descrizione">
+                        {descrizione}
+                    </div>
 
+                    <div id="Data">
+                        {tempo}   
                     </div>
                 </div>
 
-            </Contenuto>
+                <div id="immagine">
+                    <div className="Immagine">
+                        <img alt="Foto"></img>                            
+                    </div>
+                    <div className="LeggiPost">
+                        <Link>
+                            <div>
+                                <p>Leggi</p>
+                            </div>
+                        </Link>
+                    </div>
+
+                </div>
+            </div>
+
     )
 }

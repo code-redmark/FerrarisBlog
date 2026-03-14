@@ -4,11 +4,12 @@ import "../../stile/base/Testa.css"
 
 export default function Testa() {
     return (
-        <div className='Testa'>
+        <main>
+            <div className='Testa'>
             <ul id='ListaTesta'>
                 <li>
                     <Link to="/">
-                        <img id="logo" src={`assets/img/logolight.png`} alt="logo" />
+                        <img id="logo" src="assets/img/logolight.png" alt="logo" />
                     </Link>
                 </li>
                 <li>
@@ -17,6 +18,10 @@ export default function Testa() {
                     </Link>
                 </li>
             </ul>
-        </div>
+            
+            </div>
+            <div id='arcobaleno' style={{height: "3px"}}></div>
+        </main>
+        
     )
 }

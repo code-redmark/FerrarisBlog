@@ -13,7 +13,6 @@ export default function PaginaClasse({ anno, sezione }) {
 
     return (
         <main>
-            <Testa />
 
 
                 <div className="PostClasse">
@@ -31,7 +30,6 @@ export default function PaginaClasse({ anno, sezione }) {
                 </div>  
                 
 
-            <Piedi />
         </main>
             
             

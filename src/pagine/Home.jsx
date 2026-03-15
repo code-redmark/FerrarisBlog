@@ -24,8 +24,6 @@ export default function Home() {
 
     return (
         <main>
-            <Testa/>
-
             <div className="pc">
                 <div id="content">
                     <ListaClassi/>
@@ -42,8 +40,6 @@ export default function Home() {
 
             </div>
 
-
-            <Piedi/>
         </main>
         
     )

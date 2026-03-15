@@ -60,17 +60,7 @@ export default function Highlight({post}) {
                 </div>
 
                 <div id="immagine">
-                    <div className="Immagine">
-                        <img alt="Foto"></img>                            
-                    </div>
-                    <div className="LeggiPost">
-                        <Link>
-                            <div>
-                                <p>Leggi</p>
-                            </div>
-                        </Link>
-                    </div>
-
+                        <img alt="Nessuna foto, sono timidi :("></img>                            
                 </div>
             </div>
 

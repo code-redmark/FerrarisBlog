@@ -43,17 +43,12 @@
     background-position: 0 0, 0 0;
 
     /* animazione continua del gradiente */
-    animation: moveBorder 5s linear infinite;
+    animation: moveRainbowBorder 5s linear infinite;
 }
 
-@keyframes moveBorder {
-    0%   { background-position: 0 0, 0 0; }
-    50%  { background-position: 0 0, 100% 100%; }
-    100% { background-position: 0 0, 0 0; }
-}
+
 
 #LinkRiquadro {
     color: white;
     text-decoration: none;
-
 }

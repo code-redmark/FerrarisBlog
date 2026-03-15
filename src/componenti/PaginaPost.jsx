@@ -1,19 +1,22 @@
 import Testa from './base/Testa'
 import Piedi from './base/Piedi'
 import "../stile/PaginaPost.css"
+import ReactMarkdown from "react-markdown"
 
 export default function PaginaPost({post}) {
     return (
 
         <div>
-            <Testa></Testa>
+            <div className='TitoloPost'>
 
-            <ReactMarkdown>
+            </div>
+
+            <div className='CorpoPost'>
+                <ReactMarkdown>
                 {post.content}
-            </ReactMarkdown>
-
-            <Piedi></Piedi>
-
+                </ReactMarkdown>
+            </div>
+            
         </div>
 
         

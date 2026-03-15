@@ -9,7 +9,7 @@ export default function Testa() {
             <ul id='ListaTesta'>
                 <li>
                     <Link to="/">
-                        <img id="logo" src="assets/img/logolight.png" alt="logo" />
+                        <img id="logo" src="/FerrarisBlog/assets/img/logolight.png" alt="logo" />
                     </Link>
                 </li>
                 <li>

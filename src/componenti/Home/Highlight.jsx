@@ -46,15 +46,21 @@ export default function Highlight({post}) {
                         {post.description}
                     </div>
 
-                    <div id="Data">
-                        {tempo}   
-                    </div>
-
-                    <Link to={`/classe/${classe}/post/${post.slug}`}>
-                        <div id="Leggi">
-                            <p>LEGGI</p>
+                    <div id="FondoHighlight"> {/*Serve per non far sovrapporre con la descrizione */} 
+                        <div id="Data">
+                        {classe.toUpperCase()} - {tempo}
                         </div>
-                    </Link>
+                        
+                        <div>
+                            <Link to={`/classe/${classe}/post/${post.slug}`}>
+                                <div id="Leggi">
+                                    <p>LEGGI</p>
+                                </div>
+                            </Link>
+                        </div>
+                        
+                    </div>
+                    
                     
 
                 </div>

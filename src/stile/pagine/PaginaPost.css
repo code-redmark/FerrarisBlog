@@ -1,0 +1,56 @@
+#Pagina {
+    color: white;
+    background-color: #222222;
+    padding: 2%;
+}
+
+.TestaPost {
+    max-width: 60%;
+
+    font-family: "HeaderBlog";
+    font-size: 4rem;
+
+    text-align: left;
+
+    padding-bottom: 5%;
+}
+
+.TestaPost p {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.CorpoPost {
+    padding-bottom: 20%;
+}
+
+.CorpoPost #articolo {
+    display: flex;
+    flex-direction: column;
+}
+
+.CorpoPost #media {
+    display: flex;
+    flex-direction: column;
+}
+
+.CorpoPost h1 {
+    
+    font-size: small;
+    font-family: "TestoBlog";
+    font-weight: 500;
+
+    text-align: left;
+
+    font-size: 2rem;
+}
+
+.CorpoPost p {
+    font-size: small;
+    font-family: "TestoBlog";
+    font-weight: 250;
+    
+    text-align: justify;
+
+    font-size: 1.2rem; 
+}

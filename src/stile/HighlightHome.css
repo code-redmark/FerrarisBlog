@@ -109,14 +109,27 @@
     color: white;
     font-size: 1rem;
     font-family: 'TestoBlog';
-    max-height: 65%;
-    min-height: 65%;
+    max-height: 50%;
+    height: fit-content;
     position: relative;
-    overflow: hidden;
+
+    overflow:hidden;
+    text-overflow: ellipsis;
+
+
+
     display: -webkit-box;
+    line-clamp: 9;
     -webkit-line-clamp: 9;
     -webkit-box-orient: vertical;
     
+}
+
+
+.Highlight #testo #FondoHighlight {
+    display: flex;
+    width: 100%;
+    height: 10vh;
 }
 
 .Highlight #testo #Data {

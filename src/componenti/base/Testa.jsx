@@ -12,11 +12,6 @@ export default function Testa() {
                         <img id="logo" src="/FerrarisBlog/assets/img/logolight.png" alt="logo" />
                     </Link>
                 </li>
-                <li>
-                    <Link to="/Orientamento" className='test' alt='PULSANTEORIENTAMENTO'>
-                        ORIENTAMENTO
-                    </Link>
-                </li>
             </ul>
             
             </div>

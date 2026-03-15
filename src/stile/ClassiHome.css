@@ -13,6 +13,11 @@
 /* Riquadro ---------------------------------------*/
 
 .RiquadroClasse {
+
+    color: white;
+    font-size: large;
+    font-family: "HeaderBlog";
+
     border: 3px solid transparent;
     border-radius: 10px;
 

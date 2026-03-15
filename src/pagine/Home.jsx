@@ -1,14 +1,10 @@
 import "../App.css"
 
-import Testa from "../componenti/base/Testa.jsx"
-import Piedi from "../componenti/base/Piedi.jsx"
-
 import ListaClassi from "../componenti/Home/ListaClassi.jsx"
 import ListaHighlight from "../componenti/Home/ListaHighlight.jsx"
 
 import "../stile/pagine/Home.css"
 import "../stile/ClassiHome.css"
-
 
 import { useState } from "react"
 
@@ -23,12 +19,14 @@ export default function Home() {
     } else barClass = 'chiusa';
 
     return (
-        <main>
+        <div>
             <div className="pc">
+
                 <div id="content">
                     <ListaClassi/>
                     <ListaHighlight/>
                 </div>
+
             </div>
 
             <div className="mobile">
@@ -40,7 +38,7 @@ export default function Home() {
 
             </div>
 
-        </main>
+        </div>
         
     )
 }

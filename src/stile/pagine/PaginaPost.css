@@ -1,4 +1,6 @@
 #Pagina {
+    min-height: 100vh;
+
     color: white;
     background-color: #222222;
     padding: 2%;

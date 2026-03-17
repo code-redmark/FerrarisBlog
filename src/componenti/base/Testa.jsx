@@ -11,9 +11,16 @@ export default function Testa() {
                     <Link to="/">
                         <img id="logo" src="/FerrarisBlog/assets/img/logolight.png" alt="logo" />
                     </Link>
+                        <Link to="/" className='TastoHome'>
+                        <p className='TestoHome'>Home</p>
+                        <div id='arcobaleno' style={{height: "2px", width: "90px"}}></div>
+                    </Link>
+                        <Link className='ChiSiamo'>
+                        <p className='TestoHome'>Chi Siamo</p>
+                    <div id='arcobaleno' style={{height: "2px", width: "155px"}}></div>
+                    </Link>
                 </li>
             </ul>
-            
             </div>
             <div id='arcobaleno' style={{height: "3px"}}></div>
         </main>

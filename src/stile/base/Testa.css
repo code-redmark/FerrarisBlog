@@ -96,8 +96,25 @@ img#logo {
     border-bottom-right-radius: 15px;
 }
 
-    
+.TastoHome{
+    text-decoration: none;
+    margin-left: 75px;
+}
 
-   
+.ChiSiamo{
+    text-decoration: none;
+    margin-left: 50px;
+}
+
+.TestoHome{
+    font-family: 'HeaderBlog';
+    font-size: 180%;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
 
 

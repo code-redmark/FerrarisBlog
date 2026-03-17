@@ -10,12 +10,14 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "build-posts": "node src/utility/Post.js",
-    "build": "npm run build-posts && npx vite build"
+    "build": "npx vite build"
   },
   "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
     "gray-matter": "^4.0.3",
     "matter": "^0.2.0",
+    "mongoose": "^9.3.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-markdown": "^10.1.0",

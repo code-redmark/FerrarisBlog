@@ -1,9 +1,11 @@
 .Testa {
-    background-color: #222;
+    background-color: #161616;
     width: 100%;
     height: 12vh;
     display: flex;
     align-items: center;
+
+    padding-top: 1%;
 }
 
 ul#ListaTesta {
@@ -28,7 +30,7 @@ img#logo {
 
 @font-face {
     font-family: 'button';
-    src: url('public/Assets/Font/Modak.ttf') format('truetype');
+    src: url('/public/assets/font/Modak.ttf') format('truetype');
 }
 
 .button-text {
@@ -94,8 +96,25 @@ img#logo {
     border-bottom-right-radius: 15px;
 }
 
-    
+.TastoHome{
+    text-decoration: none;
+    margin-left: 75px;
+}
 
-   
+.ChiSiamo{
+    text-decoration: none;
+    margin-left: 50px;
+}
+
+.TestoHome{
+    font-family: 'HeaderBlog';
+    font-size: 180%;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
 
 

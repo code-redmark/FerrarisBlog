@@ -6,12 +6,12 @@
     height: 100%;
     background: #222;
     color: white;
-    transition: left 0.3s; /* animazione figa */
+    transition: left 0.3s;
     padding: 20px;
 }
 
 .sidebar.aperta {
-    left: 0
+    left: 100%;
 }
 
 .sidebar.chiusa {
@@ -46,4 +46,23 @@
 
     background-origin: border-box;
     background-clip: padding-box, border-box;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+
+    background-color: #222;
+}
+
+#lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 15%;
+}
+
+#highlights {
+    width: 85%;
 }

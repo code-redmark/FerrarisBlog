@@ -1,11 +1,13 @@
-import Contenuto from "../base/Contenuto";
+import { Link } from "react-router-dom";
 
-import "../../stile/Highlight.css"
+import "../../stile/HighlightHome.css"
 
-export default function Highlight({titolo, descrizione, stringaData}) {
+export default function Highlight({post}) {
+
+    const classe = post.id.slice(0, 2)
 
 
-    let currentDate = new Date(stringaData);
+    let currentDate = new Date(post.dataPost);
     let ms = Date.now() - currentDate;
     console.log(ms)
 
@@ -34,12 +36,39 @@ export default function Highlight({titolo, descrizione, stringaData}) {
 
     return (
         
-            <Contenuto larghezza="75vh" altezza="24vh">
-                <div className="Highlight">
-                    <h1>{titolo}</h1>
-                    <h2 id="Tempo">{tempo}</h2>
-                    <p id="Descrizione">{descrizione}</p>
+            <div className="Highlight">
+                <div id="testo">
+                    <div id="Titolo">
+                        {post.title}
+                    </div>
+
+                    <div id="Descrizione">
+                        {post.description}
+                    </div>
+
+                    <div id="FondoHighlight"> {/*Serve per non far sovrapporre con la descrizione */} 
+                        <div id="Data">
+                        {classe.toUpperCase()} - {tempo}
+                        </div>
+                        
+                        <div>
+                            <Link to={`/classe/${classe}/post/${post.slug}`}>
+                                <div id="Leggi">
+                                    <p>LEGGI</p>
+                                </div>
+                            </Link>
+                        </div>
+                        
+                    </div>
+                    
+                    
+
                 </div>
-            </Contenuto>
+
+                <div id="immagine">
+                        <img alt="Nessuna foto, sono timidi :("></img>                            
+                </div>
+            </div>
+
     )
 }

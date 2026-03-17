@@ -37,7 +37,7 @@ div#arcobaleno {
 /* Questa è la roba della scrollbar, è copiata da un sito molto bello che te le fa generare
 https://scrollbar.app non chiedetemi assolutamente cosa fa tutta questa roba               */
 :root {
-  --sb-track-color: #474747;
+  --sb-track-color: #3b3b3b;
   --sb-thumb-color: #868484;
   --sb-thumb-color-hover: #5a5a5a; /* Colore più scuro per l'hover */
   --sb-size: 10px;
@@ -68,3 +68,15 @@ https://scrollbar.app non chiedetemi assolutamente cosa fa tutta questa roba    
         scrollbar-width: thin; /* Opzionale, per Firefox */
     }
 }
+
+@font-face {
+    font-family: "HeaderBlog";
+    src: url("/assets/font/Lexend-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "TestoBlog";
+    src: url("/assets/font/Lexend-VariableFont_wght.ttf") format('truetype');
+}
+
+

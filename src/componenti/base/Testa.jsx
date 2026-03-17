@@ -1,23 +1,29 @@
 import { Link } from 'react-router-dom'
-import logolight from "../../../public/Assets/Img/logolight.png" // logo light mode
-import logodark from "../../../public/Assets/Img/logodark.png" // logo dark mode
+
 import "../../stile/base/Testa.css"
 
 export default function Testa() {
     return (
-        <div className='Testa'>
+        <main>
+            <div className='Testa'>
             <ul id='ListaTesta'>
                 <li>
                     <Link to="/">
-                        <img id='logo' src={logolight} alt='LOGOFERRARIS' />
+                        <img id="logo" src="/FerrarisBlog/assets/img/logolight.png" alt="logo" />
                     </Link>
-                </li>
-                <li>
-                    <Link to="/Orientamento" className='test' alt='PULSANTEORIENTAMENTO'>
-                        ORIENTAMENTO
+                        <Link to="/" className='TastoHome'>
+                        <p className='TestoHome'>Home</p>
+                        <div id='arcobaleno' style={{height: "2px", width: "90px"}}></div>
+                    </Link>
+                        <Link className='ChiSiamo'>
+                        <p className='TestoHome'>Chi Siamo</p>
+                    <div id='arcobaleno' style={{height: "2px", width: "155px"}}></div>
                     </Link>
                 </li>
             </ul>
-        </div>
+            </div>
+            <div id='arcobaleno' style={{height: "3px"}}></div>
+        </main>
+        
     )
 }

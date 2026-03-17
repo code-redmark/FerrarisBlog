@@ -32,6 +32,11 @@ div#arcobaleno {
     .mobile {
         display: block;
     }
+    div#arcobaleno {
+      content: "";
+      background: linear-gradient(45deg, #176d7f, #7b8230, #b28902, #c88e10, #92441f, #b5363b, #ab2443, #831c88, rgb(82, 43, 82), rgb(130, 0, 0));
+      width: 100%;
+    }
 }
 
 /* Questa è la roba della scrollbar, è copiata da un sito molto bello che te le fa generare

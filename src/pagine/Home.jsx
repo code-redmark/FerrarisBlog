@@ -10,6 +10,8 @@ import { useState } from "react"
 
 export default function Home() {
 
+    const [isOpen, setIsOpen] = useState(false);
+
     // State della sidebar
     let [sidebar, toggleBar] = useState(false);
     let barClass;
@@ -30,12 +32,16 @@ export default function Home() {
             </div>
 
             <div className="mobile">
-
-                <button className="sidebar_button" onClick={() => toggleBar(!barClass)}>LE CLASSI</button>
-                <div className={`sidebar ${barClass}`}>
-                    <ListaClassi/>
+                <div id="content">
+                    <ListaHighlight/>
+                    <button className="sidebar_button">
+                        <p>Le</p>
+                        <p>Classi</p>
+                    </button>
+                    <div className='sidebar'>
+                        <ListaClassi/>
+                    </div>
                 </div>
-
             </div>
 
         </div>

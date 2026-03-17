@@ -95,6 +95,23 @@ background: linear-gradient(
     animation: moveRainbowBg 10s linear infinite;
 }
 
+#ListaPost {
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5%;
+    text-decoration: none;
+}
+
+#ListaPost a {
+    color: white;
+    text-decoration: none;
+    font-style: italic;
+    font-family: "TestoBlog";
+    font-size: clamp(0.5rem, 2vw, 1.5rem);
+}
+
 @media (max-width: 768px) {
     #PostClasse {
         flex-direction: column;
@@ -132,22 +149,90 @@ background: linear-gradient(
         justify-content: center;
         font-size: clamp(2rem, 1vw, 5rem);
     }
+    .sidebar {
+        width: 100px;
+        height: 95%;
+        position: fixed;
+        background-color: var(--sb-track-color);
+        margin-left: 71%;
+        scrollbar-width: none;
+        transition: margin-left 1s ease;
+        border: 3px solid transparent;
 
-}
+        background-image: 
+            linear-gradient(rgb(71, 71, 71), rgb(71, 71, 71)), 
+            linear-gradient(45deg, #176d7f, #7b8230, #b28902, #c88e10, #92441f, #b5363b, #ab2443, #831c88, rgb(156, 84, 156), rgb(130, 0, 0));
 
-#ListaPost {
-    padding-top: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 5%;
-    text-decoration: none;
-}
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
 
-#ListaPost a {
-    color: white;
-    text-decoration: none;
-    font-style: italic;
-    font-family: "TestoBlog";
-    font-size: clamp(0.5rem, 2vw, 1.5rem);
-}
+        border-left: none;
+        border-top:none;
+        border-bottom: none;
+    }
+    .ListaClassi {
+        width: 100%;
+        height: 100%;
+        scrollbar-width: none;
+    }
+
+    .sidebar_button {
+        position: fixed;
+        box-sizing: border-box;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content:end;
+
+        width: 60px; 
+        margin-left: -2px;
+        margin-top: 100px;
+        
+        display: inline-flex;
+        align-items: center;      
+        justify-content: center;   
+        min-height: 120px;          
+        
+        font-family: 'HeaderBlog';
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        
+        border-radius: 5px 10px 10px 5px;
+        border: 3px solid transparent;
+
+        background-image: 
+            linear-gradient(rgb(71, 71, 71), rgb(71, 71, 71)), 
+            linear-gradient(45deg, #176d7f, #7b8230, #b28902, #c88e10, #92441f, #b5363b, #ab2443, #831c88, rgb(156, 84, 156), rgb(130, 0, 0));
+
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+
+        transition: margin-left 1s ease;
+    }
+    .sidebar_button:hover + .sidebar {
+        margin-left: 100%;
+    }
+    .sidebar:hover {
+        margin-left: 100%;
+    }
+    .sidebar_button:hover {
+        margin-left: 30%;
+    }
+    .sidebar:hover + .sidebar_button {
+        margin-left: 30%;
+    }
+    .ListaClassi:hover + .sidebar {
+        margin-left: 100%;
+    }
+    .ListaClassi:hover + .sidebar_button {
+        margin-left: 30%;
+    }
+    .RiquadroClasse:hover + .sidebar {
+        margin-left: 100%;
+    }
+    .RiquadroClasse:hover + .sidebar_button {
+        margin-left: 30%;
+    }

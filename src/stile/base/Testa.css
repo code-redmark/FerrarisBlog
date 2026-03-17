@@ -113,8 +113,38 @@ img#logo {
     font-weight: bold;
     text-decoration: none;
 }
+.arcobaleno_tasto_home {
+    height: 2px; 
+    width: 155px;
+}
+.arcobaleno_tasto_chi_siamo {
+    height: 2px; 
+    width: 155px;
+}
 
-
-
-
-
+@media (max-width: 768px) {
+    img#logo {
+        height: 50px;
+        width: auto;
+        display: block;
+    }
+    .TastoHome{
+        text-decoration: none;
+        margin-left: 45px;
+    }
+    .TestoHome{
+        font-family: 'HeaderBlog';
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .arcobaleno_tasto_home {
+        height: 2px; 
+        width: 70px;
+    }
+    .arcobaleno_tasto_chi_siamo {
+        height: 2px; 
+        width: 70px;
+    }
+}

@@ -121,20 +121,23 @@ img#logo {
     height: 2px; 
     width: 155px;
 }
+.open_scrollbar_div {
+    visibility: hidden;
+}
 
 @media (max-width: 768px) {
     img#logo {
-        height: 50px;
+        height: 45px;
         width: auto;
         display: block;
     }
     .TastoHome{
         text-decoration: none;
-        margin-left: 45px;
+        margin-left: 25px;
     }
     .TestoHome{
         font-family: 'HeaderBlog';
-        font-size: 20px;
+        font-size: 19px;
         color: white;
         font-weight: bold;
         text-decoration: none;
@@ -146,5 +149,23 @@ img#logo {
     .arcobaleno_tasto_chi_siamo {
         height: 2px; 
         width: 70px;
+    }
+    .ChiSiamo{
+        text-decoration: none;
+        margin-left: 30px;
+    }
+    .open_scrollbar_div {
+        visibility: visible;
+        width: 50px;
+        height: 50px;
+        border: 1px solid white;
+        display: flex;
+        justify-content: center;
+        margin-left: 20px;
+    }
+    .open_scrollbar_button {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
     }
 }

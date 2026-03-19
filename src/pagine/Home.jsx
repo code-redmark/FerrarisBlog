@@ -7,19 +7,24 @@ import "../stile/pagine/Home.css"
 import "../stile/ClassiHome.css"
 
 import { useState } from "react"
+import { createContext, useContext } from "react";
+
+const SidebarContext = createContext();
+
+export function SidebarProvider({ children }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <SidebarContext.Provider value={{ isOpen, setIsOpen }}>
+      {children}
+    </SidebarContext.Provider>
+  );
+}
 
 export default function Home() {
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    // State della sidebar
-    let [sidebar, toggleBar] = useState(false);
-    let barClass;
-
-    if (sidebar) {
-        barClass = 'aperta';
-    } else barClass = 'chiusa';
-
+    const [isOpen, setIsOpen] = useState(false);    
+    
     return (
         <div>
             <div className="pc">
@@ -34,11 +39,7 @@ export default function Home() {
             <div className="mobile">
                 <div id="content">
                     <ListaHighlight/>
-                    <button className="sidebar_button">
-                        <p>Le</p>
-                        <p>Classi</p>
-                    </button>
-                    <div className='sidebar'>
+                    <div className={`sidebar ${isOpen ? 'aperta' : 'chiusa'}`}>
                         <ListaClassi/>
                     </div>
                 </div>

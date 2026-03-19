@@ -10,8 +10,8 @@ export default function ListaClassi() {
             {
                 datiClassi.classi.map(classe => (
                   
-                    <div key={classe.id} className="RiquadroClasse">
-                        <Link id="LinkRiquadro" to={`/classe/${classe.id}`}>
+                    <div key={classe.codice} className="RiquadroClasse">
+                        <Link id="LinkRiquadro" to={`/classe/${classe.codice}`}>
                             <h1>{classe.anno} {classe.sezione}</h1>
                         </Link>
                     </div>

@@ -1,21 +1,19 @@
 import './App.css'
-import Home from './pagine/Home.jsx'
 
-import { Route, Routes } from 'react-router-dom'
-import PaginaClasse from './pagine/PaginaClasse.jsx'
-
-import datiPost from "./post/posts.json"
-import datiClassi from "./classi.json"
-
-import PaginaPost from './componenti/PaginaPost.jsx'
 import Testa from './componenti/base/Testa.jsx'
 import Piedi from './componenti/base/Piedi.jsx'
 
-function App() {
-  [ datiClassi, setDatiClassi ] = React.useState(datiClassi)
+import Home from './pagine/Home.jsx'
+import PaginaClasse from './pagine/PaginaClasse.jsx'
+import PaginaPost from './componenti/PaginaPost.jsx'
 
-  useeffect(() => {
-    fetch("http://localhost:3000/classes")
+import { Route, Routes } from 'react-router-dom'
+
+function App() {
+  const [ datiClassi, setDatiClassi ] = React.useState(datiClassi)
+
+  React.useEffect(() => {
+    fetch(`${process.env.DEV_SERVER}/classes`)
       .then(res => res.json())
       .then(data => setDatiClassi(data))
       .catch(err => console.log(err))
@@ -28,26 +26,21 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        
-        {datiClassi.classi.map(classe => 
-          <Route 
-              path={`/classe/${classe.id}`} 
-              element={<PaginaClasse anno={classe.anno} sezione={classe.sezione}/>}
-            />)}
-            
         {
-          Object.entries(datiPost).map(([idClasse, listaPosts]) =>
-            Object.values(listaPosts).map(post => 
-              <Route 
-              path={`/classe/${idClasse}/post/${post.slug}`}
-              element={<PaginaPost post={post}/>}>
-          
-              </Route>
+        datiClassi.classi.map(classe => 
+          <Route 
+              path={`/classe/${classe.anno}${classe.sezione}`} 
+              element={<PaginaClasse idClasse={classe._id}/>}
+            />,
             
-            ))
-        
+            classe.posts.map(post =>
+              <Route 
+                path={`/classe/${classe.anno}${classe.sezione}/post/${post.slug}`}
+                element={<PaginaPost post={post}/>}
+              />
+            )
+          )
         }
-
       </Routes>
 
       <Piedi/>

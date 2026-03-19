@@ -1,6 +1,4 @@
 import "../App.css"
-
-import ListaClassi from "../componenti/Home/ListaClassi.jsx"
 import ListaHighlight from "../componenti/Home/ListaHighlight.jsx"
 
 import "../stile/pagine/Home.css"

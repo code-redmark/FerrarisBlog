@@ -19,7 +19,7 @@ const app = express() // Crea l'app express
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect("mongodb://127.0.0.1:27017/blogDB")
+mongoose.connect("mongodb+srv://marcofallace_db_user:Rt7I0adGIJZClN3f@blogdb.hkr7xpk.mongodb.net/?appName=blogDB")
     .then(() => console.log("MongoDB connesso"))
     .catch(err => console.log(err));
 
@@ -37,5 +37,22 @@ app.get("/classes/:id", async (req, res) => {
     const oggettoClasse = await Class.findById(req.params.id)
     res.json(oggettoClasse)
 });
+
+
+// Roba di esempio per inserire dati nel db
+const classiDiEsempio = [
+    {anno: 3, sezione: "A", bio: "Siamo la classe 3A, siamo fortissimi!", posts: []},
+    {anno: 4, sezione: "B", bio: "Siamo la classe 4B, siamo fortissimi!", posts: []},
+    {anno: 5, sezione: "C", bio: "Siamo la classe 5C, siamo fortissimi!", posts: []},
+    {anno: 3, sezione: "D", bio: "Siamo la classe 3D, siamo fortissimi!", posts: []},
+];
+
+async function seed() {
+  await Class.deleteMany({}); // opzionale: cancella i vecchi dati
+  await Class.insertMany(classiDiEsempio);
+  console.log("Classi inserite!");
+}
+
+seed();
 
 

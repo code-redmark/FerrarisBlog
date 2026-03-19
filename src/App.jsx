@@ -12,6 +12,16 @@ import Testa from './componenti/base/Testa.jsx'
 import Piedi from './componenti/base/Piedi.jsx'
 
 function App() {
+  [ datiClassi, setDatiClassi ] = React.useState(datiClassi)
+
+  useeffect(() => {
+    fetch("http://localhost:3000/classes")
+      .then(res => res.json())
+      .then(data => setDatiClassi(data))
+      .catch(err => console.log(err))
+  }, []);
+
+
   return (
     <main>
       <Testa/>

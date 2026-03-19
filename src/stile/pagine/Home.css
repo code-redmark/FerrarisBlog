@@ -13,10 +13,7 @@
 #content {
     display: flex;
     flex-direction: row;
-
-    background-image: url(/FerrarisBlog/assets/img/bg.png);
-    background-size: 67%;
-    
+    background-color: #222;
 }
 
 .bgcolor {

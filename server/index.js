@@ -21,10 +21,22 @@ mongoose.connect(process.env.DB_URI)
     .catch(err => console.log(err));
 
 
-app.get("/classes/:id", async (req, res) => {
+app.get("/classes", async (req, res) => {
+    const classi = await Class.find();
+    res.json(classi)
+})
 
-    const oggettoClasse = await Class.findById(req.params.id)
-    res.json(oggettoClasse)
+app.get("/classes/:id", async (req, res) => {
+    const id = req.params.id
+    try {
+        const classe = await Class.findById(id);
+        if (!classe) {
+            return res.status(404).json({ errore: "Classe non trovata" });
+        }
+        res.json(classe);
+    } catch (err) {
+        res.status(500).json({ errore: "Errore server" });
+    }
 });
 
 
@@ -43,5 +55,7 @@ async function seed() {
 }
 
 seed();
+
+app.listen(5000)
 
 

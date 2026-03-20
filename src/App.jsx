@@ -8,12 +8,13 @@ import PaginaClasse from './pagine/PaginaClasse.jsx'
 import PaginaPost from './componenti/PaginaPost.jsx'
 
 import { Route, Routes } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 function App() {
-  const [ datiClassi, setDatiClassi ] = React.useState(datiClassi)
+  const [ datiClassi, setDatiClassi ] = useState([]);
 
-  React.useEffect(() => {
-    fetch(`${process.env.DEV_SERVER}/classes`)
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_SERVER}/classes`)
       .then(res => res.json())
       .then(data => setDatiClassi(data))
       .catch(err => console.log(err))
@@ -24,22 +25,27 @@ function App() {
     <main>
       <Testa/>
 
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
+<Routes>
+  <Route path='/' element={<Home />}></Route>
+  {
+    datiClassi && datiClassi.map(classe => (
+      <>
+        <Route 
+          key={`classe-${classe._id}`}
+          path={`/classe/${classe.anno}${classe.sezione}`} 
+          element={<PaginaClasse idClasse={classe._id}/>}
+        />
         {
-        datiClassi.classi.map(classe => 
-          <Route 
-              path={`/classe/${classe.anno}${classe.sezione}`} 
-              element={<PaginaClasse idClasse={classe._id}/>}
-            />,
-            
-            classe.posts.map(post =>
-              <Route 
-                path={`/classe/${classe.anno}${classe.sezione}/post/${post.slug}`}
-                element={<PaginaPost post={post}/>}
-              />
-            )
-          )
+          classe.posts && classe.posts.map(post => (
+            <Route 
+              key={`post-${post.slug}`}
+              path={`/classe/${classe.anno}${classe.sezione}/post/${post.slug}`}
+              element={<PaginaPost post={post}/>}
+            />
+                ))
+              }
+            </>
+          ))
         }
       </Routes>
 

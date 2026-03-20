@@ -1,10 +1,12 @@
 import "../App.css"
+
 import ListaHighlight from "../componenti/Home/ListaHighlight.jsx"
+import ListaClassi from "../componenti/Home/ListaClassi.jsx"
 
 import "../stile/pagine/Home.css"
 import "../stile/ClassiHome.css"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Home() {
 
@@ -16,12 +18,18 @@ export default function Home() {
         barClass = 'aperta';
     } else barClass = 'chiusa';
 
+    const [classi, setClassi] = useState([]);
+    useEffect(() => {
+        fetch(`${import.meta.env.VITE_SERVER}/classes`)
+            .then(res => res.json())
+            .then(data => setClassi(data))
+    }, [])
     return (
         <div>
             <div className="pc">
 
                 <div id="content">
-                    <ListaClassi/>
+                    <ListaClassi classi={classi}/>
                     <ListaHighlight/>
                 </div>
 
@@ -31,7 +39,7 @@ export default function Home() {
 
                 <button className="sidebar_button" onClick={() => toggleBar(!barClass)}>LE CLASSI</button>
                 <div className={`sidebar ${barClass}`}>
-                    <ListaClassi/>
+                    <ListaClassi classi={classi}/>
                 </div>
 
             </div>

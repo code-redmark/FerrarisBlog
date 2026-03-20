@@ -11,13 +11,9 @@ const SchemaClasse = new mongoose.Schema({
     bio: String,
 
     
-    posts: [{
-        title: String,
-        description: String,
-        content: String,
-        dataPost: Date,
-         slug: String
-    }]
+    posts: [
+        { type: mongoose.Schema.Types.ObjectId, ref: "Post" }
+    ]
 
 });
 

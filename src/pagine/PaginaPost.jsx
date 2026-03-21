@@ -1,17 +1,27 @@
-import Testa from './base/Testa'
-import Piedi from './base/Piedi'
 import "../stile/pagine/PaginaPost.css"
 
 import ReactMarkdown from "react-markdown"
 
 // fa gli a capo ogni volta che nel testo c'è un LF
 import remarkBreaks from 'remark-breaks';
+import { useState, useEffect } from 'react';
 
 
-export default function PaginaPost({post}) {
+export default function PaginaPost({ idPost }) {
+    
+    const [post, setDatiPost] = useState(null);
+    
+
+
+    useEffect(() => {
+        fetch(`${import.meta.env.VITE_SERVER}/posts/id/${idPost}`)
+        .then( res => res.json())
+        .then( data => setDatiPost(data))
+    }, [idPost])
+    
+    if (!post) return <h1>Caricamento</h1>
     
     return (
-
         <div id="Pagina">
             <div className='TestaPost'>
                 {post.title}

@@ -1,6 +1,6 @@
 import mongoose, { mongo, Schema } from "mongoose";
 
-export const PostSchema = new Schema({
+const PostSchema = new Schema({
     title: String,
     description: String,
     content: String,
@@ -12,4 +12,4 @@ export const PostSchema = new Schema({
     }
 });
 
-export const PostModel = mongoose.model("Post", PostSchema, "posts")
+export default mongoose.model("Post", PostSchema, "posts")

@@ -2,23 +2,25 @@ import { Link } from "react-router-dom";
 import "../stile/pagine/PaginaClasse.css"
 import { useEffect, useState } from "react";
 
+import { fetchClassById } from "../api/Class.mjs"
+import { fetchClassPosts } from "../api/Post.mjs"
 
 export default function PaginaClasse({ idClasse }) {
 
-    const [classe, setDatiClasse] = useState([]);
+    const [classe, setDatiClasse] = useState(null);
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_SERVER}/classes/${idClasse}`)
-            .then(res => res.json())
-            .then(data => setDatiClasse(data))
-            .catch(err => console.log(err))
+            fetchClassById(idClasse)
+                .then(data => setDatiClasse(data))
     }, [idClasse]);
+
+
     const [postsClasse, setDatiPostsClasse] = useState([]);
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_SERVER}/classes/${idClasse}/posts`)
-            .then(res => res.json())
+            fetchClassPosts(idClasse)
             .then(data => setDatiPostsClasse(data))
-            .catch(err => console.log(err))
     }, [idClasse]);
+
+    if (!classe) return <p>Caricamento</p>
 
     const chiave = `${classe.anno}${classe.sezione}`
 

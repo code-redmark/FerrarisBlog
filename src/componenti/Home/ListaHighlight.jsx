@@ -3,6 +3,8 @@ import Highlight from "./Highlight"
 
 import { useEffect, useState } from "react"
 
+import { fetchPopulatedPosts } from "../../api/Post.mjs";
+
 import "../../stile/HighlightHome.css"
 
 export default function ListaHighlight() {
@@ -10,21 +12,25 @@ export default function ListaHighlight() {
     const [posts, setPosts] = useState(null)
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_SERVER}/posts/pop`)
-        .then(res => res.json())
+        fetchPopulatedPosts()
         .then (data => setPosts(data))
     }, [])
 
     if (posts == null) return <h1>Caricamento</h1>
-    
+
+    const PostMap = {}
+    posts.forEach(post => {
+        PostMap[post.slug] = post
+        console.log(`Id post: ${post.slug}`)
+    });
+
     return (
         <div className="ListaHighlight">
             {
-                
-                fileHighlights.highlights.map(idPost =>
-                <div key={idPost}>
+                fileHighlights.highlights.map(slugPost =>
+                <div key={slugPost}>
                     <Highlight
-                        post={posts.find(post => post._id == idPost)}
+                        post={PostMap[slugPost]}
                     />
                 </div>
                     

@@ -10,19 +10,19 @@ import PaginaPost from './pagine/PaginaPost.jsx'
 import { Route, Routes } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
+import { fetchClasses } from "./api/Class.mjs"
+import { fetchPopulatedPosts } from "./api/Post.mjs"
+
 function App() {
   const [ datiClassi, setDatiClassi ] = useState([]);
   const [ datiPost, setDatiPost ] = useState([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_SERVER}/classes`)
-      .then(res => res.json())
+      fetchClasses()
       .then(data => setDatiClassi(data))
-      .catch(err => console.log(err))
     fetch(`${import.meta.env.VITE_SERVER}/posts/pop`)
-      .then(res => res.json())
-      .then(data => setDatiPost(data))
-      .catch(err => console.log(err))
+      fetchPopulatedPosts()
+        .then(data => setDatiPost(data))
   }, []);
 
 

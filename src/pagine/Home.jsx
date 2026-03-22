@@ -8,6 +8,8 @@ import "../stile/ClassiHome.css"
 
 import { useEffect, useState } from "react"
 
+import { fetchClasses } from "../api/Class.mjs"
+
 export default function Home() {
 
     // State della sidebar
@@ -19,11 +21,13 @@ export default function Home() {
     } else barClass = 'chiusa';
 
     const [classi, setClassi] = useState([]);
+    
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_SERVER}/classes`)
-            .then(res => res.json())
+        fetchClasses()
             .then(data => setClassi(data))
     }, [])
+
+    
     return (
         <div>
             <div className="pc">

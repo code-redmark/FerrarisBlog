@@ -1,32 +1,36 @@
-import listaHighlight from "../../highlights.json"
+import fileHighlights from "../../highlights.json";
 import Highlight from "./Highlight"
 
-import { useContext } from "react"
-import { ContextClassi } from "../../../server/ContextClassi.jsx"
+import { useEffect, useState } from "react"
 
 import "../../stile/HighlightHome.css"
 
 export default function ListaHighlight() {
 
-    const classi = useContext(ContextClassi)
+    const [posts, setPosts] = useState(null)
+
+    useEffect(() => {
+        fetch(`${import.meta.env.VITE_SERVER}/posts/pop`)
+        .then(res => res.json())
+        .then (data => setPosts(data))
+    }, [])
+
+    if (posts == null) return <h1>Caricamento</h1>
+    
     return (
         <div className="ListaHighlight">
             {
-                listaHighlight.highlights.map(highlight => {
-                    <div key={highlight.codice}>
-                        <Highlight
-                        post={() => {
-                            const classe = classi.findById(highlight.idClasse)
-                            const post = classe.posts.findById(highlight.idPost)
-                            return post
-
-                            }
-                        }
-                        />
-                    </div>
                 
-                }
-            )}
+                fileHighlights.highlights.map(idPost =>
+                <div key={idPost}>
+                    <Highlight
+                        post={posts.find(post => post._id == idPost)}
+                    />
+                </div>
+                    
+                )
+            }
+            
         </div>
     )
 }

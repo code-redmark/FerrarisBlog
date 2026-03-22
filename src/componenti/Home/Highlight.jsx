@@ -4,8 +4,7 @@ import "../../stile/HighlightHome.css"
 
 export default function Highlight({post}) {
 
-    const classe = post.id.slice(0, 2)
-
+    const classe = `${post.class.anno}${post.class.sezione}`
 
     let currentDate = new Date(post.dataPost);
     let ms = Date.now() - currentDate;
@@ -48,7 +47,7 @@ export default function Highlight({post}) {
 
                     <div id="FondoHighlight"> {/*Serve per non far sovrapporre con la descrizione */} 
                         <div id="Data">
-                        {classe.toUpperCase()} - {tempo}
+                        {classe} - {tempo}
                         </div>
                         
                         <div>

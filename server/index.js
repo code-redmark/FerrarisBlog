@@ -9,7 +9,6 @@ import Class from './schemas/Classe.js'
 import { PostModel } from "./schemas/Post.js"
 
 import dotenv from "dotenv"
-import { data } from "react-router-dom"
 dotenv.config()
 
 const app = express() // Crea l'app express

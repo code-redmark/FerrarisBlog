@@ -50,8 +50,10 @@ export default function Highlight({ post }) {
                     {classe} - {tempo}
                     </div>
                     
-                    <div>
-                        <Link to={`/classe/${classe}/post/${post.slug}`}>
+                    
+                    <div id="PulsanteLeggi">
+
+                        <Link to={`/classe/${classe}/${post.class._id}/post/${post.slug}/${post._id}`}>
                             <div id="Leggi">
                                 <p>LEGGI</p>
                             </div>

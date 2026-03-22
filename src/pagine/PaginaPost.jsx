@@ -6,9 +6,14 @@ import remarkBreaks from 'remark-breaks';
 import { useState, useEffect } from 'react';
 
 import { fetchPostById } from "../api/Post.mjs"
+import { useParams } from "react-router-dom";
 
-export default function PaginaPost({ idPost }) {
+export default function PaginaPost() {
     
+    const { ASClasse, idClasse, slug, idPost } = useParams();
+
+    if (!idPost) return <p>Post non trovato</p>
+
     const [post, setDatiPost] = useState(null);
     
     useEffect(() => {

@@ -8,7 +8,7 @@ export default function ListaClassi({ classi }) {
             {
                 classi.map(classe => (
                     <div key={classe._id} className="RiquadroClasse">
-                        <Link id="LinkRiquadro" to={`/classe/${classe.anno}${classe.sezione}`}>
+                        <Link id="LinkRiquadro" to={`/classe/${classe.anno}${classe.sezione}/${classe._id}`}>
                             <h1>{classe.anno} {classe.sezione}</h1>
                         </Link>
                     </div>

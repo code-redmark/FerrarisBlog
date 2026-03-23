@@ -11,11 +11,17 @@ import ClassRouter from "./routers/ClassRouter.js"
 import PostRouter from "./routers/PostRouter.js"
 
 const app = express()
+const appRouter = express.Router()
+
+appRouter.use("/posts", PostRouter)
+appRouter.use("/classes", ClassRouter)
 
 app.use(express.json())
-app.use(cors())
-app.use("/posts", PostRouter)
-app.use("/classes", ClassRouter)
+app.use(cors({
+    origin: process.env.VITE_FRONTEND,
+    credentials: true
+}))
+app.use("/api", appRouter)
 
 mongoose.connect(process.env.DB_URI)
     .then(() => console.log("MongoDB connesso"))

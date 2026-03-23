@@ -23,8 +23,11 @@ export default function Home() {
     const [classi, setClassi] = useState([]);
     
     useEffect(() => {
-        fetchClasses()
-            .then(data => setClassi(data))
+        const fetch = async () => {
+            const data = await fetchClasses()
+            setClassi(data)
+        }
+        fetch()
     }, [])
 
     

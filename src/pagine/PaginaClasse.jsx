@@ -11,15 +11,21 @@ export default function PaginaClasse() {
 
     const [classe, setDatiClasse] = useState(null);
     useEffect(() => {
-            fetchClassById(idClasse)
-                .then(data => setDatiClasse(data))
+        const fetch = async () => {
+            const data = await fetchClassById(idClasse)
+            setDatiClasse(data)
+        }
+        fetch()
     }, [idClasse]);
 
 
     const [postsClasse, setDatiPostsClasse] = useState(null);
     useEffect(() => {
-            fetchClassPosts(idClasse)
-            .then(data => setDatiPostsClasse(data))
+        const fetch = async () => {
+            const data = await fetchClassPosts(idClasse)
+            setDatiPostsClasse(data)
+        }
+        fetch()
     }, [idClasse]);
 
     if (!classe || !postsClasse) return <p>Caricamento</p>

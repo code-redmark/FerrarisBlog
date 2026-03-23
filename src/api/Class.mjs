@@ -1,7 +1,10 @@
-export function fetchClasses() {
-    return fetch(`${import.meta.env.VITE_SERVER}/classes`).then(res => res.json())
-}
+import api from './api.mjs'
 
-export function fetchClassById(id) {
-    return fetch(`${import.meta.env.VITE_SERVER}/classes/${id}`).then(res => res.json())
+export async function fetchClasses() {
+    const res = await api.get(`/classes`)
+    return res.data
+}
+export async function fetchClassById(id) {
+    const res = await api.get(`/classes/${id}`)
+    return res.data
 }

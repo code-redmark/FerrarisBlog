@@ -22,17 +22,17 @@ export default function PaginaLogin() {
         <div className="PaginaLogin">
             <div className='RiquadroLogin'>
                 <form onSubmit={postLogin} acceptCharset='utf-8'>
-                    <select>
+                    <select name='classe'>
                         {
                             classi.map(classe => 
-                                <option key={classe._id}>
+                                <option key={classe._id} value={classe._id}>
                                     {classe.anno}{classe.sezione}
                                 </option>
                             )
                         }
                     </select>
                     <div>
-                        PWD: <input type="text" name='password'/>
+                        PWD: <input type="password" name='password'/>
                     </div>
                     
                     <button type='submit'>Entra</button>

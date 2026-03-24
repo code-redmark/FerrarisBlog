@@ -21,7 +21,6 @@ export default function ListaHighlight() {
     const PostMap = {}
     posts.forEach(post => {
         PostMap[post.slug] = post
-        console.log(`Id post: ${post.slug}`)
     });
 
     return (

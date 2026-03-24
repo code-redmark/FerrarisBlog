@@ -24,7 +24,7 @@ export async function getPostbyId(req, res) {
     const id = req.params.id
     try {
         const post = await Post.findById(id)
-        if (!post) res.status(404).json({ message: "Post not found" })
+        if (!post) return res.status(404).json({ message: "Post not found" })
         res.json(post)
     } catch (err) {
         res.status(500).json({ message: err.message })
@@ -35,7 +35,7 @@ export async function getPopulatedPostbyId(req, res) {
     const id = req.params.id
     try {
         const post = await Post.findById(id).populate("class")
-        if (!post) res.status(404).json({ message: "Post (class field) not found" })
+        if (!post) return res.status(404).json({ message: "Post (class field) not found" })
         res.json(post)
     } catch (err) {
         res.status(500).json({ message: err.message })

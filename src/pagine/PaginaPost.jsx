@@ -10,7 +10,7 @@ import { useParams } from "react-router-dom";
 
 export default function PaginaPost() {
     
-    const { ASClasse, idClasse, slug, idPost } = useParams();
+    const { idPost } = useParams();
 
     if (!idPost) return <p>Post non trovato</p>
 

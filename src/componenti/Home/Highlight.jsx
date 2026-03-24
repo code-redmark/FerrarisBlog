@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 
 import "../../stile/HighlightHome.css"
 
-export default function Highlight({post}) {
+export default function Highlight({ post }) {
 
-    const classe = post.id.slice(0, 2)
+    if (!post) return <p>Caricamento Highlight</p>
 
+    const classe = `${post.class.anno}${post.class.sezione}`
 
     let currentDate = new Date(post.dataPost);
     let ms = Date.now() - currentDate;
-    console.log(ms)
 
     let secondi = Math.floor(ms / 1000);
     let minuti = Math.floor(secondi / 60);
@@ -35,40 +35,40 @@ export default function Highlight({post}) {
     }
 
     return (
-        
-            <div className="Highlight">
-                <div id="testo">
-                    <div id="Titolo">
-                        {post.title}
-                    </div>
+        <div className="Highlight">
+            <div id="testo">
+                <div id="Titolo">
+                    {post.title}
+                </div>
 
-                    <div id="Descrizione">
-                        {post.description}
-                    </div>
+                <div id="Descrizione">
+                    {post.description}
+                </div>
 
-                    <div id="FondoHighlight"> {/*Serve per non far sovrapporre con la descrizione */} 
-                        <div id="Data">
-                        {classe.toUpperCase()} - {tempo}
-                        </div>
-                        
-                        <div>
-                            <Link to={`/classe/${classe}/post/${post.slug}`}>
-                                <div id="Leggi">
-                                    <p>LEGGI</p>
-                                </div>
-                            </Link>
-                        </div>
-                        
+                <div id="FondoHighlight"> {/*Serve per non far sovrapporre con la descrizione */} 
+                    <div id="Data">
+                    {classe} - {tempo}
                     </div>
                     
                     
+                    <div id="PulsanteLeggi">
 
+                        <Link to={`/classe/${classe}/${post.class._id}/post/${post.slug}/${post._id}`}>
+                            <div id="Leggi">
+                                <p>LEGGI</p>
+                            </div>
+                        </Link>
+                    </div>
+                    
                 </div>
+                
+                
 
-                <div id="immagine">
-                        <img alt="Nessuna foto, sono timidi :("></img>                            
-                </div>
             </div>
 
+            <div id="immagine">
+                    <img alt="Nessuna foto, sono timidi :("></img>                            
+            </div>
+        </div>
     )
 }

@@ -1,27 +1,47 @@
-import posts from "../../src/post/posts.json"
-import { Link } from "react-router-dom";
-
+import { Link, useParams } from "react-router-dom";
 import "../stile/pagine/PaginaClasse.css"
+import { useEffect, useState } from "react";
 
-export default function PaginaClasse({ anno, sezione, bio }) {
+import { fetchClassById } from "../api/Class.mjs"
+import { fetchClassPosts } from "../api/Post.mjs"
 
-    const chiave = `${anno}${sezione.toLowerCase()}`
-    const postsClasse = Object.values(posts[chiave] || {})
+export default function PaginaClasse() {
 
-    // da implementare in sviluppo
+    const { idClasse } = useParams()
+
+    const [classe, setDatiClasse] = useState(null);
+    useEffect(() => {
+        const fetch = async () => {
+            const data = await fetchClassById(idClasse)
+            setDatiClasse(data)
+        }
+        fetch()
+    }, [idClasse]);
+
+
+    const [postsClasse, setDatiPostsClasse] = useState(null);
+    useEffect(() => {
+        const fetch = async () => {
+            const data = await fetchClassPosts(idClasse)
+            setDatiPostsClasse(data)
+        }
+        fetch()
+    }, [idClasse]);
+
+    if (!classe || !postsClasse) return <p>Caricamento</p>
+
+    const chiave = `${classe.anno}${classe.sezione}`
+
     let bioClasse = "Che strani, non hanno una biografia!"
-    if (bio) bioClasse = bio;
-
-    let noPost = false
-    if (Object.length.valueOf(postsClasse) == 0) noPost = true;
-        
+    if (classe.bio) bioClasse = classe.bio;
+ 
     return (
         <div className="PostClasse">
 
             <div id="InfoClasse">
                 <div id="ThisIs">
                     <h1>Questa è la</h1>
-                    <h1 id="nomeClasse">{anno}{sezione}</h1>
+                    <h1 id="nomeClasse">{classe?.anno}{classe?.sezione}</h1>
                 </div>
                 <div id="Biografia">
                     <h2 className="pc">Biografia</h2>
@@ -29,15 +49,17 @@ export default function PaginaClasse({ anno, sezione, bio }) {
                 </div>
                 
             </div>
+
             <div id="ListaPost">
                 {
-                    postsClasse.map(post => (
-                        <Link to={`/classe/${chiave}/post/${post.slug}`}>
-                                <div className="Post" key={post.id}>
+                    postsClasse && postsClasse.map(post => (
+                        <div key={`${post.slug}-${chiave}-${post.dataPost}`}>
+                            <Link to={`/classe/${chiave}/${classe._id}/post/${post.slug}/${post._id}`}>
+                                <div className="Post">
                                     {post.title} - {post.dataPost}
                                 </div>
-                        </Link>
-                        
+                            </Link>
+                        </div>  
                 ))}
             </div>
         </div>  

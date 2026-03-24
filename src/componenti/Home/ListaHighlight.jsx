@@ -1,24 +1,41 @@
-import listaHighlight from "../../highlights.json"
+import fileHighlights from "../../highlights.json";
 import Highlight from "./Highlight"
-import listaPost from "../../post/posts.json"
+
+import { useEffect, useState } from "react"
+
+import { fetchPopulatedPosts } from "../../api/Post.mjs";
+
 import "../../stile/HighlightHome.css"
 
 export default function ListaHighlight() {
+
+    const [posts, setPosts] = useState(null)
+
+    useEffect(() => {
+        fetchPopulatedPosts()
+        .then (data => setPosts(data))
+    }, [])
+
+    if (posts == null) return <h1>Caricamento</h1>
+
+    const PostMap = {}
+    posts.forEach(post => {
+        PostMap[post.slug] = post
+    });
+
     return (
         <div className="ListaHighlight">
             {
-                listaHighlight.highlights.map(highlight => {
-                    const classe = listaPost[highlight.id.slice(0, 2)]
-                    const post = classe[highlight.id]
-                    return (
-                        <div key={highlight.id}>
-                            <Highlight
-                            post={post}
-                            />
-                        </div>
-                    )
-                }
-            )}
+                fileHighlights.highlights.map(slugPost =>
+                <div key={slugPost}>
+                    <Highlight
+                        post={PostMap[slugPost]}
+                    />
+                </div>
+                    
+                )
+            }
+            
         </div>
     )
 }

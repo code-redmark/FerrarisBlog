@@ -1,45 +1,25 @@
 import './App.css'
-import Home from './pagine/Home.jsx'
 
-import { Route, Routes } from 'react-router-dom'
-import PaginaClasse from './pagine/PaginaClasse.jsx'
-
-import datiPost from "./post/posts.json"
-import datiClassi from "./classi.json"
-
-import PaginaPost from './componenti/PaginaPost.jsx'
 import Testa from './componenti/base/Testa.jsx'
 import Piedi from './componenti/base/Piedi.jsx'
+
+import Home from './pagine/Home.jsx'
+import PaginaClasse from './pagine/PaginaClasse.jsx'
+import PaginaPost from './pagine/PaginaPost.jsx'
+
+import { Route, Routes } from 'react-router-dom'
+import PaginaLogin from './pagine/PaginaLogin.jsx'
 
 function App() {
   return (
     <main>
       <Testa/>
-
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-        
-        {datiClassi.classi.map(classe => 
-          <Route 
-              path={`/classe/${classe.id}`} 
-              element={<PaginaClasse anno={classe.anno} sezione={classe.sezione}/>}
-            />)}
-            
-        {
-          Object.entries(datiPost).map(([idClasse, listaPosts]) =>
-            Object.values(listaPosts).map(post => 
-              <Route 
-              path={`/classe/${idClasse}/post/${post.slug}`}
-              element={<PaginaPost post={post}/>}>
-          
-              </Route>
-            
-            ))
-        
-        }
-
-      </Routes>
-
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/classe/:ASclasse/:idClasse' element={<PaginaClasse/>}/>
+          <Route path='/classe/:ASclasse/:idClasse/post/:slug/:idPost' element={<PaginaPost/>}/>
+          <Route path='/login' element={<PaginaLogin/>}/>
+        </Routes>
       <Piedi/>
     </main>
     

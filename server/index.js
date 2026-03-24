@@ -13,6 +13,26 @@ import PostRouter from "./routers/PostRouter.js"
 const app = express()
 const appRouter = express.Router()
 
+// Auth router to support frontend login flow (e.g., POST /api/auth/login)
+const AuthRouter = express.Router()
+
+AuthRouter.post("/login", (req, res) => {
+    const { email, password } = req.body || {}
+
+    // TODO: replace this stub with real authentication logic
+    if (!email || !password) {
+        return res.status(400).json({ success: false, message: "Email and password are required" })
+    }
+
+    return res.status(200).json({
+        success: true,
+        user: { email },
+        // In a real app, return a proper token/session identifier
+        token: "dummy-token"
+    })
+})
+
+appRouter.use("/auth", AuthRouter)
 appRouter.use("/posts", PostRouter)
 appRouter.use("/classes", ClassRouter)
 

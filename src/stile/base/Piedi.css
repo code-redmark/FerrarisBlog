@@ -1,15 +1,22 @@
 .Piedi {
     background-color: #161616;
     color: white;
-    text-align: CENTER;
-    padding: 10px;
+    text-align: right;
     position: relative;
     bottom: 0;
     left: 0;
-    width: 98.7%;
-    height: 200px;
+    width: 100%;
+    height: 250px;
     font-family: 'TestoBlog';
+}
 
+.logopiedi {
+margin-left: 25px
+}
+
+.contatti{
+    margin-right: 25px
+    
 }
 
 img#logoPIEDI {
@@ -17,5 +24,14 @@ img#logoPIEDI {
         width: auto;
         display: block;
         position: relative;
-        top: 55px;
+        top: 80px;
+}
+.piedicentro {
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-family: 'TestoBlog';
+    
 }

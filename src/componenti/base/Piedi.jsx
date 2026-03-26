@@ -2,10 +2,17 @@ import '../../stile/base/Piedi.css'
 
 export default function Piedi() {
     return (
+        
         <div className="Piedi">
-            <p>giovanni </p>
-            <p>Email: paolone </p>
-            <p>Telefono: palle </p>
+       
+            <img id="logoPIEDI" src="/FerrarisBlog/assets/img/LOGOPIEDI.png" alt="logoPIEDI" />
+            <p>I NOSTRI CONTATTI</p>
+            <p>Email: paolone@FERRARIS.ORG </p>
+            <p>Telefono: +39 palle </p>
         </div>
+
+        
     )
 }
+
+

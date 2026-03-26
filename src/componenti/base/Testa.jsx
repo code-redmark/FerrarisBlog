@@ -15,7 +15,7 @@ export default function Testa() {
                         <p className='TestoHome'>Home</p>
                         <div id='arcobaleno' className="arcobaleno_tasto_home"></div>
                     </Link>
-                        <Link className='ChiSiamo'>
+                        <Link to="/ChiSiamo" className='ChiSiamo'>
                         <p className='TestoHome'>Chi Siamo</p>
                     <div id='arcobaleno' className="arcobaleno_tasto_chi_siamo"></div>
                     </Link>

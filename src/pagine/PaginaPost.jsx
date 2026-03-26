@@ -1,5 +1,5 @@
-import Testa from './base/Testa'
-import Piedi from './base/Piedi'
+import Testa from '../componenti/base/Testa'
+import Piedi from '../componenti/base/Piedi'
 import "../stile/pagine/PaginaPost.css"
 
 import ReactMarkdown from "react-markdown"

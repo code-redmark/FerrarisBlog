@@ -1,0 +1,14 @@
+.titolo {
+    color: white;
+    font-family: "HeaderBlog";
+    font-size: 6vh;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+.testo {
+    color: white;
+    font-family: "TestoBlog";
+    font-size: 3vh;
+    margin-left: 10;
+}

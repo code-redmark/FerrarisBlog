@@ -7,9 +7,11 @@ import PaginaClasse from './pagine/PaginaClasse.jsx'
 import datiPost from "./post/posts.json"
 import datiClassi from "./classi.json"
 
-import PaginaPost from './componenti/PaginaPost.jsx'
+import PaginaPost from './pagine/PaginaPost.jsx'
+import ChiSiamo from './pagine/ChiSiamo.jsx'
 import Testa from './componenti/base/Testa.jsx'
 import Piedi from './componenti/base/Piedi.jsx'
+
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
             ))
         
         }
+
+        <Route path="/ChiSiamo" element={<ChiSiamo />} />
 
       </Routes>
 

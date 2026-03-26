@@ -156,16 +156,22 @@ img#logo {
     }
     .open_scrollbar_div {
         visibility: visible;
-        width: 50px;
+        width:75px;
         height: 50px;
-        border: 1px solid white;
         display: flex;
         justify-content: center;
-        margin-left: 20px;
+        margin-left: 25px;
     }
     .open_scrollbar_button {
+        background-color: #161616;
         width: 100%;
         height: 100%;
         cursor: pointer;
+    }
+    .TestoScrollbar{
+        font-size: 12px;
+        font-family: 'HeaderBlog';
+        color: white;
+
     }
 }

@@ -1,13 +1,16 @@
 .sidebar {
     position: fixed;
     top: 0;
-    left: -100%;
-    width: 35%;
-    height: 100%;
+    left: -36%;
+    width: 30%;
+    height: 97vh;
     background: #222;
     color: white;
     transition: left 0.3s;
     padding: 20px;
+}
+.sidebar.shifted {
+    left: 0%
 }
 
 #content {

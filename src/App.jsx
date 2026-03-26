@@ -1,3 +1,4 @@
+import { SidebarProvider } from "./pagine/Home.jsx"
 import './App.css'
 import Home from './pagine/Home.jsx'
 
@@ -15,6 +16,7 @@ import Piedi from './componenti/base/Piedi.jsx'
 
 function App() {
   return (
+    <SidebarProvider>
     <main>
       <Testa/>
 
@@ -46,6 +48,7 @@ function App() {
 
       <Piedi/>
     </main>
+    </SidebarProvider>
     
   )
 }

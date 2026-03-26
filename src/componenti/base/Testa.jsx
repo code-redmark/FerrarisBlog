@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
+import { SidebarContext } from "../../pagine/Home.jsx";
+import { useContext } from "react";
 
 import "../../stile/base/Testa.css"
 
 export default function Testa() {
+    const { isOpen, setIsOpen } = useContext(SidebarContext);
     return (
         <main>
             <div className='Testa'>
@@ -20,9 +23,9 @@ export default function Testa() {
                     <div id='arcobaleno' className="arcobaleno_tasto_chi_siamo"></div>
                     </Link>
                     <div className="open_scrollbar_div">
-                        <button onClick={() => setIsOpen(!isOpen)} id="scrlbr_btn" className="open_scrollbar_button">
-                            <p>bottone scrollbar</p>
-                        </button>
+                    <button onClick={() => setIsOpen(!isOpen)} id="scrlbr_btn" className="open_scrollbar_button">
+                        <p>{isOpen ? "Chiudi" : "Apri"} scrollbar</p>
+                    </button>
                     </div>
                 </li>
             </ul>

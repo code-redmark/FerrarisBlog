@@ -9,22 +9,20 @@ import "../stile/ClassiHome.css"
 import { useState } from "react"
 import { createContext, useContext } from "react";
 
-const SidebarContext = createContext();
+export const SidebarContext = createContext();
 
 export function SidebarProvider({ children }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <SidebarContext.Provider value={{ isOpen, setIsOpen }}>
-      {children}
-    </SidebarContext.Provider>
-  );
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+        <SidebarContext.Provider value={{ isOpen, setIsOpen }}>
+            {children}
+        </SidebarContext.Provider>
+    );
 }
 
 export default function Home() {
 
-    const [isOpen, setIsOpen] = useState(false);    
-    
+    const { isOpen } = useContext(SidebarContext);    
     return (
         <div>
             <div className="pc">
@@ -39,7 +37,7 @@ export default function Home() {
             <div className="mobile">
                 <div id="content">
                     <ListaHighlight/>
-                    <div className={`sidebar ${isOpen ? 'aperta' : 'chiusa'}`}>
+                    <div className={`sidebar ${isOpen ? 'shifted' : ''}`}>
                         <ListaClassi/>
                     </div>
                 </div>

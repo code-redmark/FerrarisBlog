@@ -95,6 +95,7 @@
 }
 
 .Highlight #testo #Titolo {
+    text-overflow: hidden;
     color: white;
     font-size: clamp(16px, 2.4vw, 50px);
     font-family: 'HeaderBlog';

@@ -1,13 +1,13 @@
 .sidebar {
-    position: fixed;
-    top: 0;
+    position: absolute;
     left: -36%;
     width: 30%;
-    height: 97vh;
+    height: 90vh;
     background: #222;
     color: white;
     transition: left 0.3s;
     padding: 20px;
+    z-index: 3;
 }
 .sidebar.shifted {
     left: 0%

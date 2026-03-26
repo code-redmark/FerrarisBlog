@@ -9,13 +9,13 @@ export default function Piedi() {
                 </div>
                 <div className= "contatti">
                 <p>I NOSTRI CONTATTI</p>
-                <p>Email: paolone@FERRARIS.ORG</p>
-                <p>Telefono: +39 palle</p> 
+                <p>Email: template@ferraris.org</p>
+                <p>Telefono: +39 123 456 7890</p> 
                 </div>  
                   <div className="piedicentro">
-                <p>palle</p>
-                <p>palle2</p>
-                <p>instagram: massimo_bossetti</p> 
+                <p>Media</p>
+                <p>Media</p>
+                <p>Instagram: 3M_blog_ferraris</p> 
             </div>
             </div>
 

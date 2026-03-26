@@ -8,10 +8,8 @@ export default function ChiSiamo() {
             <div className="pc">
 
                 <div id="content">
-                    <div className="titolo">Test1</div>
-                    <div className="testo">Siamo degli alunni del Ferraris</div>
+                    <div className='Titolo'>Titolo<p className='Testo'>Contenuto</p></div>
                 </div>
-
             </div>
 
             <div className="mobile">

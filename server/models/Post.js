@@ -9,6 +9,10 @@ const PostSchema = new Schema({
     class: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Class"
+    },
+    parentPost: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Post"
     }
 });
 

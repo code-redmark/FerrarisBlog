@@ -3,6 +3,7 @@ import '../stile/pagine/PaginaLogin.css'
 
 import { fetchClasses } from '../api/Class.mjs'
 import { postLogin } from '../api/Auth.mjs'
+import Caricamento from './Caricamento'
 
 export default function PaginaLogin() {
     
@@ -16,7 +17,7 @@ export default function PaginaLogin() {
         fetch()
     }, [])
 
-    if (!classi) return <p>Caricamento</p>
+    if (!classi) return <Caricamento />
 
     return (
         <div className="PaginaLogin">

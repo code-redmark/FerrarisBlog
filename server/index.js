@@ -42,17 +42,42 @@ const classiDiEsempio = [
 async function seed() {
     await Class.deleteMany({}); // opzionale: cancella i vecchi dati
     let classi = await Class.insertMany(classiDiEsempio);
-    const postDiEsempio = [
-    {
+
+    await Post.deleteMany({});
+
+    const testParent = {
         title: "Incontro a Castel Capuano",
         description: "Il 28 marzo incontreremo la scrittrice Titti Marrone a Castel Capuano, per parlare del suo libro \\\"Primmammore\\\"",
         content: "Il 28 marzo incontreremo la scrittrice Titti Marrone a Castel Capuano, per parlare del suo libro \\\"Primmammore\\\". abbiamo letto il libro e ha preparato delle domande per l'autrice. sarà un incontro molto interessante",
         dataPost: "2026-03-04T09:00:00.000Z",
         slug: "incontro-castel-capuano-3M-2026-03-04T09:00:00.000Z",
         class: classi[0]._id,
+        parentPost: null
     }
+
+    const insertedParent = await Post.insertOne(testParent)
+
+    const postDiEsempio = [
+        {
+            title: "Le nostre riflessioni",
+            description: "I pensieri e le riflessioni che abbiamo fatto leggendo Primmammore",
+            content: "Riflessioni...",
+            dataPost: "2026-03-09T09:00:00.000Z",
+            slug: "le-nostre-riflessioni-3M-2026-03-09T09:00:00.000Z",
+            class: classi[0]._id,
+            parentPost: insertedParent._id
+        },
+        {
+            title: "Il Backstage",
+            description: "Mauro Romano ha raccolto diversi momenti durante la produzione di FerrarisBlog e durante il lavoro che abbiamo preparato per l'incontro",
+            content: "Sopra sono riportati tutti i video ed il footage di Mauro",
+            dataPost: "2026-03-20T09:00:00.000Z",
+            slug: "il-backstage-3M-2026-03-20T09:00:00.000Z",
+            class: classi[0]._id,
+            parentPost: insertedParent._id
+        }
 ]
-    await Post.deleteMany({});
+    
     await Post.insertMany(postDiEsempio);
 }
 

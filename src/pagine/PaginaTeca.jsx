@@ -1,18 +1,18 @@
-import { fetchPopulatedPostById, fetchTecaChildrenByTecaId, } from "../../api/Post.mjs";
+import { fetchPopulatedTecaById, fetchTecaById } from "../api/Teca.mjs";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function PaginaTeca() {
 
-    const { idPost: idTeca } = useParams();
+    const { idTeca } = useParams();
 
     if (!idTeca) return <p>Post non trovato</p>
 
     const [teca, setDatiTeca] = useState(null);
     
     useEffect(() => {
-        fetchPopulatedPostById(idTeca) // Ci server populated perché ho bisogno di trovare tutti i sotto post che stanno nella sua stessa classe
+        fetchPopulatedTecaById(idTeca) // Ci server populated perché ho bisogno di trovare tutti i sotto post che stanno nella sua stessa classe
             .then( data => setDatiTeca(data))
     }, [idTeca])
 

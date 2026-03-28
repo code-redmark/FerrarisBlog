@@ -6,6 +6,9 @@ const PostSchema = new Schema({
     content: String,
     dataPost: Date,
     slug: String,
+
+    cover: String, // cloudinary picture public ID
+    
     class: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Class"
@@ -13,7 +16,8 @@ const PostSchema = new Schema({
     parentPost: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Post"
-    }
+    },
+
 });
 
 export default mongoose.model("Post", PostSchema, "posts")

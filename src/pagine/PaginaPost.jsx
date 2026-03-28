@@ -1,11 +1,11 @@
-import "../../stile/pagine/PaginaPost.css"
+import "../stile/pagine/PaginaPost.css"
 
 import ReactMarkdown from "react-markdown"
 
 import remarkBreaks from 'remark-breaks';
 import { useState, useEffect } from 'react';
 
-import { fetchPostById } from "../../api/Post.mjs"
+import { fetchPostById } from "../api/Post.mjs"
 import { useParams } from "react-router-dom";
 
 export default function PaginaPost() {

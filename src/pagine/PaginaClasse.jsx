@@ -3,8 +3,8 @@ import "../stile/pagine/PaginaClasse.css"
 import { useEffect, useState } from "react";
 
 import { fetchClassById } from "../api/Class.mjs"
-import { fetchClassTeche } from "../api/Post.mjs"
 import Caricamento from "./Caricamento";
+import { fetchClassTecas } from "../api/Teca.mjs";
 
 export default function PaginaClasse() {
 
@@ -23,7 +23,7 @@ export default function PaginaClasse() {
     const [techeClasse, setDatitecheClasse] = useState(null);
     useEffect(() => {
         const fetch = async () => {
-            const data = await fetchClassTeche(idClasse)
+            const data = await fetchClassTecas(idClasse)
             setDatitecheClasse(data)
         }
         fetch()
@@ -54,10 +54,10 @@ export default function PaginaClasse() {
             <div id="ListaPost">
                 {
                     techeClasse && techeClasse.map(teca => (
-                        <div key={`${teca.slug}-${chiave}-${teca.dataPost}`}>
+                        <div key={`${teca.slug}`}>
                             <Link to={`/classe/${chiave}/${classe._id}/post/${teca.slug}/${teca._id}`}>
                                 <div className="Post">
-                                    {teca.title} - {teca.dataPost}
+                                    {teca.title}
                                 </div>
                             </Link>
                         </div>  

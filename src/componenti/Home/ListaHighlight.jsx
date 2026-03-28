@@ -6,6 +6,9 @@ import { useEffect, useState } from "react"
 import { fetchPopulatedPosts } from "../../api/Post.mjs";
 
 import "../../stile/HighlightHome.css"
+import { useFetcher } from "react-router-dom";
+import { fetchPopulatedTecas } from "../../api/Teca.mjs";
+import Caricamento from "../../pagine/Caricamento";
 
 export default function ListaHighlight() {
 
@@ -14,13 +17,29 @@ export default function ListaHighlight() {
     useEffect(() => {
         fetchPopulatedPosts()
         .then (data => setPosts(data))
+        .catch(err => console.log(err))
     }, [])
 
-    if (posts == null) return <h1>Caricamento</h1>
+
+
+
+
+    const [tecas, setTecas] = useState(null)
+    useEffect(() => {
+        fetchPopulatedTecas()
+        .then (data => setTecas(data))
+        .catch(err => console.log(err))
+    }, [])
+
+    if (!posts || !tecas) return <Caricamento />
 
     const PostMap = {}
     posts.forEach(post => {
         PostMap[post.slug] = post
+    });
+    const TecaMap = {}
+    tecas.forEach(teca => {
+        TecaMap[teca.slug] = teca
     });
 
     return (

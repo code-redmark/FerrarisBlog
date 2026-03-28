@@ -14,11 +14,6 @@ export async function fetchPostById(id) {
     return res.data
 }
 
-export async function fetchTecaChildrenByTecaId(idTeca) {
-    const res = await api.get(`/posts/id/${idTeca}/children`)
-    return res.data
-}
-
 export async function fetchPopulatedPostById(id) {
     const res = await api.get(`/posts/id/${id}/pop`)
     return res.data
@@ -29,7 +24,3 @@ export async function fetchClassPosts(classId) {
     return res.data
 }
 
-export async function fetchClassTeche(classId) {
-    const res = await api.get (`/posts/class/${classId}/teche`)
-    return res.data
-}

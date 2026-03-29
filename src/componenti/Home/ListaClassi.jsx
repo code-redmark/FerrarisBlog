@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import datiClassi from "../../classi.json"
 
 import "../../stile/ClassiHome.css"
+import { normalizeModuleId } from "vite/module-runner"
 
 export default function ListaClassi() {
     return (
@@ -12,7 +13,19 @@ export default function ListaClassi() {
                   
                     <div key={classe.id} className="RiquadroClasse">
                         <Link id="LinkRiquadro" to={`/classe/${classe.id}`}>
-                            <h1>{classe.anno} {classe.sezione}</h1>
+                            <div className="Contenitore_Classe_Top">
+                                <div className="Contenitore_Sezione">
+                                    <h1 className="Sezione">{classe.anno}{classe.sezione}</h1>
+                                </div>
+                                <div className="Contenitore_Numero_Post">
+                                    <h1 className="Numero_Post">[numero] post</h1>
+                                </div>
+                            </div>
+                            <div className="Contenitore_Classe_Bottom">
+                                <div className="Contenitore_Biografia_Classe">
+                                    <h1 className="Biografia_Classe">biografia classe test test test test test test test test test test test test test test test test test test test</h1>
+                                </div>
+                            </div>
                         </Link>
                     </div>
                 

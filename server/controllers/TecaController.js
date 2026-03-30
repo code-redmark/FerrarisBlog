@@ -53,12 +53,12 @@ export async function getTecaChildren(req, res) {
         const teca = await Teca.findById(idTeca)
         if (!teca) return res.status(404).json({ message: `Teca not found`})
 
-        const classId = teca.class instanceof Object
-        ? teca.class._id
-        : teca.class;
-
+        const classId = teca.class?._id ?? teca.class;
         const children = await Post.find({ class: classId, parentTeca: idTeca })
-        if (!teca) return res.status(404).json({ message: "Teca children not found" })
+        if (!children) {
+            return res.status(404).json({ message: "Teca children not found" })
+        }
+        
         res.json(children)
     } catch (err) {
         res.status(500).json({ message: `Error looking for Teca children: ${err.message}` })

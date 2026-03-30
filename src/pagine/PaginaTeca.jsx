@@ -3,26 +3,27 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+import '../stile/pagine/PaginaTeca.css';
+
 import Caricamento from "../pagine/Caricamento.jsx";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Highlight from "../componenti/Home/Highlight.jsx"
-
 const settings = {
   infinite: true,      // Loop infinito
   speed: 500,          // Velocità di transizione in ms
-  slidesToShow: 1,     // Quante immagini mostrare contemporaneamente
-  slidesToScroll: 1,   // Quante immagini scorrono per volta
-  autoplay: true,      // Avvia il carosello automaticamente
-  autoplaySpeed: 3000, // Tempo tra una transizione e l'altra in ms
+  slidesToShow: 1,    
+  slidesToScroll: 1,  
+  autoplay: true,     
+  autoplaySpeed: 3000, 
+  arrows: false,        
 };
 
 export default function PaginaTeca() {
 
-    const { idTeca } = useParams();
+    const { idTeca, ASclasse, idClasse } = useParams();
 
     const [teca, setDatiTeca] = useState(null);
     useEffect(() => {
@@ -45,23 +46,22 @@ export default function PaginaTeca() {
 
     if (!teca) return <Caricamento />
     return (
-        <div style={{display: "flex", flexDirection: "column", backgroundColor: "#222", padding: "20px"}}>
-            
-            <div className="TestaTeca" style={{display: "flex", flexDirection: "row"}}>
-                <div className="TitoloTeca" style={{color: 'white', display: "flex", flexDirection: "column", width: "100%", gap: "10px", padding: "0 20px", textAlign: "left"}}>
+        <div className="Pagina">
+            <div className="TestaTeca">
+                <div className="TitoloTeca">
                         <h1>{teca.title}</h1>
                         <p>{teca.description}</p>
                 </div>
 
-                <div className="Carosello"  style={{ width: "100%", maxWidth: "900px", height: "400px", margin: "20px auto", padding: "0 20px" }}>
+                <div className="Carosello">
                     <Slider
                         {...settings}
                     >
                         {
                             teca.images.map((img, index) => (
-                                <div key={index}>
+                                <div key={index} className="divImgCarosello">
                                     <img src={`${import.meta.env.VITE_CLOUDINARY_URL}/${img}`} alt={`Immagine ${index}`} 
-                                        style={{ width: "100%", height: "400px", objectFit: "cover"}} 
+                                       className="imgCarosello"  
                                     />
                                 </div>
                             ))
@@ -72,14 +72,16 @@ export default function PaginaTeca() {
 
             
             
-            <div>
-                <p>Lista dei post:</p>
+            <div className="divListaPostTeca">
+                <h1 className="HeaderListaPost">Post</h1>
                 <ul className="ListaPostTeca">
                     {
                         sottoPostTeca && sottoPostTeca.map(sottoPost => (
-                            <li key={sottoPost._id}>
-                                <Link to ={`/classe/${teca.class.anno}${teca.class.sezione}/${teca.class._id}/post/${sottoPost.slug}/${sottoPost._id}`}>
-                                    <Highlight highlight={sottoPost} collezione='post' />
+                            <li key={sottoPost._id} className="ListaPostTeca">
+                                <Link to={`/classe/${ASclasse}/${idClasse}/post/id/${sottoPost._id}`} className="LinkSottoPost">
+                                    <div className="SottoPostTeca">
+                                       {sottoPost.title} - {sottoPost.dataPost.slice(0, 10).replace(/-/g, '/')}
+                                    </div>
                                 </Link>
                             </li>
                         ))

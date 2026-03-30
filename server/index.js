@@ -22,7 +22,7 @@ appRouter.use("/classes", ClassRouter)
 
 app.use(express.json())
 app.use(cors({
-    origin: process.env.VITE_FRONTEND,
+    origin: true,
     credentials: true
 }))
 app.use("/api", appRouter)
@@ -54,7 +54,8 @@ async function seed() {
         slug: "incontro-castel-capuano-3M-2026-03-04T09:00:00.000Z",
         class: classi[0]._id,
         images: [
-            'ciao.jpg'
+            'ciao.jpg',
+            'images_ufce3x'
         ]
     }
 
@@ -86,6 +87,6 @@ async function seed() {
 
 seed();
 
-app.listen(5000)
+app.listen(5000, '0.0.0.0', () => { console.log("Server avviato") })
 
 

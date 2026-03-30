@@ -25,7 +25,7 @@
 .Highlight {
     display: flex;
     width: 80%;
-    height: 38vh;
+    height: 20vh;
     flex-direction: row;
     gap: 3%;
 
@@ -173,6 +173,12 @@
     border: 3px solid black;
     background-color: green;
     margin: 2%;
+}
+
+@media (max-width: 2000px) {
+    .Highlight {
+        height: 100vh;
+    }
 }
 
 

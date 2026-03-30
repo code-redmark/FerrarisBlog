@@ -19,7 +19,9 @@ export async function fetchPopulatedTecaById(id) {
     return res.data
 }
 
-export async function fetchClassTecas(classId) {
-    const res = await api.get(`/tecas/class/${classId}`)
+export async function fetchTecaChildren(tecaId) {
+    const res = await api.get(`/tecas/id/${tecaId}/children`)
     return res.data
 }
+
+

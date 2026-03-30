@@ -1,16 +1,15 @@
-import { fetchPopulatedTecaById, fetchTecaById } from "../api/Teca.mjs";
+import { fetchPopulatedTecaById, fetchTecaChildren } from "../api/Teca.mjs";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+
+import Caricamento from "../pagine/Caricamento.jsx";
 
 export default function PaginaTeca() {
 
     const { idTeca } = useParams();
 
-    if (!idTeca) return <p>Post non trovato</p>
-
     const [teca, setDatiTeca] = useState(null);
-    
     useEffect(() => {
         fetchPopulatedTecaById(idTeca) // Ci server populated perché ho bisogno di trovare tutti i sotto post che stanno nella sua stessa classe
             .then( data => setDatiTeca(data))
@@ -18,11 +17,11 @@ export default function PaginaTeca() {
 
     const [sottoPostTeca, setSottoPostTeca] = useState(null);
     useEffect(() => {
-        fetchTecaChildrenByTecaId(idTeca)
+        fetchTecaChildren(idTeca)
             .then( data => setSottoPostTeca(data))
-    }), [idTeca]
+    }, [idTeca])
     
-    if (!teca) return <h1>Caricamento</h1>
+    if (!teca) return <Caricamento />
 
     return (
         <div>

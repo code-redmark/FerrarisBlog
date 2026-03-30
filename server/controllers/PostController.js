@@ -7,6 +7,7 @@ export async function getPosts(req, res) {
         res.json(posts)
     } catch (err) {
         res.status(500).json({message: err.message})
+        console.log(err)
     }
 }
 
@@ -17,6 +18,7 @@ export async function getPopulatedPosts(req, res) {
         res.json(popPosts)
     } catch (err) {
         res.status(500).json({ message: err.message })
+        console.log(err)
     }
 }
 
@@ -28,6 +30,7 @@ export async function getPostbyId(req, res) {
         res.json(post)
     } catch (err) {
         res.status(500).json({ message: err.message })
+        console.log(err)
     }
 }
 
@@ -39,6 +42,7 @@ export async function getPopulatedPostbyId(req, res) {
         res.json(post)
     } catch (err) {
         res.status(500).json({ message: err.message })
+        console.log(err)
     }
 }
 
@@ -50,5 +54,6 @@ export async function getClassPosts(req, res) {
         res.json(classPosts)
     } catch (err) {
         res.status(500).json({ message: err.message })
+        console.log(err)
     }
 }

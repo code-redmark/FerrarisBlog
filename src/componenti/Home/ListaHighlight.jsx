@@ -4,10 +4,10 @@ import Highlight from "./Highlight"
 import { useEffect, useState } from "react"
 
 import { fetchPopulatedPosts } from "../../api/Post.mjs";
+import { fetchPopulatedTecas } from "../../api/Teca.mjs";
 
 import "../../stile/HighlightHome.css"
-import { useFetcher } from "react-router-dom";
-import { fetchPopulatedTecas } from "../../api/Teca.mjs";
+
 import Caricamento from "../../pagine/Caricamento";
 
 export default function ListaHighlight() {
@@ -19,9 +19,6 @@ export default function ListaHighlight() {
         .then (data => setPosts(data))
         .catch(err => console.log(err))
     }, [])
-
-
-
 
 
     const [tecas, setTecas] = useState(null)
@@ -48,7 +45,13 @@ export default function ListaHighlight() {
                 fileHighlights.highlights.map(slugPost =>
                 <div key={slugPost}>
                     <Highlight
-                        post={PostMap[slugPost]}
+                        highlight={
+                            PostMap[slugPost] ? PostMap[slugPost] : 
+                            TecaMap[slugPost] ? TecaMap[slugPost] : null
+                        }
+                        collezione={PostMap[slugPost] ? 'post' : 
+                            TecaMap[slugPost] ? 'teca' : null
+                        }
                     />
                 </div>
                     

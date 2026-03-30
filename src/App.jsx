@@ -17,10 +17,10 @@ function App() {
       <Testa/>
         <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='/classe/:ASclasse/:idClasse' element={<PaginaClasse/>}/>
-          <Route path='/classe/:ASclasse/:idClasse/teca/:idTeca' element={<PaginaTeca/>}/>
-          <Route path='/classe/:ASclasse/:idClasse/post/:slug/:idPost' element={<PaginaPost/>}/>
-          <Route path='/login' element={<PaginaLogin/>}/>
+          <Route path='/classe/:ASclasse/:idClasse' element={<PaginaClasse />}/>
+          <Route path='/classe/:ASclasse/:idClasse/teca/:slug/:idTeca' element={<PaginaTeca />}/>
+          <Route path='/classe/:ASclasse/:idClasse/post/:slug/:idPost' element={<PaginaPost />}/>
+          <Route path='/login' element={<PaginaLogin />}/>
         </Routes>
       <Piedi/>
     </main>

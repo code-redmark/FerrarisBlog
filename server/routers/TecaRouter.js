@@ -9,10 +9,6 @@ router.get("/pop", TecaController.getPopulatedTecas)
 router.get("/id/:id", TecaController.getTecabyId)
 router.get("/id/:id/pop", TecaController.getPopulatedTecabyId)
 
-router.get("/id/:id/children", TecaController.getTecaChildren)
-
-router.get("/class/:ClassId/", TecaController.getClassTecas)
-router.get("/class/:ClassId/tecas", TecaController.getClassTecas)
-
+router.get("/id/:id/children",TecaController.getTecaChildren)
 
 export default router

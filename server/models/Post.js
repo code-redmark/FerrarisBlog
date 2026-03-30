@@ -13,7 +13,7 @@ const PostSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Class"
     },
-    parentPost: {
+    parentTeca: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Post"
     },

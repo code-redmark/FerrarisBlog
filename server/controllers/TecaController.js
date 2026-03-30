@@ -1,4 +1,5 @@
 import Teca from "../models/Teca.js";
+import Post from "../models/Post.js"
 
 export async function getTecas(req, res) {
     try {
@@ -7,6 +8,7 @@ export async function getTecas(req, res) {
         res.json(tecas)
     } catch (err) {
         res.status(500).json({message: err.message})
+        console.log(err)
     }
 }
 
@@ -17,6 +19,7 @@ export async function getPopulatedTecas(req, res) {
         res.json(popTecas)
     } catch (err) {
         res.status(500).json({ message: err.message })
+        console.log(err)
     }
 }
 
@@ -28,17 +31,19 @@ export async function getTecabyId(req, res) {
         res.json(teca)
     } catch (err) {
         res.status(500).json({ message: err.message })
+        console.log(err)
     }
 }
 
 export async function getPopulatedTecabyId(req, res) {
     const id = req.params.id
     try {
-        const teca = await teca.findById(id).populate("class")
+        const teca = await Teca.findById(id).populate("class")
         if (!teca) return res.status(404).json({ message: "Teca not found" })
         res.json(teca)
     } catch (err) {
         res.status(500).json({ message: err.message })
+        console.log(err)
     }
 }
 
@@ -46,22 +51,17 @@ export async function getTecaChildren(req, res) {
     const idTeca = req.params.id
     try {
         const teca = await Teca.findById(idTeca)
-        if (!teca) return res.status(404).json({ message: "Teca not found" })
-        const children = await Teca.find({ class: teca.class._id, parentTeca: teca._id })
+        if (!teca) return res.status(404).json({ message: `Teca not found`})
+
+        const classId = teca.class instanceof Object
+        ? teca.class._id
+        : teca.class;
+
+        const children = await Post.find({ class: classId, parentTeca: idTeca })
         if (!teca) return res.status(404).json({ message: "Teca children not found" })
         res.json(children)
-    } catch {
-        res.status(500).json({ message: `Error looking for Teca children: ${err.message}` })
-    }
-}
-
-export async function getClassTecas(req, res) {
-    const ClassId = req.params.ClassId
-    try {
-        const classtecas = await Teca.find({ class: ClassId })
-        if (!classtecas) return res.status(404).json({ message: "tecas not found" })
-        res.json(classtecas)
     } catch (err) {
-        res.status(500).json({ message: err.message })
+        res.status(500).json({ message: `Error looking for Teca children: ${err.message}` })
+        console.log(err)
     }
 }

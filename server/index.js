@@ -12,12 +12,10 @@ import Post from "./models/Post.js"
 import ClassRouter from "./routers/ClassRouter.js"
 import TecaRouter from "./routers/TecaRouter.js"
 import PostRouter from "./routers/PostRouter.js"
-import AuthRouter from './routers/AuthRouter.js'
 
 const app = express()
 const appRouter = express.Router()
 
-appRouter.use("/auth", AuthRouter)
 appRouter.use("/posts", PostRouter)
 appRouter.use("/tecas", TecaRouter)
 appRouter.use("/classes", ClassRouter)
@@ -55,6 +53,9 @@ async function seed() {
         description: "Il 28 marzo incontreremo la scrittrice Titti Marrone a Castel Capuano, per parlare del suo libro \\\"Primmammore\\\"",
         slug: "incontro-castel-capuano-3M-2026-03-04T09:00:00.000Z",
         class: classi[0]._id,
+        images: [
+            'ciao.jpg'
+        ]
     }
 
     const insertedParent = await Teca.insertOne(testTeca)

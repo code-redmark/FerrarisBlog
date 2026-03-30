@@ -8,7 +8,6 @@ import PaginaClasse from './pagine/PaginaClasse.jsx'
 import PaginaTeca from './pagine/PaginaTeca.jsx'
 
 import { Route, Routes } from 'react-router-dom'
-import PaginaLogin from './pagine/PaginaLogin.jsx'
 import PaginaPost from './pagine/PaginaPost.jsx'
 
 function App() {

@@ -21,7 +21,6 @@ export async function getClassById(req, res) {
         res.status(500).json({ message: err.message })
         console.log(err)
     }
-    console.log("getClass")
 }
 
 export async function getClassTecas(req, res) {
@@ -35,5 +34,4 @@ export async function getClassTecas(req, res) {
         res.status(500).json({ message: err.message })
         console.log(err)
     }
-    console.log("getClassTecas")
 }

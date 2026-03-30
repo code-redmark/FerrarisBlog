@@ -35,13 +35,15 @@ export default function PaginaTeca() {
         fetchTecaChildren(idTeca)
             .then( data => setSottoPostTeca(data))
     }, [idTeca])
-    
+
+    useEffect(() => {
+        if (!teca || !teca.images) return;
+        for (let image of teca.images) {
+            console.log(`${import.meta.env.VITE_CLOUDINARY_URL}/${image}`);
+        }
+    }, [teca]);
+
     if (!teca) return <Caricamento />
-
-    for (let image of teca.images) {
-        console.log(`${import.meta.env.CLOUDINARY_URL}/${image}`);
-    }
-
     return (
         <div style={{display: "flex", flexDirection: "column", backgroundColor: "#222", padding: "20px"}}>
             

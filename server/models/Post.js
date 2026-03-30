@@ -15,7 +15,7 @@ const PostSchema = new Schema({
     },
     parentTeca: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Post"
+        ref: "Teca"
     },
 
 });

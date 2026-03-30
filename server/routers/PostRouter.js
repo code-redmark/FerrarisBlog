@@ -11,4 +11,5 @@ router.get("/id/:id/pop", PostController.getPopulatedPostbyId)
 
 router.get("/class/:ClassId/", PostController.getClassPosts)
 
+
 export default router

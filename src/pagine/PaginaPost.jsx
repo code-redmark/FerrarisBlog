@@ -15,7 +15,6 @@ export default function PaginaPost() {
     if (!idPost) return <p>Post non trovato</p>
 
     const [post, setDatiPost] = useState(null);
-    
     useEffect(() => {
         fetchPostById(idPost)
             .then( data => setDatiPost(data))

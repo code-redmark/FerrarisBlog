@@ -3,7 +3,8 @@ import "../stile/pagine/PaginaClasse.css"
 import { useEffect, useState } from "react";
 
 import { fetchClassById } from "../api/Class.mjs"
-import { fetchClassPosts } from "../api/Post.mjs"
+import Caricamento from "./Caricamento";
+import { fetchClassTecas } from "../api/Class.mjs";
 
 export default function PaginaClasse() {
 
@@ -19,16 +20,16 @@ export default function PaginaClasse() {
     }, [idClasse]);
 
 
-    const [postsClasse, setDatiPostsClasse] = useState(null);
+    const [tecasClasse, setDatiTecasClasse] = useState(null);
     useEffect(() => {
         const fetch = async () => {
-            const data = await fetchClassPosts(idClasse)
-            setDatiPostsClasse(data)
+            const data = await fetchClassTecas(idClasse)
+            setDatiTecasClasse(data)
         }
         fetch()
     }, [idClasse]);
 
-    if (!classe || !postsClasse) return <p>Caricamento</p>
+    if (!classe || !tecasClasse) return <Caricamento />
 
     const chiave = `${classe.anno}${classe.sezione}`
 
@@ -52,11 +53,11 @@ export default function PaginaClasse() {
 
             <div id="ListaPost">
                 {
-                    postsClasse && postsClasse.map(post => (
-                        <div key={`${post.slug}-${chiave}-${post.dataPost}`}>
-                            <Link to={`/classe/${chiave}/${classe._id}/post/${post.slug}/${post._id}`}>
+                    tecasClasse && tecasClasse.map(teca => (
+                        <div key={`${teca.slug}`}>
+                            <Link to={`/classe/${chiave}/${classe._id}/teca/${teca.slug}/${teca._id}`}>
                                 <div className="Post">
-                                    {post.title} - {post.dataPost}
+                                    <p> Teca: {teca.title}</p>
                                 </div>
                             </Link>
                         </div>  

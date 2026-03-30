@@ -1,4 +1,5 @@
 import Class from '../models/Classe.js'
+import Teca from '../models/Teca.js'
 
 export async function getClasses(req, res) {
     try {
@@ -7,6 +8,7 @@ export async function getClasses(req, res) {
         res.json(foundClasses)
     } catch(err) {
         res.status(500).json({ message: err.message })
+        console.log(err)
     }
 }
 
@@ -17,5 +19,19 @@ export async function getClassById(req, res) {
         res.json(foundClass)
     } catch(err) {
         res.status(500).json({ message: err.message })
+        console.log(err)
+    }
+}
+
+export async function getClassTecas(req, res) {
+    const id = req.params.id
+    
+    try {
+        const classTecas = await Teca.find({ class: id })
+        if (!classTecas) return res.status(404).json({ message: "tecas not found" })
+        res.json(classTecas)
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+        console.log(err)
     }
 }

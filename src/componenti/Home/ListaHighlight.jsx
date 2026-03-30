@@ -4,8 +4,11 @@ import Highlight from "./Highlight"
 import { useEffect, useState } from "react"
 
 import { fetchPopulatedPosts } from "../../api/Post.mjs";
+import { fetchPopulatedTecas } from "../../api/Teca.mjs";
 
 import "../../stile/HighlightHome.css"
+
+import Caricamento from "../../pagine/Caricamento";
 
 export default function ListaHighlight() {
 
@@ -14,13 +17,26 @@ export default function ListaHighlight() {
     useEffect(() => {
         fetchPopulatedPosts()
         .then (data => setPosts(data))
+        .catch(err => console.log(err))
     }, [])
 
-    if (posts == null) return <h1>Caricamento</h1>
+
+    const [tecas, setTecas] = useState(null)
+    useEffect(() => {
+        fetchPopulatedTecas()
+        .then (data => setTecas(data))
+        .catch(err => console.log(err))
+    }, [])
+
+    if (!posts || !tecas) return <Caricamento />
 
     const PostMap = {}
     posts.forEach(post => {
         PostMap[post.slug] = post
+    });
+    const TecaMap = {}
+    tecas.forEach(teca => {
+        TecaMap[teca.slug] = teca
     });
 
     return (
@@ -29,7 +45,13 @@ export default function ListaHighlight() {
                 fileHighlights.highlights.map(slugPost =>
                 <div key={slugPost}>
                     <Highlight
-                        post={PostMap[slugPost]}
+                        highlight={
+                            PostMap[slugPost] ? PostMap[slugPost] : 
+                            TecaMap[slugPost] ? TecaMap[slugPost] : null
+                        }
+                        collezione={PostMap[slugPost] ? 'post' : 
+                            TecaMap[slugPost] ? 'teca' : null
+                        }
                     />
                 </div>
                     

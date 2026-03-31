@@ -175,10 +175,4 @@
     margin: 2%;
 }
 
-@media (max-width: 2000px) {
-    .Highlight {
-        height: 100vh;
-    }
-}
-
 

@@ -9,7 +9,6 @@ export default function Highlight({post}) {
 
     let currentDate = new Date(post.dataPost);
     let ms = Date.now() - currentDate;
-    console.log(ms)
 
     let secondi = Math.floor(ms / 1000);
     let minuti = Math.floor(secondi / 60);

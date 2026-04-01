@@ -1,4 +1,4 @@
-import { SidebarProvider } from "./pagine/Home.jsx"
+import { SidebarProvider } from "./context/SidebarContext.jsx"
 import './App.css'
 import Home from './pagine/Home.jsx'
 

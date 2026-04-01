@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 @keyframes moveRainbowBorder {
     0%   { background-position: 0 0, 0 0; }
     50%  { background-position: 0 0, 100% 100%; }
@@ -8,17 +12,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: scroll;
-    background-color: #ffffff00;
-    padding: 10%;
+    width: 100%;
+    padding: 3%;
+    gap: 15%;
+    
 }
 
 .Highlight {
+    max-width: 90%;
+    min-width: 60%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     border-radius: 10px;
     background-color: rgb(73, 73, 73);
-    width: 100%;
+    padding: 5%;
+    gap: 10%;
+
+    margin-top: 10%;
 }
 
 .Highlight #testo {
@@ -28,6 +38,8 @@
     display: flex;
     flex-direction: column;
     text-align: justify;
+    padding: 10% 5%;
+    border-radius: 5px
 }
 
 .Highlight #immagine {
@@ -36,6 +48,8 @@
 
     border: 3px solid transparent;
     border-radius: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
 
     
     background:
@@ -56,7 +70,9 @@
         rgba(23,109,127,0.5)
         ) border-box;
 
-    width: 35%;
+    width: 100%;
+    min-height: 20%;
+    height: fit-content;
 
 
     color: #6a6a6a;
@@ -83,43 +99,11 @@
     z-index: 2;
 }
 
-@media ( min-width: 768px ) and ( max-width: 1464px) {
-
-
-
-}
-
-@media (min-width : 1465px) {
-    .ListaHighlight {
-        padding-top: 3vh;
-        width: 80%;
-        height: 110vh;
-        padding: 3%;
-        gap: 15%;
-        scrollbar-width: none;
-    }
-    .Highlight {         
-        width: 80%;
-        height: 38vh;
-        gap: 3%;
-        padding: 3% 3%;
-    }
-    .Highlight #testo {
-        padding: 10%, 5%;
-        border-radius: 5px;
-        width: 65%;
-    }
-}
-
-
-/*
-
-
 .Highlight #testo #Descrizione {
     color: white;
     font-size: 1rem;
     font-family: 'TestoBlog';
-    max-height: 50%;
+    min-height: 100%;
     height: fit-content;
     position: relative;
 
@@ -155,11 +139,15 @@
 }
 
 .Highlight #testo #Leggi {
-    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     background-color: rgb(73, 73, 73);
 
     position: absolute;
-    padding: 2vh 3%;
+    padding: 2vh 0%;
     bottom: -8%;
     width: 50%;
     height: 5%;
@@ -179,90 +167,43 @@
 .Highlight #testo #Leggi p {
 
     font-family: 'HeaderBlog';
-    font-size: larger;
+    text-align: center;
+    font-size: 0.9rem;
     text-decoration: none;
     color: rgb(216, 216, 216);
 }
 
-.Highlight #immagine.LeggiPost {
-    height: 40%;
-    border: 3px solid black;
-    background-color: green;
-    margin: 2%;
-}
-
-@media (max-width: 768px) {
+@media (min-width : 1465px) {
     .ListaHighlight {
-        display: flex;
         padding-top: 3vh;
-        flex-direction: column;
-        align-items: center;
-
-        overflow-y: scroll;
-        background-color: #ffffff00;
-
-        width: 90%;
-        height: 120vh;
-
+        width: 80%;
+        height: 110vh;
         padding: 3%;
-        gap: 15%;
-
         scrollbar-width: none;
     }
-    .Highlight {
-        display: flex;
-        width: 97%;
-        height: 50vh;
-        flex-direction: row;
-        gap: 3%;
-
+    .Highlight {         
+        height: 38vh;
         padding: 3% 3%;
-
-        border-radius: 10px;
-
-        background-color: rgb(73, 73, 73);
+        flex-direction: row;
+        gap: 3%
+    }
+    .Highlight #testo {
+        border-radius: 5px;
+        padding-top: 1%;
+        width: 65%;
     }
     .Highlight #testo #Titolo {
-        color: white;
-        font-size: clamp(19px, 2.4vw, 50px);
-        font-family: 'HeaderBlog';
-        font-weight: 900;
-        white-space: nowrap;
-
-        padding-bottom: 3%;
-        z-index: 2;
+        font-size: 2rem;
     }
-    .Highlight #testo #Descrizione {
-        color: white;
-        font-size: 1rem;
-        font-family: 'TestoBlog';
-        max-height: 50%;
-        height: fit-content;
-        position: relative;
 
-        overflow:hidden;
-        text-overflow: ellipsis;
-
-
-
-        display: -webkit-box;
-        line-clamp: 9;
-        -webkit-line-clamp: 9;
-        -webkit-box-orient: vertical;
-    
+    .Highlight #immagine {
+        height: 100%;
+        
     }
-    .Highlight #testo #Data {
-
-        position: absolute;
-        bottom: 0;
-        left: 0;
-
-
-        color: rgb(135, 135, 135);
-        font-family: "TestoBlog";
-        font-size: 1rem;
+    .Highlight #testo #Leggi p {
+        font-size: 1.2rem;
     }
-    
 }
 
-*/
+
+

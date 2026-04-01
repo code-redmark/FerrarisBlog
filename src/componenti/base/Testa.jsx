@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { SidebarContext } from "../../pagine/Home.jsx";
+import { SidebarContext } from "../../context/SidebarContext";
 import { useContext } from "react";
 
 import "../../stile/base/Testa.css"
@@ -7,7 +7,7 @@ import "../../stile/base/Testa.css"
 export default function Testa() {
     const { isOpen, setIsOpen } = useContext(SidebarContext);
     return (
-        <main>
+        <div>
             <div className='Testa'>
             <ul id='ListaTesta'>
                 <li>
@@ -31,7 +31,7 @@ export default function Testa() {
             </ul>
             </div>
             <div id='arcobaleno' style={{height: "3px"}}></div>
-        </main>
+        </div>
         
     )
 }

@@ -81,8 +81,7 @@ div#arcobaleno {
   src: url("/assets/font/Lexend-VariableFont_wght.ttf") format("truetype");
 }
 
-/* ===== DESKTOP ===== */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .pc {
     display: block;
   }
@@ -92,10 +91,9 @@ div#arcobaleno {
   }
 }
 
-
 .sidebar {
     position: absolute;
-    left: -36%;
+    display: none;
     width: 30%;
     height: 90vh;
     background: #222;
@@ -105,5 +103,5 @@ div#arcobaleno {
     z-index: 3;
 }
 .sidebar.shifted {
-    left: 0%
+    display: block;
 }

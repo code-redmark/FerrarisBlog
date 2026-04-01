@@ -11,11 +11,10 @@ export default function ListaHighlight() {
                     const classe = listaPost[highlight.id.slice(0, 2)]
                     const post = classe[highlight.id]
                     return (
-                        <div key={highlight.id}>
                             <Highlight
                             post={post}
+                            key={highlight.id}
                             />
-                        </div>
                     )
                 }
             )}

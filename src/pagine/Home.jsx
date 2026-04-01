@@ -33,24 +33,10 @@ export default function Home() {
     
     return (
         <div>
-            <div className="pc">
-
                 <div id="content">
                     <ListaClassi classi={classi}/>
                     <ListaHighlight/>
                 </div>
-
-            </div>
-
-            <div className="mobile">
-
-                <button className="sidebar_button" onClick={() => toggleBar(!barClass)}>LE CLASSI</button>
-                <div className={`sidebar ${barClass}`}>
-                    <ListaClassi classi={classi}/>
-                </div>
-
-            </div>
-
         </div>
         
     )

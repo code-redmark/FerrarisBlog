@@ -22,7 +22,7 @@ export function SidebarProvider({ children }) {
 
 export default function Home() {
 
-    const { isOpen } = useContext(SidebarContext);    
+      
     return (
         <div>
             <div className="pc">
@@ -37,9 +37,6 @@ export default function Home() {
             <div className="mobile">
                 <div id="content">
                     <ListaHighlight/>
-                    <div className={`sidebar ${isOpen ? 'shifted' : ''}`}>
-                        <ListaClassi/>
-                    </div>
                 </div>
             </div>
 

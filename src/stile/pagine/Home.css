@@ -1,37 +1,8 @@
-.sidebar {
-    position: absolute;
-    left: -36%;
-    width: 30%;
-    height: 90vh;
-    background: #222;
-    color: white;
-    transition: left 0.3s;
-    padding: 20px;
-    z-index: 3;
-}
-.sidebar.shifted {
-    left: 0%
-}
+
 
 #content {
     height: 950px;
     display: flex;
     flex-direction: row;
     background-color: #222;
-}
-
-.bgcolor {
-    background-color: white;
-}
-
-#lista {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    width: 15%;
-}
-
-#highlights {
-    width: 85%;
 }

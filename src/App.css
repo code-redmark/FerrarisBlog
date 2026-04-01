@@ -1,3 +1,4 @@
+/* ===== BASE (mobile-first / generico) ===== */
 * {
   margin: 0;
 }
@@ -11,40 +12,36 @@
 }
 
 div#arcobaleno {
-    content: "";
-    background: linear-gradient(45deg, #176d7f, #7b8230, #b28902, #c88e10, #92441f, #b5363b, #ab2443, #831c88, rgb(82, 43, 82), rgb(130, 0, 0));
-    width: 100%;
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #176d7f,
+    #7b8230,
+    #b28902,
+    #c88e10,
+    #92441f,
+    #b5363b,
+    #ab2443,
+    #831c88,
+    rgb(82, 43, 82),
+    rgb(130, 0, 0)
+  );
+  width: 100%;
 }
 
 .pc {
-    display: block;
+  display: none;
 }
 
 .mobile {
-    display: none;
+  display: block;
 }
 
-@media (max-width: 768px) {
-    .pc {
-        display: none;
-    }
-
-    .mobile {
-        display: block;
-    }
-    div#arcobaleno {
-      content: "";
-      background: linear-gradient(45deg, #176d7f, #7b8230, #b28902, #c88e10, #92441f, #b5363b, #ab2443, #831c88, rgb(82, 43, 82), rgb(130, 0, 0));
-      width: 100%;
-    }
-}
-
-/* Questa è la roba della scrollbar, è copiata da un sito molto bello che te le fa generare
-https://scrollbar.app non chiedetemi assolutamente cosa fa tutta questa roba               */
+/* Scrollbar */
 :root {
   --sb-track-color: #3b3b3b;
   --sb-thumb-color: #868484;
-  --sb-thumb-color-hover: #5a5a5a; /* Colore più scuro per l'hover */
+  --sb-thumb-color-hover: #5a5a5a;
   --sb-size: 10px;
 }
 
@@ -62,26 +59,51 @@ https://scrollbar.app non chiedetemi assolutamente cosa fa tutta questa roba    
   border-radius: 0px;
 }
 
-/* Hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--sb-thumb-color-hover);
 }
 
 @supports (scrollbar-color: auto) {
-    * {
-        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-        scrollbar-width: thin; /* Opzionale, per Firefox */
-    }
+  * {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    scrollbar-width: thin;
+  }
+}
+
+/* Font-face */
+@font-face {
+  font-family: "HeaderBlog";
+  src: url("/assets/font/Lexend-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "HeaderBlog";
-    src: url("/assets/font/Lexend-VariableFont_wght.ttf") format('truetype');
+  font-family: "TestoBlog";
+  src: url("/assets/font/Lexend-VariableFont_wght.ttf") format("truetype");
 }
 
-@font-face {
-    font-family: "TestoBlog";
-    src: url("/assets/font/Lexend-VariableFont_wght.ttf") format('truetype');
+/* ===== DESKTOP ===== */
+@media (min-width: 1024px) {
+  .pc {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
 }
 
 
+.sidebar {
+    position: absolute;
+    left: -36%;
+    width: 30%;
+    height: 90vh;
+    background: #222;
+    color: white;
+    transition: left 0.3s;
+    padding: 20px;
+    z-index: 3;
+}
+.sidebar.shifted {
+    left: 0%
+}

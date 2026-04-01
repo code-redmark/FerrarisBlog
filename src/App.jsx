@@ -12,42 +12,44 @@ import PaginaPost from './pagine/PaginaPost.jsx'
 import ChiSiamo from './pagine/ChiSiamo.jsx'
 import Testa from './componenti/base/Testa.jsx'
 import Piedi from './componenti/base/Piedi.jsx'
-
+import Sidebar from './componenti/base/Sidebar.jsx'
 
 function App() {
+
+
   return (
     <SidebarProvider>
-    <main>
-      <Testa/>
-
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-        
-        {datiClassi.classi.map(classe => 
-          <Route 
-              path={`/classe/${classe.id}`} 
-              element={<PaginaClasse anno={classe.anno} sezione={classe.sezione}/>}
-            />)}
-            
-        {
-          Object.entries(datiPost).map(([idClasse, listaPosts]) =>
-            Object.values(listaPosts).map(post => 
-              <Route 
-              path={`/classe/${idClasse}/post/${post.slug}`}
-              element={<PaginaPost post={post}/>}>
+      <Sidebar />
+      <main>
+        <Testa/>
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
           
-              </Route>
+          {datiClassi.classi.map(classe => 
+            <Route 
+                path={`/classe/${classe.id}`} 
+                element={<PaginaClasse anno={classe.anno} sezione={classe.sezione}/>}
+              />)}
+              
+          {
+            Object.entries(datiPost).map(([idClasse, listaPosts]) =>
+              Object.values(listaPosts).map(post => 
+                <Route 
+                path={`/classe/${idClasse}/post/${post.slug}`}
+                element={<PaginaPost post={post}/>}>
             
-            ))
-        
-        }
+                </Route>
+              
+              ))
+          
+          }
 
-        <Route path="/ChiSiamo" element={<ChiSiamo />} />
+          <Route path="/ChiSiamo" element={<ChiSiamo />} />
 
-      </Routes>
+        </Routes>
 
-      <Piedi/>
-    </main>
+        <Piedi/>
+      </main>
     </SidebarProvider>
     
   )

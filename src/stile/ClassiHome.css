@@ -17,7 +17,7 @@
     font-size: large;
     font-family: "HeaderBlog";
 
-    height: 22%;
+    min-height: 15%;
 
     border: 3px solid transparent;
     border-radius: 10px;
@@ -27,7 +27,7 @@
 
     /* sfondo interno fisso + bordo con gradiente più tenue */
     background:
-        linear-gradient(rgb(71,71,71), rgb(84,84,84)) padding-box,
+        linear-gradient(rgb(71,71,71), rgb(71,71,71)) padding-box,
         linear-gradient(45deg,
             rgba(23,109,127,0.5),
             rgba(23,109,127,0.5),
@@ -72,31 +72,18 @@
 }
 
 .Sezione {
-    font-size: 45px;
-
-    background: linear-gradient(
-        90deg,
-        rgba(12, 176, 208, 0.5) 0%,
-        rgba(187, 203, 11, 0.5) 10%,
-        rgba(231, 178, 6, 0.5) 20%,
-        rgba(215, 10, 10, 0.5) 50%,
-        rgba(12, 176, 208, 0.5) 60%,
-        rgba(187, 203, 11, 0.5) 70%,
-        rgba(193, 11, 193, 0.5) 90%,
-        rgba(12, 176, 208, 0.5) 100%
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-
-    background-size: 800% 200%;
-    animation: moveRainbowBg 10s linear infinite;
+    font-size: clamp(18px, 10vw, 35px);
+    color: #cfcfcf;
+    padding-left: 2vw;
+    font-weight: 600;
 }
 .Numero_Post {
     font-size: 20px;
     margin-left: auto;
     margin-top: 8px;
+    color: #9d9c9c;
+    font-style: italic;
+    font-weight: 500;
 }
 .Contenitore_Numero_Post {
     width: 50%;
@@ -117,11 +104,14 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;  
     overflow: hidden;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
+    text-align: justify;
     justify-content: center;   
 }
 .Biografia_Classe {
-    font-size: 19px;
+    color: #9d9c9c;
+    font-size: clamp(19px, 10vw, 22px);
+    font-weight: 300;
     padding-left: 6px;
     padding-right: 6px;
 }

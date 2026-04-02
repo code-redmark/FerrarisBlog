@@ -32,8 +32,8 @@ export default function PaginaClasse({ anno, sezione, bio }) {
             <div id="ListaPost">
                 {
                     postsClasse.map(post => (
-                        <Link to={`/classe/${chiave}/post/${post.slug}`}>
-                                <div className="Post" key={post.id}>
+                        <Link to={`/classe/${chiave}/post/${post.slug}` } key={post.id}>
+                                <div className="Post">
                                     {post.title} - {post.dataPost}
                                 </div>
                         </Link>

@@ -22,7 +22,9 @@ export default function Testa() {
                         <p className='TestoHome'>Chi Siamo</p>
                     <div id='arcobaleno' className="arcobaleno_tasto_chi_siamo"></div>
                     </Link>
-                    
+
+                    <div className="Div_Spaziatrice"></div>
+
                     <div className="open_scrollbar_div">
                         <button onClick={() => setIsOpen(!isOpen)} id="scrlbr_btn" className="open_scrollbar_button">
                             <p className='TestoScrollbar'>{isOpen ? "Chiudi" : "Apri"} Lista Classi</p>

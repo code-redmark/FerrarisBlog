@@ -92,16 +92,132 @@ div#arcobaleno {
 }
 
 .sidebar {
-    position: absolute;
-    display: none;
-    width: 66%;
-    height: 90vh;
+    position: fixed;
+    margin-left: -100%;
+    width: 70%;
+    height: 102.4%;
     background: #222;
     color: white;
     transition: left 0.3s;
     padding: 20px;
     z-index: 3;
+    transition: margin-left 0.3s ease;
 }
 .sidebar.shifted {
-    display: block;
+    margin-left: 0%;
+}
+
+.Home_Link {
+  text-decoration: none;
+}
+
+.ChiSiamo_Link {
+  text-decoration: none;
+}
+
+.Testo_Classi_Div {
+  width: 100%;
+  height: 65px;
+  font-size: 21px;
+  font-family: 'HeaderBlog';
+  color: white;
+  display: flex;
+  justify-content: baseline;
+  align-items: last baseline;
+}
+
+.Opzione_Home_Div {
+  width: 100%;
+  height: 45px;
+}
+
+.Opzione_Home_Button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #00000000;
+  font-size: 20px;
+  font-family: 'HeaderBlog';
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 30px;
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+}
+
+.Opzione_Home_Button:hover {
+  background-color: #49494981
+}
+
+.Opzione_Home_Logo_Div {
+  width: 30%;
+  height: 100%;
+  border: 1px solid green;
+}
+
+.Opzione_Home_Testo_Div {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+
+.Opzione_ChiSiamo_Div {
+  width: 100%;
+  height: 45px;
+}
+
+.Opzione_ChiSiamo_Button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #00000000;
+  font-size: 20px;
+  font-family: 'HeaderBlog';
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 30px;
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+}
+
+.Opzione_ChiSiamo_Button:hover {
+  background-color: #49494981
+}
+
+.Opzione_ChiSiamo_Logo_Div {
+  width: 30%;
+  height: 100%;
+  border: 1px solid green;
+}
+
+.Opzione_ChiSiamo_Testo_Div {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+
+.Logo_Sidebar {
+  position: relative;
+  width: 90%;
+  height: auto;
+}
+
+.Sidebar_Logo_Div {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Opzioni_Div {
+  width: 100%;
+  height: 165px;
 }

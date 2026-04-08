@@ -14,7 +14,7 @@ The project uses Git to practice code management and facilitate collaborative wo
 ### Current Status
 
 **Frontend**
-- [ ] Main pages: Home, Articles, Contacts
+- [x] Main pages: Home, Articles, Contacts
 - [ ] Responsive layout for desktop and mobile
 - [x] Navigation between sections and categories
 - [ ] Display articles with text and images

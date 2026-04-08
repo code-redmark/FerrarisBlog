@@ -100,7 +100,7 @@ div#arcobaleno {
     color: white;
     transition: left 0.3s;
     padding: 20px;
-    z-index: 3;
+    z-index: 10;
     transition: margin-left 0.3s ease;
 }
 .sidebar.shifted {
@@ -154,13 +154,7 @@ div#arcobaleno {
 .Opzione_Home_Logo_Div {
   width: 30%;
   height: 100%;
-  border: 1px transparent;
-}
-
-.Opzione_Home_Logo_Div img {
-  object-fit:scale-down;
-  height: 100%;
-  width: 100%;
+  border: 1px solid green;
 }
 
 .Opzione_Home_Testo_Div {
@@ -199,7 +193,7 @@ div#arcobaleno {
 .Opzione_ChiSiamo_Logo_Div {
   width: 30%;
   height: 100%;
-  border: 1px transparent;
+  border: 1px solid green;
 }
 
 .Opzione_ChiSiamo_Testo_Div {
@@ -227,15 +221,3 @@ div#arcobaleno {
   width: 100%;
   height: 165px;
 }
-
-@font-face {
-    font-family: "HeaderBlog";
-    src: url("/assets/font/Lexend-VariableFont_wght.ttf") format('truetype');
-}
-
-@font-face {
-    font-family: "TestoBlog";
-    src: url("/assets/font/Lexend-VariableFont_wght.ttf") format('truetype');
-}
-
-

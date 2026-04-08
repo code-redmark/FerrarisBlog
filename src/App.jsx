@@ -3,6 +3,7 @@ import './App.css'
 
 import Testa from './componenti/base/Testa.jsx'
 import Piedi from './componenti/base/Piedi.jsx'
+import Sidebar from './componenti/base/Sidebar.jsx'
 
 import Home from './pagine/Home.jsx'
 import PaginaClasse from './pagine/PaginaClasse.jsx'
@@ -16,6 +17,8 @@ function App() {
 
   return (
     <main>
+      <SidebarProvider>
+      <Sidebar/>
       <Testa/>
         <Routes>
           <Route path='/' element={<Home />}/>
@@ -24,6 +27,7 @@ function App() {
           <Route path='/classe/:ASclasse/:idClasse/post/:slug/:idPost' element={<PaginaPost />}/>
         </Routes>
       <Piedi/>
+      </SidebarProvider>
     </main>
     
   )

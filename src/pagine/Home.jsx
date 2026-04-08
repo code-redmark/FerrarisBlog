@@ -4,7 +4,7 @@ import ListaHighlight from "../componenti/Home/ListaHighlight.jsx"
 import ListaClassi from "../componenti/Home/ListaClassi.jsx"
 
 import "../stile/pagine/Home.css"
-import "../stile/ClassiHome.css"
+import "../stile/ListaClassi.css"
 
 import { useEffect, useState } from "react"
 
@@ -34,7 +34,10 @@ export default function Home() {
     return (
         <div>
                 <div id="content">
-                    <ListaClassi classi={classi}/>
+                    <div id="ClassiHome">   
+                        <ListaClassi classi={classi}/>
+                    </div>
+                    
                     <ListaHighlight/>
                 </div>
         </div>

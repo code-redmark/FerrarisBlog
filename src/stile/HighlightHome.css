@@ -13,8 +13,10 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 3%;
+    padding: 0%, 3%;
+    padding-left: 6%;
     gap: 15%;
+    overflow-y: scroll;
     
 }
 
@@ -50,6 +52,7 @@
     border-radius: 20px;
     padding-left: 2%;
     padding-right: 2%;
+    margin-bottom: 5%;
 
     
     background:
@@ -72,6 +75,7 @@
 
     width: 100%;
     min-height: 20%;
+    max-height: 75%;
     height: fit-content;
 
 
@@ -85,6 +89,13 @@
     background-position: 0 0, 0 0;
 
     animation: moveRainbowBorder 10s linear infinite;
+}
+
+.Highlight #immagine img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 .Highlight #testo #Titolo {
@@ -173,7 +184,18 @@
     color: rgb(216, 216, 216);
 }
 
-@media (min-width : 1465px) {
+@media (min-width: 768px) {
+    .ListaHighlight {
+        padding-top: 3vh;
+        width: 80%;
+        height: 110vh;
+        padding: 3%;
+        scrollbar-width: none;
+    }
+
+}
+
+@media (min-width : 1300px) {
     .ListaHighlight {
         padding-top: 3vh;
         width: 80%;
@@ -198,12 +220,9 @@
 
     .Highlight #immagine {
         height: 100%;
-        
+        max-width: 50%;
     }
     .Highlight #testo #Leggi p {
         font-size: 1.2rem;
     }
 }
-
-
-

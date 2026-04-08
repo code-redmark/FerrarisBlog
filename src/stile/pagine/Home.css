@@ -5,11 +5,20 @@
     background-color: #222;
     justify-content: center;
     align-content: center;
-    
+    gap: 5%;
 }
 
-@media (min-width: 768px) and (max-width: 1464px) {
+#content #ClassiHome {
+    display: none;
+    width: 30%;
+    overflow-y: scroll;
+}
+
+@media (min-width: 768px) {
     #content {
-        gap: 20px;
+        gap: 10%;
+    }
+    #content #ClassiHome {
+        display: flex;
     }
 }

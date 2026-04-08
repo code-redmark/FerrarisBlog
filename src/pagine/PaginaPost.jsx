@@ -25,12 +25,13 @@ export default function PaginaPost() {
     return (
         <div id="Pagina">
             <div className='TestaPost'>
-                {post.title}
-                <p>
-                    {post.description}
-                </p>
-
-                <img id="coverPost" src={post.cover || null}/> {/* cover sarà aggiunta col prossimo merge */}
+                <div id='cover'>
+                    <img id="coverPost" src={`${import.meta.env.VITE_CLOUDINARY_URL}/${post.cover}`} alt="foto"/>
+                </div>
+                <div id='Testo'>
+                    <h1>{post.title}</h1>
+                    <p>{post.description}</p>
+                </div>
             </div>
 
             <div className='CorpoPost'>

@@ -51,11 +51,13 @@ async function seed() {
     const testTeca = {
         title: "Incontro a Castel Capuano",
         description: "Il 28 marzo incontreremo la scrittrice Titti Marrone a Castel Capuano, per parlare del suo libro \\\"Primmammore\\\"",
+        cover: 'castel-capuano_sklbvw',
         slug: "incontro-castel-capuano-3M-2026-03-04T09:00:00.000Z",
         class: classi[0]._id,
         images: [
-            'ciao.jpg',
-            'images_ufce3x'
+            'FotoPlanning_fyl8yq',
+            'castel-capuano_sklbvw',
+            'Primmammore_xzinye'
         ]
     }
 
@@ -64,8 +66,9 @@ async function seed() {
     const postDiEsempio = [
         {
             title: "Le nostre riflessioni",
+            cover: 'Riflessioni_ggiytc',
             description: "I pensieri e le riflessioni che abbiamo fatto leggendo Primmammore",
-            content: "Riflessioni...",
+            content: "[Work In Progress]",
             dataPost: "2026-03-09T09:00:00.000Z",
             slug: "le-nostre-riflessioni-3M-2026-03-09T09:00:00.000Z",
             class: classi[0]._id,
@@ -73,10 +76,21 @@ async function seed() {
         },
         {
             title: "Il Backstage",
+            cover: 'Backstage_yrf2oh',
             description: "Mauro Romano ha raccolto diversi momenti durante la produzione di FerrarisBlog e durante il lavoro che abbiamo preparato per l'incontro",
-            content: "Sopra sono riportati tutti i video ed il footage di Mauro",
+            content: "[Work In Progress, riportare i video di Mauro please]",
             dataPost: "2026-03-20T09:00:00.000Z",
             slug: "il-backstage-3M-2026-03-20T09:00:00.000Z",
+            class: classi[0]._id,
+            parentTeca: insertedParent._id
+        },
+        {
+            title: "La mappa concettuale",
+            cover: 'Mappa_m5n60x',
+            description: "Federico Prorogiglio e Valentina Gatto hanno esposto una mappa concettuale sul libro Primmammore che individua e tratta il tema principale del libro, il Patriarcato",
+            content: "[Work In Progress (Spiegazione della mappa)]",
+            dataPost: "2026-04-08T09:00:00.000Z",
+            slug: "la-mappa-concettuale-3M-2026-04-08T09:00:00.000Z",
             class: classi[0]._id,
             parentTeca: insertedParent._id
         }

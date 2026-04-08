@@ -105,64 +105,103 @@ img#logo {
     transition: background-color 0.3s;
 }
 
-.TastoHome{
-    text-decoration: none;
-    margin-left: 75px;
-}
-
-.ChiSiamo{
-    text-decoration: none;
-    margin-left: 50px;
-}
-
-.TestoHome{
-    font-family: 'HeaderBlog';
-    font-size: 180%;
-    color: white;
+.test {
+    position: relative;
+    box-sizing: border-box;
+    width: 200px;
+    margin: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    font-family: 'contenuto';
+    font-size: 21px;
     font-weight: bold;
+    color: white;
     text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px;
 }
 
+.test::after {
+    content: "";
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8px;
+    width: 80%;
+    height: 3px;
 
+    background: linear-gradient(
+        45deg,
+        #176d7f,
+        #7b8230,
+        #b28902,
+        #c88e10,
+        #92441f,
+        #b5363b,
+        #ab2443,
+        #831c88,
+        rgb(156, 84, 156),
+        rgb(130, 0, 0)
+    );
 
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+@media (min-width: 768px) {
+
+    .Testa {
+        background-color: #161616;
+        width: 100%;
+        height: 12vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        display: flex;
+    }
 
     img#logo {
         height: 60px;
     }
 
-.TastoHome{
-    text-decoration: none;
-    margin-left: 75px;
-    display: block;
-}
+    .TastoHome{
+        text-decoration: none;
+        margin-left: 75px;
+        display: block;
+    }
 
-.ChiSiamo{
-    text-decoration: none;
-    margin-left: 50px;
-    display: block;
-}
+    .ChiSiamo{
+        text-decoration: none;
+        margin-left: 50px;
+        display: block;
+    }
 
-.TestoHome{
-    font-family: 'HeaderBlog';
-    font-size: 180%;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
+    .TestoHome{
+        font-family: 'HeaderBlog';
+        font-size: 180%;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
 
-.arcobaleno_tasto_home {
-    height: 2px; 
-    width: 155px;
-}
+    .arcobaleno_tasto_home {
+        height: 2px; 
+        width: 155px;
+    }
 
-.arcobaleno_tasto_chi_siamo {
-    height: 2px; 
-    width: 155px;
-}
+    .arcobaleno_tasto_chi_siamo {
+        height: 2px; 
+        width: 155px;
+    }
 
-.open_scrollbar_div {
-    display: none;
-}
-.Div_Spaziatrice {
-    display: none;
+    .open_scrollbar_div {
+        display: none;
+    }
+    .Div_Spaziatrice {
+        display: none;
+    }
+
+    
 }

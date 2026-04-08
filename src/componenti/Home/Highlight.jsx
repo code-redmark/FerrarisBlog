@@ -76,7 +76,7 @@ export default function Highlight({ highlight, collezione }) {
             </div>
 
             <div id="immagine">
-                    <img alt="Nessuna foto, sono timidi :("></img>                            
+                    <img src={`${import.meta.env.VITE_CLOUDINARY_URL}/${highlight.cover}`} alt="Nessuna foto, sono timidi :("></img>                            
             </div>
         </div>
     )

@@ -227,3 +227,15 @@ div#arcobaleno {
   width: 100%;
   height: 165px;
 }
+
+@font-face {
+    font-family: "HeaderBlog";
+    src: url("/assets/font/Lexend-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "TestoBlog";
+    src: url("/assets/font/Lexend-VariableFont_wght.ttf") format('truetype');
+}
+
+

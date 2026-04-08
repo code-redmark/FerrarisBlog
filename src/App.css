@@ -154,7 +154,13 @@ div#arcobaleno {
 .Opzione_Home_Logo_Div {
   width: 30%;
   height: 100%;
-  border: 1px solid green;
+  border: 1px transparent;
+}
+
+.Opzione_Home_Logo_Div img {
+  object-fit:scale-down;
+  height: 100%;
+  width: 100%;
 }
 
 .Opzione_Home_Testo_Div {
@@ -193,7 +199,7 @@ div#arcobaleno {
 .Opzione_ChiSiamo_Logo_Div {
   width: 30%;
   height: 100%;
-  border: 1px solid green;
+  border: 1px transparent;
 }
 
 .Opzione_ChiSiamo_Testo_Div {

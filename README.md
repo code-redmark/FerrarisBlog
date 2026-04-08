@@ -57,7 +57,7 @@ Il progetto utilizza Git per praticare la gestione del codice e facilitare il la
 ### Stato Attuale
 
 **Frontend**
-- [ ] Pagine principali: Home, Articoli, Contatti
+- [x] Pagine principali: Home, Articoli, Contatti
 - [ ] Layout responsive per desktop e mobile
 - [x] Navigazione tra sezioni e categorie
 - [ ] Visualizzazione articoli con testo e immagini

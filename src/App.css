@@ -1,3 +1,4 @@
+/* ===== BASE (mobile-first / generico) ===== */
 * {
   margin: 0;
 }
@@ -11,35 +12,36 @@
 }
 
 div#arcobaleno {
-    content: "";
-    background: linear-gradient(45deg, #176d7f, #7b8230, #b28902, #c88e10, #92441f, #b5363b, #ab2443, #831c88, rgb(82, 43, 82), rgb(130, 0, 0));
-    width: 100%;
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #176d7f,
+    #7b8230,
+    #b28902,
+    #c88e10,
+    #92441f,
+    #b5363b,
+    #ab2443,
+    #831c88,
+    rgb(82, 43, 82),
+    rgb(130, 0, 0)
+  );
+  width: 100%;
 }
 
 .pc {
-    display: block;
+  display: none;
 }
 
 .mobile {
-    display: none;
+  display: block;
 }
 
-@media (max-width: 768px) {
-    .pc {
-        display: none;
-    }
-
-    .mobile {
-        display: block;
-    }
-}
-
-/* Questa è la roba della scrollbar, è copiata da un sito molto bello che te le fa generare
-https://scrollbar.app non chiedetemi assolutamente cosa fa tutta questa roba               */
+/* Scrollbar */
 :root {
   --sb-track-color: #3b3b3b;
   --sb-thumb-color: #868484;
-  --sb-thumb-color-hover: #5a5a5a; /* Colore più scuro per l'hover */
+  --sb-thumb-color-hover: #5a5a5a;
   --sb-size: 10px;
 }
 
@@ -57,16 +59,173 @@ https://scrollbar.app non chiedetemi assolutamente cosa fa tutta questa roba    
   border-radius: 0px;
 }
 
-/* Hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--sb-thumb-color-hover);
 }
 
 @supports (scrollbar-color: auto) {
-    * {
-        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-        scrollbar-width: thin; /* Opzionale, per Firefox */
-    }
+  * {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    scrollbar-width: thin;
+  }
+}
+
+/* Font-face */
+@font-face {
+  font-family: "HeaderBlog";
+  src: url("/assets/font/Lexend-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TestoBlog";
+  src: url("/assets/font/Lexend-VariableFont_wght.ttf") format("truetype");
+}
+
+@media (min-width: 768px) {
+  .pc {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+.sidebar {
+    position: fixed;
+    margin-left: -100%;
+    width: 70%;
+    height: 102.4%;
+    background: #222;
+    color: white;
+    transition: left 0.3s;
+    padding: 20px;
+    z-index: 3;
+    transition: margin-left 0.3s ease;
+}
+.sidebar.shifted {
+    margin-left: 0%;
+}
+
+.Home_Link {
+  text-decoration: none;
+}
+
+.ChiSiamo_Link {
+  text-decoration: none;
+}
+
+.Testo_Classi_Div {
+  width: 100%;
+  height: 65px;
+  font-size: 21px;
+  font-family: 'HeaderBlog';
+  color: white;
+  display: flex;
+  justify-content: baseline;
+  align-items: last baseline;
+}
+
+.Opzione_Home_Div {
+  width: 100%;
+  height: 45px;
+}
+
+.Opzione_Home_Button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #00000000;
+  font-size: 20px;
+  font-family: 'HeaderBlog';
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 30px;
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+}
+
+.Opzione_Home_Button:hover {
+  background-color: #49494981
+}
+
+.Opzione_Home_Logo_Div {
+  width: 30%;
+  height: 100%;
+  border: 1px transparent;
+}
+
+.Opzione_Home_Logo_Div img {
+  object-fit:scale-down;
+  height: 100%;
+  width: 100%;
+}
+
+.Opzione_Home_Testo_Div {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+
+.Opzione_ChiSiamo_Div {
+  width: 100%;
+  height: 45px;
+}
+
+.Opzione_ChiSiamo_Button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #00000000;
+  font-size: 20px;
+  font-family: 'HeaderBlog';
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 30px;
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+}
+
+.Opzione_ChiSiamo_Button:hover {
+  background-color: #49494981
+}
+
+.Opzione_ChiSiamo_Logo_Div {
+  width: 30%;
+  height: 100%;
+  border: 1px transparent;
+}
+
+.Opzione_ChiSiamo_Testo_Div {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+
+.Logo_Sidebar {
+  position: relative;
+  width: 90%;
+  height: auto;
+}
+
+.Sidebar_Logo_Div {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Opzioni_Div {
+  width: 100%;
+  height: 165px;
 }
 
 @font-face {

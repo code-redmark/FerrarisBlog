@@ -1,3 +1,4 @@
+import { SidebarProvider } from "./context/SidebarContext.jsx"
 import './App.css'
 
 import Testa from './componenti/base/Testa.jsx'
@@ -11,6 +12,8 @@ import { Route, Routes } from 'react-router-dom'
 import PaginaPost from './pagine/PaginaPost.jsx'
 
 function App() {
+
+
   return (
     <main>
       <Testa/>

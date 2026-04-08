@@ -1,35 +1,40 @@
 import { Link } from 'react-router-dom'
+import { SidebarContext } from "../../context/SidebarContext";
+import { useContext } from "react";
 
 import "../../stile/base/Testa.css"
 
 export default function Testa() {
+    const { isOpen, setIsOpen } = useContext(SidebarContext);
     return (
-        <main>
+        <div>
             <div className='Testa'>
             <ul id='ListaTesta'>
                 <li>
                     <Link to="/">
                         <img id="logo" src="/FerrarisBlog/assets/img/logolight.png" alt="logo" />
                     </Link>
-
-                    <Link to="/" className='TastoHome'>
+                        <Link to="/" className='TastoHome'>
                         <p className='TestoHome'>Home</p>
-                        <div id='arcobaleno' style={{height: "2px", width: "90px"}}></div>
+                        <div id='arcobaleno' className="arcobaleno_tasto_home"></div>
                     </Link>
-
-                    <Link className='ChiSiamo'>
+                    <Link to="/ChiSiamo" className='ChiSiamo'>
                         <p className='TestoHome'>Chi Siamo</p>
-                        <div id='arcobaleno' style={{height: "2px", width: "155px"}}></div>
+                    <div id='arcobaleno' className="arcobaleno_tasto_chi_siamo"></div>
                     </Link>
 
-                    <Link className='TastoLogin' to='/login'>
-                        <p className='TestoHome'>   Login</p>
-                    </Link>
+                    <div className="Div_Spaziatrice"></div>
+
+                    <div className="open_scrollbar_div">
+                        <button onClick={() => setIsOpen(!isOpen)} id="scrlbr_btn" className="open_scrollbar_button">
+                            <p className='TestoScrollbar'>{isOpen ? "Chiudi" : "Apri"} Lista Classi</p>
+                        </button>
+                    </div>
                 </li>
             </ul>
             </div>
             <div id='arcobaleno' style={{height: "3px"}}></div>
-        </main>
+        </div>
         
     )
 }

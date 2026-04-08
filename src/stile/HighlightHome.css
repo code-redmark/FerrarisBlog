@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 @keyframes moveRainbowBorder {
     0%   { background-position: 0 0, 0 0; }
     50%  { background-position: 0 0, 100% 100%; }
@@ -6,51 +10,36 @@
 
 .ListaHighlight {
     display: flex;
-    padding-top: 3vh;
     flex-direction: column;
     align-items: center;
-
-    overflow-y: scroll;
-    background-color: #ffffff00;
-
-    width: 80%;
-    height: 120vh;
-
+    width: 100%;
     padding: 3%;
     gap: 15%;
-
-    scrollbar-width: none;
+    
 }
 
 .Highlight {
+    max-width: 90%;
+    min-width: 60%;
     display: flex;
-    width: 80%;
-    height: 20vh;
-    flex-direction: row;
-    gap: 3%;
-
-    padding: 3% 3%;
-
+    flex-direction: column-reverse;
     border-radius: 10px;
-
     background-color: rgb(73, 73, 73);
+    padding: 5%;
+    gap: 10%;
+
+    margin-top: 10%;
 }
 
 .Highlight #testo {
-
-    padding: 10%, 5%;
-
+    outline: 2px solid rgb(42, 42, 42);
+    outline-offset: 5px;
     position: relative;
     display: flex;
     flex-direction: column;
-
     text-align: justify;
-
-    border-radius: 5px;
-
-    outline: 2px solid rgb(42, 42, 42);
-    outline-offset: 5px;
-    width: 65%;
+    padding: 10% 5%;
+    border-radius: 5px
 }
 
 .Highlight #immagine {
@@ -58,7 +47,9 @@
     flex-direction: column;
 
     border: 3px solid transparent;
-    border-radius: 10px;
+    border-radius: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
 
     
     background:
@@ -79,14 +70,16 @@
         rgba(23,109,127,0.5)
         ) border-box;
 
-    width: 35%;
+    width: 100%;
+    min-height: 20%;
+    height: fit-content;
 
 
     color: #6a6a6a;
     font-family: "TestoBlog";
     text-align: center;
     justify-content: center;
-    font-size: x-large;
+    font-size: clamp(16px, 5vw, 30px);
 
     background-size: 100% 200%;
     background-position: 0 0, 0 0;
@@ -95,6 +88,7 @@
 }
 
 .Highlight #testo #Titolo {
+    text-overflow: hidden;
     color: white;
     font-size: clamp(16px, 2.4vw, 50px);
     font-family: 'HeaderBlog';
@@ -109,7 +103,7 @@
     color: white;
     font-size: 1rem;
     font-family: 'TestoBlog';
-    max-height: 50%;
+    min-height: 100%;
     height: fit-content;
     position: relative;
 
@@ -145,34 +139,71 @@
 }
 
 .Highlight #testo #Leggi {
-    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     background-color: rgb(73, 73, 73);
-    border: 2px solid rgb(42, 42, 42);
-    border-radius: 5px;
 
     position: absolute;
-    padding: 2vh 3%;
+    padding: 2vh 0%;
     bottom: -8%;
-    width: 20%;
+    width: 50%;
     height: 5%;
     left: 67%;
+
+    border: 2px solid #2a2a2a;
+    border-radius: 10px;
+
+    width: 20%;
+
+    background-size: 100% 200%;
+    background-position: 0 0, 0 0;
+
+    animation: moveRainbowBorder 10s linear infinite;
 }
 
 .Highlight #testo #Leggi p {
 
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: large;
+    font-family: 'HeaderBlog';
+    text-align: center;
+    font-size: 0.9rem;
     text-decoration: none;
     color: rgb(216, 216, 216);
 }
 
-.Highlight #immagine.LeggiPost {
-    height: 40%;
-    border: 3px solid black;
-    background-color: green;
-    margin: 2%;
+@media (min-width : 1465px) {
+    .ListaHighlight {
+        padding-top: 3vh;
+        width: 80%;
+        height: 110vh;
+        padding: 3%;
+        scrollbar-width: none;
+    }
+    .Highlight {         
+        height: 38vh;
+        padding: 3% 3%;
+        flex-direction: row;
+        gap: 3%
+    }
+    .Highlight #testo {
+        border-radius: 5px;
+        padding-top: 1%;
+        width: 65%;
+    }
+    .Highlight #testo #Titolo {
+        font-size: 2rem;
+    }
+
+    .Highlight #immagine {
+        height: 100%;
+        
+    }
+    .Highlight #testo #Leggi p {
+        font-size: 1.2rem;
+    }
 }
+
 
 

@@ -1,13 +1,16 @@
 .Testa {
-    overflow: scroll;
-
     background-color: #161616;
-    width: 100vw;
-    height: 12vh;
+    width: 100%;
+    height: 10vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
+    display: flex;
+}
 
-    padding-top: 1%;
+.Div_Spaziatrice {
+    flex-grow: 0.99;
+    background-color: red;
 }
 
 ul#ListaTesta {
@@ -15,19 +18,73 @@ ul#ListaTesta {
     align-items: center;
     list-style: none;
     gap: 20px;
+    margin: 0;
+    width: 100%;
     padding-inline-start: 20px;
 }
 
 ul#ListaTesta li {
     display: flex;
     align-items: center;
+    width: 100%;
     flex: 0 0 auto;
 }
 
 img#logo {
-    height: 60px;
+    height: 40px;
     width: auto;
     display: block;
+}
+
+.TastoHome{
+    text-decoration: none;
+    margin-left: 25px;
+    display: none;
+}
+
+.ChiSiamo {
+    text-decoration: none;
+    margin-left: 30px;
+    display: none;
+}
+
+.TestoHome{
+    font-family: 'HeaderBlog';
+    font-size: 19px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.arcobaleno_tasto_home {
+    height: 2px; 
+    width: 70px;
+}
+
+.arcobaleno_tasto_chi_siamo {
+    height: 2px; 
+    width: 70px;
+}
+
+.open_scrollbar_div {
+    display: block;
+    width:75px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.open_scrollbar_button {
+    background-color: #161616;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.TestoScrollbar{
+    font-size: 12px;
+    font-family: 'HeaderBlog';
+    color: white;
 }
 
 @font-face {
@@ -69,4 +126,43 @@ img#logo {
 
 
 
+    img#logo {
+        height: 60px;
+    }
 
+.TastoHome{
+    text-decoration: none;
+    margin-left: 75px;
+    display: block;
+}
+
+.ChiSiamo{
+    text-decoration: none;
+    margin-left: 50px;
+    display: block;
+}
+
+.TestoHome{
+    font-family: 'HeaderBlog';
+    font-size: 180%;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.arcobaleno_tasto_home {
+    height: 2px; 
+    width: 155px;
+}
+
+.arcobaleno_tasto_chi_siamo {
+    height: 2px; 
+    width: 155px;
+}
+
+.open_scrollbar_div {
+    display: none;
+}
+.Div_Spaziatrice {
+    display: none;
+}

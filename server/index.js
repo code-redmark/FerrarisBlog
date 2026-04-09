@@ -50,7 +50,7 @@ async function seed() {
     
     const testTeca = {
         title: "Incontro a Castel Capuano",
-        description: "Il 28 marzo incontreremo la scrittrice Titti Marrone a Castel Capuano, per parlare del suo libro \\\"Primmammore\\\"",
+        description: `L'11 aprile incontreremo la scrittrice Titti Marrone a Castel Capuano, per parlare del suo libro "Primmammore"`,
         cover: 'castel-capuano_sklbvw',
         slug: "incontro-castel-capuano-3M-2026-03-04T09:00:00.000Z",
         class: classi[0]._id,
@@ -91,6 +91,16 @@ async function seed() {
             content: "[Work In Progress (Spiegazione della mappa)]",
             dataPost: "2026-04-08T09:00:00.000Z",
             slug: "la-mappa-concettuale-3M-2026-04-08T09:00:00.000Z",
+            class: classi[0]._id,
+            parentTeca: insertedParent._id
+        },
+        {
+            title: "Il nostro brainstorming",
+            cover: 'Brainstorming_prtqha',
+            description: "Alla fine della lettura del libro tutti gli alunni della classe (e i professori) hanno scelto una parola per descrivere il libro",
+            content: "[Work In Progress]",
+            dataPost: "2026-04-08T09:00:00.000Z",
+            slug: "il-nostro-brainstorming-3M-2026-04-09T09:00:00.000Z",
             class: classi[0]._id,
             parentTeca: insertedParent._id
         }
